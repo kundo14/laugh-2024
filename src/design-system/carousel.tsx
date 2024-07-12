@@ -6,12 +6,14 @@ import AutoScroll from "embla-carousel-auto-scroll";
 export const EmblaCarousel = ({
   slides,
   options,
+  stopOnMouseEnter,
 }: {
   slides: { title: string; description: string; image: string }[];
   options?: EmblaOptionsType;
+  stopOnMouseEnter?: boolean;
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ playOnInit: true, stopOnMouseEnter: true, speed: 5000 }),
+    AutoScroll({ playOnInit: true, stopOnMouseEnter: true, speed: 3 }),
   ]);
   const [isPlaying, setIsPlaying] = React.useState(false);
 
@@ -35,6 +37,10 @@ export const EmblaCarousel = ({
       .on("autoScroll:stop", () => setIsPlaying(false))
       .on("reInit", () => setIsPlaying(autoScroll.isPlaying()));
   }, [emblaApi]);
+
+  React.useEffect(() => {
+    toggleAutoplay();
+  }, []);
 
   return (
     <div className="embla w-full">
