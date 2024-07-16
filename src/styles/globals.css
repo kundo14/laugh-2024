@@ -41,6 +41,10 @@ body {
   margin-bottom: -24px;
 }
 
+b {
+  font-weight: 800;
+}
+
 /* we add a custom underline using scratches: /public/images/scratches/yellow-underline.svg */
 i {
   position: relative;
@@ -57,4 +61,21 @@ i::after {
   background-image: url('/images/scratches/yellow-underline.svg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.slide {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #171717;
+  transition: all;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  font-size: 180px;
+  margin-right: 120px;
+  letter-spacing: -0.08em;                
+}
+
+.slide:hover {
+  color: #FFCE5B;
 }

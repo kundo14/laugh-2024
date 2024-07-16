@@ -1,3 +1,4 @@
+import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
 import { EmblaCarousel } from "@/design-system/carousel";
@@ -21,6 +22,9 @@ const projects = [
 ];
 
 export default function Home() {
+  const [playingProject, setPlayingProject] = React.useState<null | number>(
+    null
+  );
   return (
     <PageLayout
       headProps={{
@@ -29,10 +33,14 @@ export default function Home() {
       }}
       rootClassName="bg-gray-400"
     >
+      <img
+        src="/images/textures/texture.jpg"
+        className="w-full h-screen absolute top-0 left-0 opacity-10"
+      />
       {/* so we get the full screen. We dont take into account the nav */}
       <div className="h-[calc(100vh-137px)] w-full overflow-hidden flex flex-col relative">
         <div className="container">
-          <div className="flex flex-col gap-4 !max-w-[420px] text-12 uppercase leading-[1.8] mt-32">
+          <div className="flex flex-col gap-6 !max-w-[420px] text-12 uppercase leading-[1.8] mt-32">
             <p>
               <i>WE POWER PASSION</i>
             </p>
@@ -54,10 +62,11 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="w-full absolute bottom-0 left-0">
+        <div className="w-full absolute bottom-0 left-0 mb-10">
           <EmblaCarousel
             slides={projects}
             options={{ direction: "ltr", loop: true }}
+            setPlayingProject={setPlayingProject}
           />
         </div>
       </div>

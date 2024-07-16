@@ -2,18 +2,19 @@ import * as React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import Link from "next/link";
 
 export const EmblaCarousel = ({
   slides,
   options,
-  stopOnMouseEnter,
+  setPlayingProject,
 }: {
   slides: { title: string; description: string; image: string }[];
   options?: EmblaOptionsType;
-  stopOnMouseEnter?: boolean;
+  setPlayingProject: React.Dispatch<React.SetStateAction<number | null>>;
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ playOnInit: true, stopOnMouseEnter: true, speed: 3 }),
+    AutoScroll({ playOnInit: true, speed: 3 }),
   ]);
   const [isPlaying, setIsPlaying] = React.useState(false);
 
@@ -46,19 +47,22 @@ export const EmblaCarousel = ({
     <div className="embla w-full">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container flex">
-          {slides.map((item) => (
-            <div className="embla__slide" key={item.title}>
-              <p
-                className="font-archivoBlack uppercase leading-none"
-                key={item.title}
-                style={{
-                  fontSize: "180px",
-                  marginRight: "120px",
-                  letterSpacing: "-0.08em",
-                }}
-              >
+          {slides.map((item, idx) => (
+            <div
+              className="embla__slide"
+              key={item.title}
+              onMouseEnter={() => {
+                toggleAutoplay();
+                setPlayingProject(idx);
+              }}
+              onMouseLeave={() => {
+                toggleAutoplay();
+                setPlayingProject(null);
+              }}
+            >
+              <Link href={"/"} className="slide" key={item.title}>
                 {item.title}
-              </p>
+              </Link>
             </div>
           ))}
         </div>
