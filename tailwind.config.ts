@@ -27,7 +27,9 @@ const config: Config = {
       20: "20px",
       24: "24px",
       32: "32px",
+      42: "42px",
       48: "48px",
+      92: "92px",
     },
     colors: {
       yellow: "#FFCE5B",

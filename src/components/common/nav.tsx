@@ -31,11 +31,13 @@ export const Nav = () => {
         "flex items-center justify-between container !mt-10 sticky top-0 !py-6 z-50"
       )}
     >
-      <img
-        src="/images/logos/black.svg"
-        className="w-24 h-auto"
-        alt="home logo"
-      />
+      <Link href="/" aria-label="logo home">
+        <img
+          src="/images/logos/black.svg"
+          className="w-24 h-auto"
+          alt="home logo"
+        />
+      </Link>
       <div className="flex items-center gap-6">
         {links.map((link) => (
           <Link

@@ -52,12 +52,12 @@ export const EmblaCarousel = ({
               className="embla__slide"
               key={item.title}
               onMouseEnter={() => {
-                toggleAutoplay();
                 setPlayingProject(idx);
+                toggleAutoplay();
               }}
               onMouseLeave={() => {
-                toggleAutoplay();
                 setPlayingProject(null);
+                toggleAutoplay();
               }}
             >
               <Link href={"/"} className="slide" key={item.title}>

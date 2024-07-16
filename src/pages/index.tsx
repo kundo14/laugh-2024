@@ -31,7 +31,6 @@ export default function Home() {
         ...defaultMeta,
         title: "Laugh | share laughs, share sports",
       }}
-      rootClassName="bg-gray-400"
     >
       <img
         src="/images/textures/texture.jpg"
@@ -62,7 +61,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="w-full absolute bottom-0 left-0 mb-10">
+        <div className="w-full absolute bottom-0 left-0 mb-4">
           <EmblaCarousel
             slides={projects}
             options={{ direction: "ltr", loop: true }}
