@@ -37,6 +37,8 @@ const config: Config = {
       black: '#171717',
       red: '#A21038',
       gold: '#C7A16D',
+      transparent: "transparent",
+      current: "currentColor",
       gray: {
         100: "#F5F5F5",
         200: "#EFEFEF",

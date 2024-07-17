@@ -26,11 +26,7 @@ export const links = [
 
 export const Nav = () => {
   return (
-    <div
-      className={cn(
-        "flex items-center justify-between container !mt-10 sticky top-0 !py-6 z-50"
-      )}
-    >
+    <header className={cn("container !mt-10 !py-6")}>
       <Link href="/" aria-label="logo home">
         <img
           src="/images/logos/black.svg"
@@ -43,12 +39,12 @@ export const Nav = () => {
           <Link
             key={link.url}
             href={link.url}
-            className="text-12 text-black uppercase"
+            className="text-12 uppercase text-white"
           >
             {link.label}
           </Link>
         ))}
       </div>
-    </div>
+    </header>
   );
 };

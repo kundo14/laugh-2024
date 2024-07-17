@@ -40,9 +40,7 @@ const PageLayout = ({
   const { pathname } = router;
 
   return (
-    <div
-      className={cn("text-16 text-black relative bg-gray-200", rootClassName)}
-    >
+    <div className={cn("text-16 text-black relative", rootClassName)}>
       <style jsx global>{`
         :root {
           --font-archivo: ${archivo.style.fontFamily};
