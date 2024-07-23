@@ -1,4 +1,64 @@
+import * as React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import FadeIn from "@/components/common/fadeIn";
+
+const clients = [
+  {
+    name: "adidas",
+    logo: "/images/clients/1.svg",
+  },
+  {
+    name: "easports",
+    logo: "/images/clients/2.svg",
+  },
+  {
+    name: "arg",
+    logo: "/images/clients/3.svg",
+  },
+  {
+    name: "netflix",
+    logo: "/images/clients/4.svg",
+  },
+  {
+    name: "nike",
+    logo: "/images/clients/5.svg",
+  },
+  {
+    name: "arg2",
+    logo: "/images/clients/3.svg",
+  },
+  {
+    name: "adidas2",
+    logo: "/images/clients/1.svg",
+  },
+  {
+    name: "nike2",
+    logo: "/images/clients/5.svg",
+  },
+  {
+    name: "easports2",
+    logo: "/images/clients/2.svg",
+  },
+  {
+    name: "netflix2",
+    logo: "/images/clients/4.svg",
+  },
+];
+
 export const Clients = () => {
+  const [visibleClients, setVisibleClients] = React.useState(
+    clients.slice(0, 5)
+  );
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 5) % clients.length);
+      setVisibleClients(clients.slice(index, index + 5));
+    }, 3000); // Change logos every 3 seconds
+    return () => clearInterval(interval);
+  }, [index]);
+
   return (
     <div className="flex flex-col w-full items-center">
       <div className="flex flex-col items-center text-18 italic uppercase leading-[1.8] text-center">
@@ -11,6 +71,24 @@ export const Clients = () => {
           />
           ambitious and exciting brands
         </p>
+      </div>
+      <div className="grid grid-cols-5 gap-x-20 mt-12">
+        {visibleClients.map((client, i) => (
+          <FadeIn key={i} delay={i * 0.1}>
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={client.logo}
+                src={client.logo}
+                alt={client.name}
+                className="w-full h-auto"
+                initial={{ rotateX: 90, opacity: 0 }}
+                animate={{ rotateX: 0, opacity: 1 }}
+                exit={{ rotateX: -90, opacity: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+              />
+            </AnimatePresence>
+          </FadeIn>
+        ))}
       </div>
     </div>
   );
