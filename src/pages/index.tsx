@@ -31,6 +31,8 @@ export default function Home() {
         ...defaultMeta,
         title: "Laugh | share laughs, share sports",
       }}
+      withoutFooter
+      withoutBackgroundTexture
     >
       <img
         src="/images/textures/texture.jpg"

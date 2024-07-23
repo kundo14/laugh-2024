@@ -5,6 +5,7 @@ import { cn } from "../../lib/cn";
 import { motion } from "framer-motion";
 import Head, { HeadProps } from "../common/head";
 import { Nav } from "../common/nav";
+import { Footer } from "../common/footer";
 
 const noNavPaths = ["/404"];
 
@@ -29,12 +30,14 @@ const PageLayout = ({
   withoutFooter,
   className,
   rootClassName,
+  withoutBackgroundTexture,
 }: {
   headProps?: HeadProps;
   children: ReactNode;
   withoutFooter?: boolean;
   className?: string;
   rootClassName?: string;
+  withoutBackgroundTexture?: boolean;
 }) => {
   const router = useRouter();
   const { pathname } = router;
@@ -67,7 +70,14 @@ const PageLayout = ({
       >
         {children}
       </motion.main>
-      {/* {!withoutFooter && <Footer />} */}
+      {!withoutFooter && <Footer className="z-50 relative" />}
+      {!withoutBackgroundTexture && (
+        <img
+          src="/images/textures/paper.jpg"
+          className="w-full h-full absolute top-0 left-0 opacity-50 z-0"
+          alt="texture bg"
+        />
+      )}
     </div>
   );
 };

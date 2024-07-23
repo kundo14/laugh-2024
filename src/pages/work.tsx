@@ -35,11 +35,6 @@ export default function Work() {
         title: "Our Work | Laugh",
       }}
     >
-      <img
-        src="/images/textures/paper-2.jpg"
-        className="w-full h-full absolute top-0 left-0 opacity-10"
-        alt="texture bg"
-      />
       <div className="container !mt-20 z-40 relative">
         <div className="w-full max-w-[1100px]">
           <div className="w-full flex items-end justify-between">
@@ -70,12 +65,12 @@ export default function Work() {
               <div className="h-[800px] w-full bg-yellow" />
             </div>
           </div>
-          <div className="sticky top-32 flex flex-col gap-3">
+          <div className="sticky top-32 flex flex-col gap-3 group">
             {submenu.map((item, i) => (
               <Link
                 key={i}
                 href={item.href}
-                className="text-12 uppercase inline-flex"
+                className="text-12 uppercase inline-flex group-hover:opacity-50 hover:!opacity-100 transition-all duration-150"
               >
                 {item.label} <span className="ml-1">.{toRoman(i + 1)}</span>
               </Link>
