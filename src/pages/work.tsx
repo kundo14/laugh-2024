@@ -3,6 +3,7 @@ import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
 import Link from "next/link";
 import { toRoman } from "@/lib/helpers/toRoman";
+import { Clients } from "@/components/sections/work/clients";
 
 const submenu = [
   {
@@ -76,6 +77,9 @@ export default function Work() {
               </Link>
             ))}
           </div>
+        </div>
+        <div className="container !mt-40">
+          <Clients />
         </div>
       </div>
     </PageLayout>
