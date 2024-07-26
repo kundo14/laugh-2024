@@ -4,6 +4,66 @@ import { defaultMeta } from "@/components/common/head";
 import Link from "next/link";
 import { toRoman } from "@/lib/helpers/toRoman";
 import { Clients } from "@/components/sections/work/clients";
+import { FeaturedWorks } from "@/components/sections/work/featured";
+import { WorkPreview } from "@/models";
+import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
+
+const featuredStaticWorks: WorkPreview[] = [
+  {
+    name: "La Bombonera Regresa",
+    date: {
+      start: 2021,
+      end: 2021,
+    },
+    imagePreview: "/works/boca.jpg",
+    slug: "la-bombonera-regresa",
+    tags: ["buenos aires", "studios"],
+  },
+  {
+    name: "EA Sports FIFA",
+    date: {
+      start: 2023,
+      end: 2023,
+    },
+    imagePreview: "/works/fifa.jpg",
+    slug: "ea-sports-fifa",
+    tags: ["caba", "360"],
+  },
+  {
+    name: "La Bombonera Regresa",
+    date: {
+      start: 2021,
+      end: 2021,
+    },
+    imagePreview: "/works/boca.jpg",
+    slug: "la-bombonera-regresa",
+    tags: ["buenos aires", "passion love"],
+  },
+  {
+    name: "Adidas",
+    date: {
+      start: 2023,
+      end: 2023,
+    },
+    imagePreview: "/works/heroes.jpg",
+    slug: "adidas",
+    tags: ["madrid", "passion love"],
+  },
+  {
+    name: "EA Sports FIFA",
+    date: {
+      start: 2023,
+      end: 2023,
+    },
+    imagePreview: "/works/fifa.jpg",
+    slug: "ea-sports-fifa",
+    tags: ["caba", "studios"],
+  },
+];
+
+const allWorks = featuredStaticWorks
+  .concat(featuredStaticWorks)
+  .concat(featuredStaticWorks);
 
 const submenu = [
   {
@@ -78,10 +138,23 @@ export default function Work() {
             ))}
           </div>
         </div>
-        <div className="container !mt-40">
-          <Clients />
-        </div>
+        <Clients className="!py-40 " />
       </div>
+      <FeaturedWorks works={featuredStaticWorks} className="z-40 relative" />
+      <div className="!py-40 z-40 relative overflow-x-hidden">
+        <ScrollableWorks
+          works={allWorks.filter((w) => w.tags.includes("passion love"))}
+          title="Passion Love"
+        />
+      </div>
+      {/* <ScrollableWorks
+        works={allWorks.filter((w) => w.tags.includes("studios"))}
+        title="studios"
+      />
+      <ScrollableWorks
+        works={allWorks.filter((w) => w.tags.includes("360"))}
+        title="360"
+      /> */}
     </PageLayout>
   );
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
-import { EmblaCarousel } from "@/design-system/carousel";
+import { EmblaCarouselAutoScroll } from "@/design-system/carousel-autoscroll";
 
 const projects = [
   {
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full absolute bottom-0 left-0 mb-4">
-          <EmblaCarousel
+          <EmblaCarouselAutoScroll
             slides={projects}
             options={{ direction: "ltr", loop: true }}
             setPlayingProject={setPlayingProject}

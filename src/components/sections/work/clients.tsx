@@ -1,6 +1,8 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "@/components/common/fadeIn";
+import { FeaturedWorks } from "./featured";
+import { cn } from "@/lib/cn";
 
 const clients = [
   {
@@ -45,7 +47,7 @@ const clients = [
   },
 ];
 
-export const Clients = () => {
+export const Clients = ({ className }: { className?: string }) => {
   const [visibleClients, setVisibleClients] = React.useState(
     clients.slice(0, 5)
   );
@@ -60,7 +62,7 @@ export const Clients = () => {
   }, [index]);
 
   return (
-    <div className="flex flex-col w-full items-center">
+    <div className={cn("flex flex-col w-full items-center", className)}>
       <div className="flex flex-col items-center text-18 italic uppercase leading-[1.8] text-center">
         <p className="font-light">we have worked with some of the most</p>
         <p className="font-bold relative max-w-max">
@@ -72,7 +74,7 @@ export const Clients = () => {
           ambitious and exciting brands
         </p>
       </div>
-      <div className="grid grid-cols-5 gap-x-20 mt-12">
+      <div className="grid grid-cols-5 gap-x-20 mt-12 h-[160px]">
         {visibleClients.map((client, i) => (
           <FadeIn key={i} delay={i * 0.1}>
             <AnimatePresence mode="wait">

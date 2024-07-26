@@ -62,6 +62,7 @@ header a {
 
 ::selection {
   background-color: #FFCE5B;
+  color: #171717;
 }
 
 b {
