@@ -10,7 +10,7 @@ export const FeaturedWorks = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("bg-black py-32 w-full", className)}>
+    <div id="featured" className={cn("bg-black py-32 w-full", className)}>
       <div className="container flex items-start justify-between gap-32">
         <div className="flex flex-col sticky top-32 w-full max-w-[500px]">
           <img

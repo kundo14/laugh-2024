@@ -7,6 +7,7 @@ import { Clients } from "@/components/sections/work/clients";
 import { FeaturedWorks } from "@/components/sections/work/featured";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
+import { Quote } from "@/components/common/dynamic-sections/quote";
 
 const featuredStaticWorks: WorkPreview[] = [
   {
@@ -138,7 +139,7 @@ export default function Work() {
             ))}
           </div>
         </div>
-        <Clients className="!py-40 " />
+        <Clients className="!py-40" />
       </div>
       <FeaturedWorks works={featuredStaticWorks} className="z-40 relative" />
       <div className="!py-40 z-40 relative overflow-x-hidden">

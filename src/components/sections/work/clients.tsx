@@ -62,7 +62,10 @@ export const Clients = ({ className }: { className?: string }) => {
   }, [index]);
 
   return (
-    <div className={cn("flex flex-col w-full items-center", className)}>
+    <div
+      id="clients"
+      className={cn("flex flex-col w-full items-center", className)}
+    >
       <div className="flex flex-col items-center text-18 italic uppercase leading-[1.8] text-center">
         <p className="font-light">we have worked with some of the most</p>
         <p className="font-bold relative max-w-max">

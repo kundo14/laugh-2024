@@ -20,3 +20,8 @@ export type WorkPreview = Pick<
   Work,
   "name" | "slug" | "imagePreview" | "tags" | "date"
 >;
+
+export type Quote = {
+  quote: string;
+  author: string;
+};

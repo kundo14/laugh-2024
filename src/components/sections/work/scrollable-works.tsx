@@ -12,16 +12,12 @@ export const ScrollableWorks = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col", className)}>
-      <div className="flex items-center w-full justify-between !mb-8 container">
-        <p className="text-black uppercase text-16">{title}</p>
-      </div>
-      <div className="overflow-x-visible container">
-        <EmblaCarouselWorks
-          slides={works}
-          options={{ slidesToScroll: "auto" }}
-        />
-      </div>
+    <div id="passion-love" className={cn("flex flex-col", className)}>
+      <EmblaCarouselWorks
+        slides={works}
+        title={title}
+        options={{ slidesToScroll: "auto" }}
+      />
     </div>
   );
 };
