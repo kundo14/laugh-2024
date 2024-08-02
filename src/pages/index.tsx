@@ -1,7 +1,7 @@
 import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
-import { EmblaCarouselAutoScroll } from "@/design-system/carousel-autoscroll";
+import { EmblaCarouselAutoScroll } from "@/components/design-system/carousel-autoscroll";
 
 const projects = [
   {

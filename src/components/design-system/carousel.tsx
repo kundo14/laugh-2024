@@ -41,8 +41,8 @@ export const EmblaCarouselWorks = ({
   }, []);
 
   return (
-    <div className="flex flex-col">
-      <div className="flex items-center w-full justify-between !mb-8 container">
+    <div className="flex flex-col container">
+      <div className="flex items-center w-full justify-between">
         {title && <p className="text-black uppercase text-16">{title}</p>}
         <div className="flex gap-6">
           <button
@@ -95,7 +95,7 @@ export const EmblaCarouselWorks = ({
           </button>
         </div>
       </div>
-      <div className="overflow-x-visible container">
+      <div className="overflow-x-visible mt-8">
         <div className="embla">
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container flex gap-4">

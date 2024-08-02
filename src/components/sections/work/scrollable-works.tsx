@@ -1,4 +1,4 @@
-import { EmblaCarouselWorks } from "@/design-system/carousel";
+import { EmblaCarouselWorks } from "@/components/design-system/carousel";
 import { cn } from "@/lib/cn";
 import { WorkPreview as WorkPreviewProps } from "@/models";
 

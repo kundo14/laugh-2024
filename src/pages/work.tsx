@@ -8,6 +8,8 @@ import { FeaturedWorks } from "@/components/sections/work/featured";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { Quote } from "@/components/common/dynamic-sections/quote";
+import { WorkHeroData } from "@/components/sections/works/hero-data";
+import { works } from "@/lib/static/works";
 
 const featuredStaticWorks: WorkPreview[] = [
   {
@@ -141,21 +143,29 @@ export default function Work() {
         </div>
         <Clients className="!py-40" />
       </div>
-      <FeaturedWorks works={featuredStaticWorks} className="z-40 relative" />
-      <div className="!py-40 z-40 relative overflow-x-hidden">
+      <WorkHeroData work={works[0]} className="relative z-40" />
+      <FeaturedWorks
+        works={featuredStaticWorks}
+        className="z-40 relative mb-20"
+      />
+      <div className="!py-16 z-40 relative overflow-x-hidden">
         <ScrollableWorks
           works={allWorks.filter((w) => w.tags.includes("passion love"))}
           title="Passion Love"
         />
       </div>
-      {/* <ScrollableWorks
-        works={allWorks.filter((w) => w.tags.includes("studios"))}
-        title="studios"
-      />
-      <ScrollableWorks
-        works={allWorks.filter((w) => w.tags.includes("360"))}
-        title="360"
-      /> */}
+      <div className="!py-16 z-40 relative overflow-x-hidden">
+        <ScrollableWorks
+          works={allWorks.filter((w) => w.tags.includes("studios"))}
+          title="Studios"
+        />
+      </div>
+      <div className="!py-16 z-40 relative overflow-x-hidden">
+        <ScrollableWorks
+          works={allWorks.filter((w) => w.tags.includes("360"))}
+          title="360"
+        />
+      </div>
     </PageLayout>
   );
 }
