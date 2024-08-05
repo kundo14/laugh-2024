@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Head, { HeadProps } from "../common/head";
 import { Nav } from "../common/nav";
 import { Footer } from "../common/footer";
+import SmoothScrolling from "../common/scroll";
 
 const noNavPaths = ["/404"];
 
@@ -52,32 +53,34 @@ const PageLayout = ({
         }
       `}</style>
       <Head headProps={headProps} />
-      <div className="h-px" />
-      {!noNavPaths.includes(pathname) && <Nav />}
-      <motion.main
-        className={cn("", className)}
-        key={pathname}
-        initial="pageInitial"
-        animate="pageAnimate"
-        variants={{
-          pageInitial: {
-            opacity: 0,
-          },
-          pageAnimate: {
-            opacity: 1,
-          },
-        }}
-      >
-        {children}
-      </motion.main>
-      {!withoutFooter && <Footer className="z-50 relative" />}
-      {!withoutBackgroundTexture && (
-        <img
-          src="/images/textures/paper.jpg"
-          className="w-full h-full absolute top-0 left-0 opacity-50 z-0"
-          alt="texture bg"
-        />
-      )}
+      <SmoothScrolling>
+        <div className="h-px" />
+        {!noNavPaths.includes(pathname) && <Nav />}
+        <motion.main
+          className={cn("", className)}
+          key={pathname}
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}
+        >
+          {children}
+        </motion.main>
+        {!withoutFooter && <Footer className="z-50 relative" />}
+        {!withoutBackgroundTexture && (
+          <img
+            src="/images/textures/paper.jpg"
+            className="w-full h-full absolute top-0 left-0 opacity-50 z-0"
+            alt="texture bg"
+          />
+        )}
+      </SmoothScrolling>
     </div>
   );
 };

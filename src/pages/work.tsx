@@ -10,6 +10,7 @@ import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { Quote } from "@/components/common/dynamic-sections/quote";
 import { WorkHeroData } from "@/components/sections/works/hero-data";
 import { works } from "@/lib/static/works";
+import { CustomDraggable } from "@/components/common/draggable";
 
 const featuredStaticWorks: WorkPreview[] = [
   {
@@ -114,11 +115,14 @@ export default function Work() {
                 Our work.
               </p>
             </div>
-            <img
-              src="/images/scratches/yellow-arrow.svg"
-              alt="yellow arrow"
-              className="-mb-4"
-            />
+            <CustomDraggable>
+              <img
+                src="/images/scratches/yellow-arrow.svg"
+                alt="yellow arrow"
+                className="-mb-4"
+                draggable={false}
+              />
+            </CustomDraggable>
           </div>
         </div>
         <div className="w-full flex items-start gap-16 mt-12">
