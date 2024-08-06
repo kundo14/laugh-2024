@@ -1,5 +1,12 @@
 import { cn } from "@/lib/cn";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../design-system/dropdown";
+import { ContactDropdown } from "./contact-dropdown";
 
 export const links = [
   {
@@ -17,10 +24,6 @@ export const links = [
   {
     label: "Studios",
     url: "/studios",
-  },
-  {
-    label: "Contact",
-    url: "/#contact",
   },
 ];
 
@@ -45,6 +48,7 @@ export const Nav = () => {
               {link.label}
             </Link>
           ))}
+          <ContactDropdown />
         </div>
       </div>
     </header>

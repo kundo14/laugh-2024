@@ -20,7 +20,7 @@ const links = [
   },
   {
     label: "contact",
-    url: "/#contact",
+    url: "#contact",
     underline: true,
   },
 ];
@@ -36,12 +36,17 @@ export const Footer = ({ className }: { className?: string }) => {
       <div className="flex flex-col gap-5 sm:gap-0 sm:flex-row lg:flex-col justify-between w-full flex-1">
         <div className="flex flex-col lg:mb-14">
           <Link
-            href=""
-            className="uppercase text-16 sm:text-18 text-black mb-1.5"
+            href="https://www.instagram.com/weare_laugh/"
+            target="_blank"
+            className="uppercase text-16 sm:text-18 text-black mb-1.5 hover:underline"
           >
             instagram
           </Link>
-          <Link href="" className="uppercase text-16 sm:text-18 text-black">
+          <Link
+            href=""
+            target="_blank"
+            className="uppercase text-16 sm:text-18 text-black hover:underline"
+          >
             youtube
           </Link>
         </div>

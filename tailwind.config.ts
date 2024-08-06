@@ -38,6 +38,7 @@ const config: Config = {
       red: '#A21038',
       gold: '#C7A16D',
       transparent: "transparent",
+      dropdown: "hsla(0,0%,94%,0.8)",
       current: "currentColor",
       gray: {
         100: "#F5F5F5",

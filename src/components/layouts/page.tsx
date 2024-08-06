@@ -59,16 +59,9 @@ const PageLayout = ({
         <motion.main
           className={cn("", className)}
           key={pathname}
-          initial="pageInitial"
-          animate="pageAnimate"
-          variants={{
-            pageInitial: {
-              opacity: 0,
-            },
-            pageAnimate: {
-              opacity: 1,
-            },
-          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.75 }}
         >
           {children}
         </motion.main>
