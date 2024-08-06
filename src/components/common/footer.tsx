@@ -29,28 +29,33 @@ export const Footer = ({ className }: { className?: string }) => {
   return (
     <footer
       className={cn(
-        "flex justify-between items-end gap-16 !mt-80 container !pb-10",
+        "flex flex-col lg:flex-row justify-between lg:items-end gap-8 lg:gap-16 !mt-80 container !pb-10",
         className
       )}
     >
-      <div className="flex flex-col flex-1">
-        <div className="flex flex-col mb-14">
-          <Link href="" className="uppercase text-18 text-black mb-1.5">
+      <div className="flex flex-col gap-5 sm:gap-0 sm:flex-row lg:flex-col justify-between w-full flex-1">
+        <div className="flex flex-col lg:mb-14">
+          <Link
+            href=""
+            className="uppercase text-16 sm:text-18 text-black mb-1.5"
+          >
             instagram
           </Link>
-          <Link href="" className="uppercase text-18 text-black">
+          <Link href="" className="uppercase text-16 sm:text-18 text-black">
             youtube
           </Link>
         </div>
-        <div className="flex justify-between w-full">
-          <p className="text-14 uppercase">©{new Date().getFullYear()}</p>
-          <div className="flex items-center gap-6 group">
+        <div className="flex justify-between lg:w-full">
+          <p className="hidden lg:flex text-14 uppercase">
+            ©{new Date().getFullYear()}
+          </p>
+          <div className="flex items-end lg:items-center gap-6 group">
             {links.map((link, index) => (
               <Link
                 href={link.url}
                 key={index}
                 className={cn(
-                  "text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
+                  "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
                   {
                     scratch: link.underline,
                   }
@@ -62,7 +67,7 @@ export const Footer = ({ className }: { className?: string }) => {
           </div>
         </div>
       </div>
-      <p className="font-archivoBlack text-[180px] tracking-[-0.08em] uppercase text-black min-w-max leading-none -mb-6">
+      <p className="font-archivoBlack text-[25vw] sm:text-[26.20vw] lg:text-[120px] xl:text-[180px] tracking-[-0.08em] uppercase text-black min-w-max leading-none -mb-6">
         Laugh
       </p>
     </footer>

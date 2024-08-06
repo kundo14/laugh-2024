@@ -119,3 +119,18 @@ i::after {
 .slide:hover {
   color: #FFCE5B;
 }
+
+/* mediascreen for slide */
+@media screen and (max-width: 1024px) {
+  .slide {
+    font-size: 120px;
+    margin-right: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slide {
+    font-size: 80px;
+    margin-right: 60px;
+  }
+}

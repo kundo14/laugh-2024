@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "@/components/common/fadeIn";
 import { FeaturedWorks } from "./featured";
 import { cn } from "@/lib/cn";
+import { CustomDraggable } from "@/components/common/draggable";
 
 const clients = [
   {
@@ -69,11 +70,14 @@ export const Clients = ({ className }: { className?: string }) => {
       <div className="flex flex-col items-center text-18 italic uppercase leading-[1.8] text-center">
         <p className="font-light">we have worked with some of the most</p>
         <p className="font-bold relative max-w-max">
-          <img
-            src="/images/scratches/yellow-underline.svg"
-            alt="underline clients"
-            className="w-full h-auto absolute -bottom-5 left-0"
-          />
+          <CustomDraggable>
+            <img
+              src="/images/scratches/yellow-underline.svg"
+              alt="underline clients"
+              className="w-full h-auto absolute -bottom-5 left-0"
+              draggable={false}
+            />
+          </CustomDraggable>
           ambitious and exciting brands
         </p>
       </div>

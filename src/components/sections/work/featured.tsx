@@ -1,3 +1,4 @@
+import { CustomDraggable } from "@/components/common/draggable";
 import { WorkPreview } from "@/components/common/work-preview";
 import { cn } from "@/lib/cn";
 import { WorkPreview as WorkPreviewProps } from "@/models";
@@ -13,11 +14,14 @@ export const FeaturedWorks = ({
     <div id="featured" className={cn("bg-black py-32 w-full", className)}>
       <div className="container flex items-start justify-between gap-32">
         <div className="flex flex-col sticky top-32 w-full max-w-[500px]">
-          <img
-            src="/images/scratches/yellow-arrow.svg"
-            alt="yellow arrow"
-            className="absolute -bottom-44 right-0 w-[80px] h-auto"
-          />
+          <CustomDraggable>
+            <img
+              src="/images/scratches/yellow-arrow.svg"
+              alt="yellow arrow"
+              className="absolute -bottom-44 right-0 w-[80px] h-auto"
+              draggable={false}
+            />
+          </CustomDraggable>
           <p className="text-16 uppercase text-yellow mb-8">[Featured Works]</p>
           <p className="text-gray-300 text-12 uppercase leading-[1.8]">
             Lorem ipsum dolor sit amet consectetur. Maecenas adipiscing tellus

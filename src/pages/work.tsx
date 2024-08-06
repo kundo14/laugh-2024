@@ -133,7 +133,7 @@ export default function Work() {
               <div className="h-[800px] w-full bg-yellow" />
             </div>
           </div>
-          <div className="sticky top-32 flex flex-col gap-3 group">
+          <div className="hidden sticky top-32 sm:flex flex-col gap-3 group">
             {submenu.map((item, i) => (
               <Link
                 key={i}

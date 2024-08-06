@@ -41,7 +41,7 @@ export default function Home() {
       {/* so we get the full screen. We dont take into account the nav */}
       <div className="h-[calc(100vh-137px)] w-full overflow-hidden flex flex-col relative">
         <div className="container">
-          <div className="flex flex-col gap-6 !max-w-[420px] text-12 uppercase leading-[1.8] mt-32">
+          <div className="flex flex-col gap-6 !max-w-[420px] text-12 uppercase leading-[1.8] mt-20 sm:mt-32">
             <p>
               <i>WE POWER PASSION</i>
             </p>
@@ -63,7 +63,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="w-full absolute bottom-0 left-0 mb-4">
+        <div className="w-full absolute bottom-0 left-0 mb-12 sm:mb-4">
           <EmblaCarouselAutoScroll
             slides={projects}
             options={{ direction: "ltr", loop: true }}

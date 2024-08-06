@@ -1,3 +1,4 @@
+import { CustomDraggable } from "@/components/common/draggable";
 import { cn } from "@/lib/cn";
 import { Work } from "@/models";
 import Markdown from "react-markdown";
@@ -24,10 +25,13 @@ export const WorkHeroData = ({
         <div className="flex flex-col border-t border-gray-500 pt-4 mt-12">
           <div className="mb-3 relative max-w-max">
             <p className="uppercase text-12 text-gray-500">deliverables</p>
-            <img
-              src="/images/scratches/yellow-scratch.svg"
-              className="absolute -left-[30%] -bottom-[45%] min-w-[160%]"
-            />
+            <CustomDraggable>
+              <img
+                src="/images/scratches/yellow-scratch.svg"
+                className="absolute -left-[30%] -bottom-[45%] min-w-[160%]"
+                draggable={false}
+              />
+            </CustomDraggable>
           </div>
           <ul className="text-12 text-gray-500">
             {work.deliverables.map((deliverable) => (
@@ -39,19 +43,22 @@ export const WorkHeroData = ({
         </div>
       </div>
       <div className="flex flex-col pl-12 border-l border-gray-500 max-w-[800px] pb-44">
-        <p className="text-48 leading-tight mb-14">
+        <div className="text-48 leading-tight mb-14">
           <Markdown remarkPlugins={[remarkGfm]}>{work.heroTitle}</Markdown>
-        </p>
-        <p className="text-16 text-gray-800 leading-[1.8]">
+        </div>
+        <div className="text-16 text-gray-800 leading-[1.8]">
           <Markdown remarkPlugins={[remarkGfm]}>
             {work.heroDescription}
           </Markdown>
-        </p>
+        </div>
       </div>
-      <img
-        src="/images/scratches/yellow-arrow-2.svg"
-        className="absolute bottom-20 right-0"
-      />
+      <CustomDraggable>
+        <img
+          src="/images/scratches/yellow-arrow-2.svg"
+          className="absolute bottom-20 right-0"
+          draggable={false}
+        />
+      </CustomDraggable>
     </div>
   );
 };
