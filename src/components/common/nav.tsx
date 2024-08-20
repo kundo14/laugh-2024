@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../design-system/dropdown";
-import { ContactDropdown } from "./contact-dropdown";
+import { ContactDropdown } from "./contact/contact-nav-dropdown";
 
 export const links = [
   {

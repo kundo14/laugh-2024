@@ -1,5 +1,7 @@
 import { cn } from "@/lib/cn";
 import Link from "next/link";
+import { ContactDropdown } from "./contact/contact-nav-dropdown";
+import { ContactFooterDropdown } from "./contact/contact-footer-dropdow";
 
 const links = [
   {
@@ -17,11 +19,6 @@ const links = [
   {
     label: "studios",
     url: "/studios",
-  },
-  {
-    label: "contact",
-    url: "#contact",
-    underline: true,
   },
 ];
 
@@ -60,15 +57,13 @@ export const Footer = ({ className }: { className?: string }) => {
                 href={link.url}
                 key={index}
                 className={cn(
-                  "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
-                  {
-                    scratch: link.underline,
-                  }
+                  "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150"
                 )}
               >
                 {link.label}
               </Link>
             ))}
+            <ContactFooterDropdown />
           </div>
         </div>
       </div>

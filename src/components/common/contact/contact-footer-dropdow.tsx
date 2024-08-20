@@ -4,16 +4,16 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../design-system/dropdown";
+} from "../../design-system/dropdown";
 
-export const ContactDropdown = ({ size = "sm" }: { size?: "sm" | "lg" }) => {
+export const ContactFooterDropdown = ({}: {}) => {
   const router = useRouter();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button
           name="contact"
-          className="text-12 uppercase text-white group-hover:opacity-50 hover:!opacity-100 transition-all duration-150"
+          className="text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150 !text-black"
         >
           contact
         </button>
