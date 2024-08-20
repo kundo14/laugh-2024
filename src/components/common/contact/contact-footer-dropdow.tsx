@@ -5,15 +5,27 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../../design-system/dropdown";
+import { cn } from "@/lib/cn";
 
-export const ContactFooterDropdown = ({}: {}) => {
+export const ContactFooterDropdown = ({
+  color,
+}: {
+  color?: "red" | "gold" | "yellow";
+}) => {
   const router = useRouter();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button
           name="contact"
-          className="text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150 !text-black"
+          className={cn(
+            "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150 !text-black",
+            {
+              scratch: color === "yellow" || !color,
+              scratch_red: color === "red",
+              scratch_gold: color === "gold",
+            }
+          )}
         >
           contact
         </button>

@@ -22,7 +22,13 @@ const links = [
   },
 ];
 
-export const Footer = ({ className }: { className?: string }) => {
+export const Footer = ({
+  className,
+  color,
+}: {
+  className?: string;
+  color?: "red" | "gold" | "yellow";
+}) => {
   return (
     <footer
       className={cn(
@@ -63,11 +69,21 @@ export const Footer = ({ className }: { className?: string }) => {
                 {link.label}
               </Link>
             ))}
-            <ContactFooterDropdown />
+            <ContactFooterDropdown color={color} />
           </div>
         </div>
       </div>
-      <p className="font-archivoBlack text-[25vw] sm:text-[26.20vw] lg:text-[120px] xl:text-[180px] tracking-[-0.08em] uppercase text-black min-w-max leading-none -mb-6">
+      <p
+        className={cn(
+          "font-archivoBlack text-[25vw] sm:text-[26.20vw] lg:text-[120px] xl:text-[180px] tracking-[-0.08em] uppercase min-w-max leading-none -mb-6",
+          {
+            "text-red": color === "red",
+            "text-yellow": color === "yellow",
+            "text-gold": color === "gold",
+            "text-black": !color,
+          }
+        )}
+      >
         Laugh
       </p>
     </footer>

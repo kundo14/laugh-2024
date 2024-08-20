@@ -27,9 +27,9 @@ export const links = [
   },
 ];
 
-export const Nav = () => {
+export const Nav = ({ className }: { className?: string }) => {
   return (
-    <header className={cn("container !mt-10 !py-6")}>
+    <header className={cn("container !mt-10 !py-6", className)}>
       <div className="flex justify-between relative flex-1">
         <Link href="/" aria-label="logo home">
           <img

@@ -87,7 +87,7 @@ i::after {
   background-repeat: no-repeat;
 }
 
-.scratch {
+.scratch, .scratch_red, .scratch_gold {
   position: relative;
 }
 
@@ -99,6 +99,30 @@ i::after {
   width: 150%;
   height: 150%;
   background-image: url('/images/scratches/yellow-scratch.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.scratch_red::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 150%;
+  height: 150%;
+  background-image: url('/images/scratches/red-scratch.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.scratch_gold::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 150%;
+  height: 150%;
+  background-image: url('/images/scratches/gold-scratch.svg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
