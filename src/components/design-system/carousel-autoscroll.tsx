@@ -9,7 +9,7 @@ export const EmblaCarouselAutoScroll = ({
   options,
   setPlayingProject,
 }: {
-  slides: { title: string; description: string; image: string }[];
+  slides: { title: string; description: string; image: string; link: string }[];
   options?: EmblaOptionsType;
   setPlayingProject: React.Dispatch<React.SetStateAction<number | null>>;
 }) => {
@@ -60,7 +60,7 @@ export const EmblaCarouselAutoScroll = ({
                 toggleAutoplay();
               }}
             >
-              <Link href={"/"} className="slide" key={item.title}>
+              <Link href={item.link} className="slide" key={item.title}>
                 {item.title}
               </Link>
             </div>

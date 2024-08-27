@@ -25,3 +25,10 @@ export type Quote = {
   quote: string;
   author: string;
 };
+
+export type CarouselSlideProps = {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+};

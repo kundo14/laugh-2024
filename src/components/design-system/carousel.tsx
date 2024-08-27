@@ -100,7 +100,10 @@ export const EmblaCarouselWorks = ({
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container flex gap-4">
               {slides.map((item, idx) => (
-                <div key={idx} className="embla__slide !max-w-[420px]">
+                <div
+                  key={idx}
+                  className="embla__slide !max-w-[340px] sm:!max-w-[420px]"
+                >
                   <WorkPreview
                     size="small"
                     variant="light"

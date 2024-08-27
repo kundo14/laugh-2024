@@ -8,16 +8,19 @@ const projects = [
     title: "La bombonera regresa",
     description: "Description 1",
     image: "/images/projects/project1.jpg",
+    link: "/work-la-bombonera-regresa",
   },
   {
     title: "México manda",
     description: "Description 2",
     image: "/images/projects/project2.jpg",
+    link: "/work-mexico-manda",
   },
   {
     title: "Heroes",
     description: "Description 3",
     image: "/images/projects/project3.jpg",
+    link: "/work-heroes",
   },
 ];
 

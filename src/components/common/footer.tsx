@@ -31,8 +31,9 @@ export const Footer = ({
 }) => {
   return (
     <footer
+      id="contact"
       className={cn(
-        "flex flex-col lg:flex-row justify-between lg:items-end gap-8 lg:gap-16 !mt-80 container !pb-10",
+        "flex flex-col lg:flex-row justify-between lg:items-end gap-8 lg:gap-16 !mt-48 lg:!mt-64 xl:!mt-80 container !pb-10",
         className
       )}
     >

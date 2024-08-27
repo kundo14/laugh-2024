@@ -18,7 +18,7 @@ export const WorkPreview = ({
       href={`/work/${work.slug}`}
       className={cn("flex flex-col w-full font-archivo", className, {
         "gap-3": size === "small",
-        "gap-4": size === "large",
+        "gap-3 lg:gap-4": size === "large",
       })}
     >
       <img
@@ -41,22 +41,22 @@ export const WorkPreview = ({
         className={cn("font-semibold uppercase", {
           "!text-white": variant === "dark",
           "!text-black": variant === "light",
-          "text-32": size === "large",
-          "text-24": size === "small",
+          "text-24 lg:text-32": size === "large",
+          "text-20 sm:text-24": size === "small",
         })}
       >
         {work.name}
       </p>
       <div
         className={cn("flex gap-2 items-center", {
-          "mt-1": size === "large",
+          "lg:mt-1": size === "large",
         })}
       >
         {work.tags.map((tag, index) => (
           <span
             key={index}
             className={cn("!text-12 uppercase px-3 py-1 border", {
-              "text-gray-300 border-gray-700": variant === "dark",
+              "text-gray-300 border-gray-700 bg-black": variant === "dark",
               "text-black border-black": variant === "light",
             })}
           >
