@@ -32,11 +32,13 @@ const VerticalPageLayout = ({
   rootClassName,
   logo,
   color,
+  noBg,
 }: {
   headProps?: HeadProps;
   children: ReactNode;
   className?: string;
   rootClassName?: string;
+  noBg?: boolean;
   logo: ReactNode;
   color?: "red" | "gold" | "yellow";
 }) => {
@@ -56,7 +58,16 @@ const VerticalPageLayout = ({
       <SmoothScrolling>
         <div className="h-px" />
         <Nav />
-        <div className="flex flex-col items-center justify-center w-full h-screen bg-red -mt-[136px]">
+        <div
+          className={cn(
+            "flex flex-col items-center justify-center w-full h-screen -mt-[136px]",
+            {
+              "bg-red": color === "red" && !noBg,
+              "bg-gold": color === "gold" && !noBg,
+              "bg-yellow": color === "yellow" && !noBg,
+            }
+          )}
+        >
           {logo}
         </div>
         <motion.main
@@ -69,6 +80,11 @@ const VerticalPageLayout = ({
           {children}
         </motion.main>
         <Footer className="z-50 relative" color={color} />
+        <img
+          src="/images/textures/paper.jpg"
+          className="w-full h-full absolute top-0 left-0 opacity-10 z-0"
+          alt="texture bg"
+        />
       </SmoothScrolling>
     </div>
   );

@@ -1,12 +1,10 @@
+import * as React from "react";
 import { cn } from "@/lib/cn";
 import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../design-system/dropdown";
 import { ContactDropdown } from "./contact/contact-nav-dropdown";
@@ -33,10 +31,27 @@ export const links = [
 ];
 
 export const Nav = ({ className }: { className?: string }) => {
+  const [hasScrolled, setHasScrolled] = React.useState(false);
   const router = useRouter();
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <header className={cn("container sm:!mt-4 md:!mt-10 !py-6", className)}>
-      <div className="flex items-center justify-between relative flex-1">
+    <header
+      className={cn("container sm:!mt-4 md:!mt-10 !py-6", className, {
+        contrast: hasScrolled,
+      })}
+    >
+      <div className="flex items-center justify-between relative flex-1 text-current">
         <Link href="/" aria-label="logo home">
           <img
             src="/images/logos/black.svg"
@@ -49,17 +64,17 @@ export const Nav = ({ className }: { className?: string }) => {
             <Link
               key={link.url}
               href={link.url}
-              className="text-12 uppercase text-white group-hover:opacity-50 hover:!opacity-100 transition-all duration-150"
+              className="text-12 uppercase text-current group-hover:opacity-50 hover:!opacity-100"
             >
               {link.label}
             </Link>
           ))}
           <ContactDropdown />
         </div>
-        <div className="flex sm:hidden">
+        <div className="flex sm:hidden text-current">
           <DropdownMenu>
-            <DropdownMenuTrigger>
-              <HamburgerMenuIcon className="text-white w-5 h-5" />
+            <DropdownMenuTrigger asChild>
+              <HamburgerMenuIcon className="text-current w-5 h-5" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" sideOffset={10}>
               {links.map((link) => (

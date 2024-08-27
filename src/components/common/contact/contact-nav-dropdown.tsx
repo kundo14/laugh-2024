@@ -13,7 +13,7 @@ export const ContactDropdown = ({ size = "sm" }: { size?: "sm" | "lg" }) => {
       <DropdownMenuTrigger asChild>
         <button
           name="contact"
-          className="text-12 uppercase text-white group-hover:opacity-50 hover:!opacity-100 transition-all duration-150"
+          className="text-12 uppercase group-hover:opacity-50 hover:!opacity-100"
         >
           contact
         </button>
