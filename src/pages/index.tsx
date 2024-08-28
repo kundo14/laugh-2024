@@ -39,7 +39,7 @@ export default function Home() {
     >
       <img
         src="/images/textures/texture.jpg"
-        className="w-full h-screen absolute top-0 left-0 opacity-10"
+        className="w-full h-[100svh] absolute top-0 left-0 opacity-10"
       />
       {/* so we get the full screen. We dont take into account the nav */}
       <div className="h-[calc(100svh-140px)] max-h-[calc(100svh-140px)] sm:h-[calc(100vh-137px)] sm:max-h-[calc(100vh-137px)] w-full overflow-hidden flex flex-col relative">
