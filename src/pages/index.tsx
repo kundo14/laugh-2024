@@ -42,7 +42,7 @@ export default function Home() {
         className="w-full h-screen absolute top-0 left-0 opacity-10"
       />
       {/* so we get the full screen. We dont take into account the nav */}
-      <div className="h-[calc(100vh-140px)] max-h-[calc(100vh-140px)] sm:h-[calc(100vh-137px)] sm:max-h-[calc(100vh-137px)] w-full overflow-hidden flex flex-col relative border border-red">
+      <div className="h-[calc(100svh-140px)] max-h-[calc(100svh-140px)] sm:h-[calc(100vh-137px)] sm:max-h-[calc(100vh-137px)] w-full overflow-hidden flex flex-col relative">
         <div className="container">
           <div className="flex flex-col gap-6 !max-w-[420px] text-12 uppercase leading-[1.8] mt-20 sm:mt-32">
             <p>
