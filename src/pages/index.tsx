@@ -66,7 +66,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="w-full absolute bottom-0 left-0 mb-12 sm:mb-4">
+        <div className="w-full absolute bottom-0 left-0 mb-4">
           <EmblaCarouselAutoScroll
             slides={projects}
             options={{ direction: "ltr", loop: true }}
