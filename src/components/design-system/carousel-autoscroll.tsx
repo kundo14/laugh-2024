@@ -22,6 +22,7 @@ export const EmblaCarouselAutoScroll = ({
     const autoScroll = emblaApi?.plugins()?.autoScroll;
     if (!autoScroll) return;
 
+    console.log("autoScroll.isPlaying()", autoScroll.isPlaying());
     const playOrStop = autoScroll.isPlaying()
       ? autoScroll.stop
       : autoScroll.play;
@@ -46,7 +47,7 @@ export const EmblaCarouselAutoScroll = ({
   return (
     <div className="embla w-full">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container flex">
+        <div className="embla__container flex group">
           {slides.map((item, idx) => (
             <div
               className="embla__slide"
@@ -60,19 +61,17 @@ export const EmblaCarouselAutoScroll = ({
                 toggleAutoplay();
               }}
             >
-              <Link href={item.link} className="slide" key={item.title}>
+              <Link
+                href={item.link}
+                className="slide text-black group-hover:text-gray-600/30 hover:!text-yellow"
+                key={item.title}
+              >
                 {item.title}
               </Link>
             </div>
           ))}
         </div>
       </div>
-
-      {/* <div className="embla__controls">
-        <button className="embla__play" onClick={toggleAutoplay} type="button">
-          {isPlaying ? "Stop" : "Start"}
-        </button>
-      </div> */}
     </div>
   );
 };

@@ -2,12 +2,14 @@ import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
 import { EmblaCarouselAutoScroll } from "@/components/design-system/carousel-autoscroll";
+import { cn } from "@/lib/cn";
+import { AnimatePresence, motion } from "framer-motion";
 
 const projects = [
   {
-    title: "La bombonera regresa",
-    description: "Description 1",
-    image: "/images/projects/project1.jpg",
+    title: "Adidas",
+    description: "Adidas Perú",
+    image: "/gifs/adidas.gif",
     link: "/work-la-bombonera-regresa",
   },
   {
@@ -36,15 +38,36 @@ export default function Home() {
       }}
       withoutFooter
       withoutBackgroundTexture
+      isPlaying={playingProject !== null}
     >
       <img
         src="/images/textures/texture.jpg"
         className="w-full h-[100svh] absolute top-0 left-0 opacity-10"
       />
+      <AnimatePresence>
+        {playingProject !== null && (
+          <motion.img
+            src={projects[playingProject].image}
+            className="w-full h-[100svh] absolute top-0 left-0 object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          />
+        )}
+      </AnimatePresence>
+
       {/* so we get the full screen. We dont take into account the nav */}
       <div className="h-[calc(100svh-140px)] max-h-[calc(100svh-140px)] sm:h-[calc(100vh-137px)] sm:max-h-[calc(100vh-137px)] w-full overflow-hidden flex flex-col relative">
         <div className="container">
-          <div className="flex flex-col gap-6 !max-w-[420px] text-12 uppercase leading-[1.8] mt-20 sm:mt-32">
+          <div
+            className={cn(
+              "flex flex-col gap-6 !max-w-[420px] !text-12 uppercase leading-[1.8] mt-20 sm:mt-32 transition-all duration-300",
+              {
+                "text-white": playingProject !== null,
+              }
+            )}
+          >
             <p>
               <i>WE POWER PASSION</i>
             </p>

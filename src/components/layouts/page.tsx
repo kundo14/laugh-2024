@@ -32,6 +32,7 @@ const PageLayout = ({
   className,
   rootClassName,
   withoutBackgroundTexture,
+  isPlaying,
 }: {
   headProps?: HeadProps;
   children: ReactNode;
@@ -39,6 +40,7 @@ const PageLayout = ({
   className?: string;
   rootClassName?: string;
   withoutBackgroundTexture?: boolean;
+  isPlaying?: boolean;
 }) => {
   const router = useRouter();
   const { pathname } = router;
@@ -55,7 +57,7 @@ const PageLayout = ({
       <Head headProps={headProps} />
       <SmoothScrolling>
         <div className="h-px" />
-        {!noNavPaths.includes(pathname) && <Nav />}
+        {!noNavPaths.includes(pathname) && <Nav isPlaying={isPlaying} />}
         <motion.main
           className={cn("", className)}
           key={pathname}

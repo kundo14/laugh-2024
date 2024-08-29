@@ -30,7 +30,13 @@ export const links = [
   },
 ];
 
-export const Nav = ({ className }: { className?: string }) => {
+export const Nav = ({
+  className,
+  isPlaying,
+}: {
+  className?: string;
+  isPlaying?: boolean;
+}) => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const router = useRouter();
 
@@ -48,7 +54,7 @@ export const Nav = ({ className }: { className?: string }) => {
   return (
     <header
       className={cn("container sm:!mt-4 md:!mt-10 !py-6", className, {
-        contrast: hasScrolled,
+        contrast: hasScrolled || isPlaying,
       })}
     >
       <div className="flex items-center justify-between relative flex-1 text-current">

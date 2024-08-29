@@ -135,18 +135,14 @@ i::after {
   font-family: 'Archivo Black', sans-serif;
   text-transform: uppercase;
   line-height: 1;
-  color: #171717;
   transition: all;
-  transition-duration: 150ms;
+  transition-duration: 300ms;
   transition-timing-function: ease-in-out;
   font-size: 180px;
   margin-right: 120px;
   letter-spacing: -0.08em;                
 }
 
-.slide:hover {
-  color: #FFCE5B;
-}
 
 /* mediascreen for slide */
 @media screen and (max-width: 1024px) {
