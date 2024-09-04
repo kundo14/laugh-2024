@@ -11,6 +11,8 @@ import { Quote } from "@/components/common/dynamic-sections/quote";
 import { WorkHeroData } from "@/components/sections/works/hero-data";
 import { works } from "@/lib/static/works";
 import { CustomDraggable } from "@/components/common/draggable";
+import { basehub } from "basehub";
+import { fetchWorks } from "@/lib/basehub";
 
 const featuredStaticWorks: WorkPreview[] = [
   {
@@ -92,7 +94,7 @@ const submenu = [
   },
 ];
 
-export default function Work() {
+function Work() {
   return (
     <PageLayout
       headProps={{
@@ -191,3 +193,5 @@ export default function Work() {
     </PageLayout>
   );
 }
+
+export default Work;

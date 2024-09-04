@@ -9,19 +9,19 @@ const projects = [
   {
     title: "Adidas",
     description: "Adidas Perú",
-    image: "/gifs/adidas.gif",
+    video: "/gifs/adidas.mp4",
     link: "/work-la-bombonera-regresa",
   },
   {
     title: "México manda",
     description: "Description 2",
-    image: "/images/projects/project2.jpg",
+    video: "/images/projects/project2.jpg",
     link: "/work-mexico-manda",
   },
   {
     title: "Heroes",
     description: "Description 3",
-    image: "/images/projects/project3.jpg",
+    video: "/images/projects/project3.jpg",
     link: "/work-heroes",
   },
 ];
@@ -46,8 +46,11 @@ export default function Home() {
       />
       <AnimatePresence>
         {playingProject !== null && (
-          <motion.img
-            src={projects[playingProject].image}
+          <motion.video
+            autoPlay
+            loop
+            muted
+            src={projects[playingProject].video}
             className="w-full h-[100svh] absolute top-0 left-0 object-cover"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

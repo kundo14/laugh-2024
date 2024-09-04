@@ -9,7 +9,7 @@ export const EmblaCarouselAutoScroll = ({
   options,
   setPlayingProject,
 }: {
-  slides: { title: string; description: string; image: string; link: string }[];
+  slides: { title: string; description: string; video: string; link: string }[];
   options?: EmblaOptionsType;
   setPlayingProject: React.Dispatch<React.SetStateAction<number | null>>;
 }) => {

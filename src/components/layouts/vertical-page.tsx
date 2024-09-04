@@ -57,7 +57,7 @@ const VerticalPageLayout = ({
       <Head headProps={headProps} />
       <SmoothScrolling>
         <div className="h-px" />
-        <Nav />
+        <Nav color={color === "red" ? "white" : "black"} />
         <div
           className={cn(
             "flex flex-col items-center justify-center w-full h-screen -mt-[136px]",

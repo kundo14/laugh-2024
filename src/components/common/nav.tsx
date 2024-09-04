@@ -33,9 +33,11 @@ export const links = [
 export const Nav = ({
   className,
   isPlaying,
+  color = "black",
 }: {
   className?: string;
   isPlaying?: boolean;
+  color?: "black" | "white";
 }) => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const router = useRouter();
@@ -51,16 +53,19 @@ export const Nav = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <header
       className={cn("container sm:!mt-4 md:!mt-10 !py-6", className, {
         contrast: hasScrolled || isPlaying,
+        "text-white": color === "white",
+        "text-black": color === "black",
       })}
     >
       <div className="flex items-center justify-between relative flex-1 text-current">
-        <Link href="/" aria-label="logo home">
+        <Link href="/" aria-label="logo home" className="text-white">
           <img
-            src="/images/logos/black.svg"
+            src={"/images/logos/black.svg"}
             className="w-24 h-auto"
             alt="home logo"
           />
