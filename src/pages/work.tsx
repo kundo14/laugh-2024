@@ -7,12 +7,7 @@ import { Clients } from "@/components/sections/work/clients";
 import { FeaturedWorks } from "@/components/sections/work/featured";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
-import { Quote } from "@/components/common/dynamic-sections/quote";
-import { WorkHeroData } from "@/components/sections/works/hero-data";
-import { works } from "@/lib/static/works";
 import { CustomDraggable } from "@/components/common/draggable";
-import { basehub } from "basehub";
-import { fetchWorks } from "@/lib/basehub";
 
 const featuredStaticWorks: WorkPreview[] = [
   {
