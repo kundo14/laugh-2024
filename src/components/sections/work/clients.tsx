@@ -88,25 +88,31 @@ export const Clients = ({ className }: { className?: string }) => {
     return () => clearInterval(interval);
   }, [index]);
 
+  console.log("visibleClients", visibleClients);
+
   return (
     <div
       id="clients"
       className={cn("flex flex-col w-full items-center", className)}
     >
       <div className="flex flex-col items-center text-18 italic uppercase leading-[1.8] text-center">
-        <p className="font-light">we have worked with some of the most</p>
-        <div className="relative max-w-max">
-          <CustomDraggable>
-            <img
-              src="/images/scratches/yellow-underline.svg"
-              alt="underline clients"
-              className="w-full h-auto absolute -bottom-5 left-0"
-              draggable={false}
-            />
-          </CustomDraggable>
-          {""}
-          <span className="font-bold">ambitious and exciting brands</span>
-        </div>
+        <FadeIn>
+          <p className="font-light">we have worked with some of the most</p>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="relative max-w-max">
+            <CustomDraggable>
+              <img
+                src="/images/scratches/yellow-underline.svg"
+                alt="underline clients"
+                className="w-full h-auto absolute -bottom-5 left-0"
+                draggable={false}
+              />
+            </CustomDraggable>
+            {""}
+            <span className="font-bold">ambitious and exciting brands</span>
+          </div>
+        </FadeIn>
       </div>
       {isMobile ? (
         <Marquee>

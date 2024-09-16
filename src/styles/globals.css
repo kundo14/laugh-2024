@@ -143,6 +143,26 @@ i::after {
   letter-spacing: -0.08em;                
 }
 
+/* cursor */
+.flare {
+  position: fixed;
+  border: 2px solid white;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999999 !important ;
+  backdrop-filter: blur(1px);
+  background-color: #0000005e;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  cursor: none !important; /* Let's hide the default cursor so it looks way better */
+}
+
+/* .flare.pointer {
+  opacity: 0 !important;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+} */
+
 
 /* mediascreen for slide */
 @media screen and (max-width: 1024px) {
@@ -156,5 +176,11 @@ i::after {
   .slide {
     font-size: 80px;
     margin-right: 60px;
+  }
+  .flare {
+    width: 0;
+    height: 0;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
+      opacity 0.2s ease-in-out;
   }
 }

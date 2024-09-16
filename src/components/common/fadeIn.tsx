@@ -12,8 +12,12 @@ type FadeInProps = {
 };
 
 const variant = {
-  visible: { opacity: 1, translateY: 0, transition: { duration: 0.6 } },
-  hidden: { opacity: 0, translateY: 100 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { duration: 0.6, ease: "easeInOut" },
+  },
+  hidden: { opacity: 0, translateY: 60 },
 };
 
 const FadeIn = ({

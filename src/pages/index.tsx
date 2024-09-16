@@ -4,6 +4,7 @@ import { defaultMeta } from "@/components/common/head";
 import { EmblaCarouselAutoScroll } from "@/components/design-system/carousel-autoscroll";
 import { cn } from "@/lib/cn";
 import { AnimatePresence, motion } from "framer-motion";
+import FadeIn from "@/components/common/fadeIn";
 
 const projects = [
   {
@@ -13,16 +14,22 @@ const projects = [
     link: "/work-la-bombonera-regresa",
   },
   {
-    title: "México manda",
+    title: "BPLAY",
     description: "Description 2",
-    video: "/images/projects/project2.jpg",
-    link: "/work-mexico-manda",
+    video: "/gifs/adidas.mp4",
+    link: "/bplay",
   },
   {
-    title: "Heroes",
+    title: "Concacaf",
     description: "Description 3",
-    video: "/images/projects/project3.jpg",
-    link: "/work-heroes",
+    video: "/gifs/adidas.mp4",
+    link: "/concacaf",
+  },
+  {
+    title: "Ea Sports",
+    description: "Description 3",
+    video: "/gifs/adidas.mp4",
+    link: "/ea-sports",
   },
 ];
 
@@ -71,25 +78,32 @@ export default function Home() {
               }
             )}
           >
-            <p>
-              <i>WE POWER PASSION</i>
-            </p>
-            <p>
-              <b>Welcome to Laugh.</b> An <b>award winning</b> sports marketing
-              agency delivering <b>first class results.</b> We specialize in
-              formulating, building, and scaling strategies across key
-              verticals, <b>generating revenue from the passion of sports.</b>
-            </p>
-            <p>
-              At Laugh, our profound understanding of fans enables us to{" "}
-              <b>enhance the commercial value of sports</b>, from{" "}
-              <b>
-                maximizing your sponsorship rights, upscaling your online
-                presence
-              </b>
-              , capitalize on key market opportunities with{" "}
-              <b>premium content production.</b>
-            </p>
+            <FadeIn>
+              <p>
+                <i>WE POWER PASSION</i>
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <p>
+                <b>Welcome to Laugh.</b> An <b>award winning</b> sports
+                marketing agency delivering <b>first class results.</b> We
+                specialize in formulating, building, and scaling strategies
+                across key verticals,{" "}
+                <b>generating revenue from the passion of sports.</b>
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p>
+                At Laugh, our profound understanding of fans enables us to{" "}
+                <b>enhance the commercial value of sports</b>, from{" "}
+                <b>
+                  maximizing your sponsorship rights, upscaling your online
+                  presence
+                </b>
+                , capitalize on key market opportunities with{" "}
+                <b>premium content production.</b>
+              </p>
+            </FadeIn>
           </div>
         </div>
         <div className="w-full absolute bottom-0 left-0 mb-4">

@@ -5,6 +5,7 @@ import { WorkPreview } from "@/components/common/work-preview";
 import { cn } from "@/lib/cn";
 import { WorkPreview as WorkPreviewProps } from "@/models";
 import useMedia from "use-media";
+import FadeIn from "@/components/common/fadeIn";
 
 export const FeaturedWorks = ({
   works,
@@ -53,16 +54,24 @@ export const FeaturedWorks = ({
               draggable={false}
             />
           </CustomDraggable>
-          <p className="text-16 uppercase text-yellow mb-8">[Featured Works]</p>
-          <p className="text-gray-300 text-12 uppercase leading-[1.8]">
-            Lorem ipsum dolor sit amet consectetur. Maecenas adipiscing tellus
-            non nisi aliquet et diam cursus. Sem quis scelerisque interdum
-            turpis placerat.
-          </p>
+          <FadeIn>
+            <p className="text-16 uppercase text-yellow mb-8">
+              [Featured Works]
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="text-gray-300 text-12 uppercase leading-[1.8]">
+              Lorem ipsum dolor sit amet consectetur. Maecenas adipiscing tellus
+              non nisi aliquet et diam cursus. Sem quis scelerisque interdum
+              turpis placerat.
+            </p>
+          </FadeIn>
         </div>
         <div className="flex flex-col gap-12 xl:gap-20 flex-1 z-10 mt-12 pb-40 md:pb-0 md:mt-0">
           {works.map((work, index) => (
-            <WorkPreview key={index} variant="dark" work={work} size="large" />
+            <FadeIn key={index} delay={index * 0.1}>
+              <WorkPreview variant="dark" work={work} size="large" />
+            </FadeIn>
           ))}
         </div>
       </div>
