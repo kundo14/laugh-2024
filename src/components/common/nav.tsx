@@ -10,6 +10,7 @@ import {
 import { ContactDropdown } from "./contact/contact-nav-dropdown";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
+import { Logo } from "./logos/laugh";
 
 export const links = [
   {
@@ -63,12 +64,16 @@ export const Nav = ({
       })}
     >
       <div className="flex items-center justify-between relative flex-1 text-current">
-        <Link href="/" aria-label="logo home" className="text-white">
-          <img
-            src={"/images/logos/black.svg"}
-            className="w-24 h-auto"
-            alt="home logo"
-          />
+        <Link
+          href="/"
+          aria-label="logo home"
+          className={cn("", {
+            contrast: hasScrolled || isPlaying,
+            "text-white": color === "white",
+            "text-black": color === "black",
+          })}
+        >
+          <Logo className="text-current" />
         </Link>
         <div className="hidden sm:flex flex-col absolute top-0 right-0 sm:relative sm:flex-row items-end sm:items-center gap-2 sm:gap-6 group">
           {links.map((link) => (

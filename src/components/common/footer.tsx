@@ -42,14 +42,14 @@ export const Footer = ({
           <Link
             href="https://www.instagram.com/weare_laugh/"
             target="_blank"
-            className="uppercase text-16 sm:text-18 text-black mb-1.5 hover:underline"
+            className="uppercase text-16 sm:text-18 text-black mb-1.5 hover:underline max-w-max"
           >
             instagram
           </Link>
           <Link
             href=""
             target="_blank"
-            className="uppercase text-16 sm:text-18 text-black hover:underline"
+            className="uppercase text-16 sm:text-18 text-black hover:underline max-w-max"
           >
             youtube
           </Link>

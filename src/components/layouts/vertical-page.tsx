@@ -80,11 +80,6 @@ const VerticalPageLayout = ({
           {children}
         </motion.main>
         <Footer className="z-50 relative" color={color} />
-        <img
-          src="/images/textures/paper.jpg"
-          className="w-full h-full absolute top-0 left-0 opacity-10 z-0"
-          alt="texture bg"
-        />
       </SmoothScrolling>
     </div>
   );
