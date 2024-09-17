@@ -3,26 +3,30 @@ import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Link from "next/link";
+import { useMedia } from "use-media";
+import { cn } from "@/lib/cn";
 
 export const EmblaCarouselAutoScroll = ({
   slides,
   options,
   setPlayingProject,
+  playingProject,
 }: {
   slides: { title: string; description: string; video: string; link: string }[];
   options?: EmblaOptionsType;
   setPlayingProject: React.Dispatch<React.SetStateAction<number | null>>;
+  playingProject: number | null;
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     AutoScroll({ playOnInit: true, speed: 3 }),
   ]);
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const isMobile = useMedia({ maxWidth: "768px" });
 
   const toggleAutoplay = React.useCallback(() => {
     const autoScroll = emblaApi?.plugins()?.autoScroll;
     if (!autoScroll) return;
 
-    console.log("autoScroll.isPlaying()", autoScroll.isPlaying());
     const playOrStop = autoScroll.isPlaying()
       ? autoScroll.stop
       : autoScroll.play;
@@ -40,9 +44,30 @@ export const EmblaCarouselAutoScroll = ({
       .on("reInit", () => setIsPlaying(autoScroll.isPlaying()));
   }, [emblaApi]);
 
+  // Handle mobile-specific behavior
   React.useEffect(() => {
-    toggleAutoplay();
-  }, []);
+    if (isMobile) {
+      // Stop carousel auto-scroll on mobile
+      emblaApi?.plugins()?.autoScroll?.stop();
+      // Set the first project as playing on mobile
+      setPlayingProject(0);
+
+      // Create an interval to switch projects every 3 seconds
+      const interval = setInterval(() => {
+        setPlayingProject((prevProject) => {
+          // Cycle through the slides
+          const nextProject =
+            prevProject !== null && prevProject < slides.length - 1
+              ? prevProject + 1
+              : 0;
+          return nextProject;
+        });
+      }, 3000);
+
+      // Clean up the interval on unmount
+      return () => clearInterval(interval);
+    }
+  }, [isMobile, slides.length, emblaApi, setPlayingProject]);
 
   return (
     <div className="embla w-full">
@@ -53,17 +78,23 @@ export const EmblaCarouselAutoScroll = ({
               className="embla__slide"
               key={item.title}
               onMouseEnter={() => {
-                setPlayingProject(idx);
-                toggleAutoplay();
+                if (!isMobile) {
+                  setPlayingProject(idx);
+                  toggleAutoplay();
+                }
               }}
               onMouseLeave={() => {
-                setPlayingProject(null);
-                toggleAutoplay();
+                if (!isMobile) {
+                  setPlayingProject(null);
+                  toggleAutoplay();
+                }
               }}
             >
               <Link
                 href={item.link}
-                className="slide text-black group-hover:text-gray-600/30 hover:!text-yellow"
+                className={`slide text-black group-hover:text-gray-600/30 ${
+                  playingProject === idx ? "text-yellow" : ""
+                } hover:!text-yellow`}
                 key={item.title}
               >
                 {item.title}

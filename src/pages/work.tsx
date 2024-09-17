@@ -117,7 +117,7 @@ function Work() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="flex items-end gap-4 lg:gap-8 mt-2 sm:mt-0">
-                <p className="flex xl:hidden uppercase font-black ml-auto italic text-48 md:text-[64px]">
+                <p className="flex xl:hidden uppercase font-black ml-auto italic text-[40px] sm:text-48 md:text-[64px]">
                   Our work.
                 </p>
                 <CustomDraggable>

@@ -111,6 +111,7 @@ export default function Home() {
             slides={projects}
             options={{ direction: "ltr", loop: true }}
             setPlayingProject={setPlayingProject}
+            playingProject={playingProject}
           />
         </div>
       </div>

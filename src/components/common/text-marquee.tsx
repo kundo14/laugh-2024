@@ -10,11 +10,14 @@ const Text = ({
 }) => {
   return (
     <div
-      className={cn("text-[160px] font-archivoBlack uppercase mr-12", {
-        "text-red": color === "red",
-        "text-gold": color === "gold",
-        "text-yellow": color === "yellow",
-      })}
+      className={cn(
+        "text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-archivoBlack uppercase mr-12",
+        {
+          "text-red": color === "red",
+          "text-gold": color === "gold",
+          "text-yellow": color === "yellow",
+        }
+      )}
     >
       {children}
     </div>

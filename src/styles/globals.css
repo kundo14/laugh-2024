@@ -176,7 +176,7 @@ i::after {
 @media screen and (max-width: 768px) {
   .slide {
     font-size: 80px;
-    margin-right: 60px;
+    margin-right: 48px;
   }
   .flare {
     width: 0;

@@ -48,14 +48,14 @@ export default function PassionLove() {
             />
           </FadeIn>
           <div className="grid sm:grid-cols-2 gap-2">
-            <FadeIn delay={0.3}>
+            <FadeIn delay={0.6}>
               <img
                 src="/images/assets/work-vertical-1.jpg"
                 alt="work hero"
                 className="w-full h-auto"
               />
             </FadeIn>
-            <FadeIn delay={0.6}>
+            <FadeIn delay={0.9}>
               <img
                 src="/images/assets/work-vertical-2.jpg"
                 alt="work hero"

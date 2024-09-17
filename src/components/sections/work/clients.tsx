@@ -88,8 +88,6 @@ export const Clients = ({ className }: { className?: string }) => {
     return () => clearInterval(interval);
   }, [index]);
 
-  console.log("visibleClients", visibleClients);
-
   return (
     <div
       id="clients"
