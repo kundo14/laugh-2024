@@ -19,7 +19,7 @@ export default function PassionLove() {
       }
       color="red"
     >
-      <div className="container !mt-20 z-40">
+      <div className="container relative !mt-20 z-40">
         <TextAndImages
           images={[
             "/works/boca.jpg",
@@ -28,7 +28,7 @@ export default function PassionLove() {
             "/works/boca.jpg",
           ]}
           markdown={
-            "# Passion Love\n \n \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc."
+            "Passion Love\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc."
           }
         />
       </div>

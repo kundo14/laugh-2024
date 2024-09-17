@@ -26,6 +26,9 @@ export const TextAndImages = ({
         <Markdown
           remarkPlugins={[remarkGfm]}
           className={"leading-loose text-16 text-black"}
+          components={{
+            p: ({ children }) => <p className="mb-4">{children}</p>,
+          }}
         >
           {markdown}
         </Markdown>
