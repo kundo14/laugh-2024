@@ -1,3 +1,4 @@
+import { CustomDraggable } from "@/components/common/draggable";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -22,10 +23,10 @@ export const TextAndImages = ({
           />
         ))}
       </div>
-      <div className="sticky top-0 flex flex-col pt-32 flex-1 max-w-[480px]">
+      <div className="sticky top-16 flex flex-col py-16 flex-1">
         <Markdown
           remarkPlugins={[remarkGfm]}
-          className={"leading-loose text-16 text-black"}
+          className={"leading-relaxed text-16 text-black font-archivo"}
           components={{
             p: ({ children }) => <p className="mb-4">{children}</p>,
           }}
@@ -34,10 +35,16 @@ export const TextAndImages = ({
         </Markdown>
         <Link
           href="/"
-          className="inline-flex items-center uppercase underline text-12 mt-8"
+          className="inline-flex items-center uppercase text-14 mt-8 group relative max-w-max"
         >
           Contact us
-          <ArrowTopRightIcon className="w-4 h-4 ml-2" />
+          <ArrowTopRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transform transition-all duration-150" />
+          <img
+            src="/images/scratches/red-underline.svg"
+            alt="underline clients"
+            className="w-full h-auto absolute -bottom-6 left-0"
+            draggable={false}
+          />
         </Link>
       </div>
     </div>

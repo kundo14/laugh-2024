@@ -2,6 +2,8 @@ import * as React from "react";
 import VerticalPageLayout from "@/components/layouts/vertical-page";
 import { defaultMeta } from "@/components/common/head";
 import { TextAndImages } from "@/components/sections/verticals/text-and-images";
+import FadeIn from "@/components/common/fadeIn";
+import { TextMarquee } from "@/components/common/text-marquee";
 
 export default function PassionLove() {
   return (
@@ -22,15 +24,46 @@ export default function PassionLove() {
       <div className="container relative !mt-20 z-40">
         <TextAndImages
           images={[
-            "/works/boca.jpg",
-            "/works/fifa.jpg",
-            "/works/heroes.jpg",
-            "/works/boca.jpg",
+            "/images/assets/film.jpg",
+            "/images/assets/mexico.jpg",
+            "/images/assets/mexico-1.jpg",
+            "/images/assets/beach.jpg",
           ]}
           markdown={
-            "Passion Love\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc. Nullam nec dui nec nunc ultricies ultricies. Sed nec nunc ultricies, ultricies nunc nec, ultricies nunc."
+            "**Our passion for projects is unmatched.**\n\nWe're fans at heart, bringing our love for the game into everything we do.\n\nWe create special teams for our partners with an unwavering commitment.\n\nWe build engaging communities on social media, craft creative strategy and high-quality productions, and provide expert management for sports sponsorships.\n\nEach partner shows how much we care about the game and giving our best every time."
           }
         />
+      </div>
+      <TextMarquee
+        text="We create exclusive passion love teams for each partner, offering various services to enhance their interaction with fans."
+        color="red"
+      />
+      <div className="container">
+        <div className="flex-1 flex flex-col gap-2">
+          <FadeIn delay={0.3}>
+            <img
+              src="/images/assets/work-1.jpg"
+              alt="work hero"
+              className="w-full h-auto"
+            />
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 gap-2">
+            <FadeIn delay={0.3}>
+              <img
+                src="/images/assets/work-vertical-1.jpg"
+                alt="work hero"
+                className="w-full h-auto"
+              />
+            </FadeIn>
+            <FadeIn delay={0.6}>
+              <img
+                src="/images/assets/work-vertical-2.jpg"
+                alt="work hero"
+                className="hidden sm:flex w-full h-auto"
+              />
+            </FadeIn>
+          </div>
+        </div>
       </div>
       <img
         src="/images/textures/paper.jpg"
