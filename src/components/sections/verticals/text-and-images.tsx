@@ -58,8 +58,11 @@ export const TextAndImages = ({
           components={{
             p: ({ children }) => (
               <FadeIn>
-                <p className="mb-4">{children}</p>
+                <p className="mb-4 text-gray-600">{children}</p>
               </FadeIn>
+            ),
+            strong: ({ children }) => (
+              <b className="font-bold !text-black">{children}</b>
             ),
           }}
         >

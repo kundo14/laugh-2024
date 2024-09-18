@@ -1,4 +1,20 @@
-export type Work = {
+export type Quote = {
+  quote: string;
+  author: string;
+};
+
+export type TextSlider = {
+  text: string;
+};
+
+export type ImageTextProps = {
+  image: string;
+  text: string;
+};
+
+export type ImageTextGalleryProps = ImageTextProps[];
+
+export type WorkTemplateProps = {
   name: string;
   slug: string;
   imagePreview: string;
@@ -7,45 +23,24 @@ export type Work = {
     start: number;
     end: number;
   };
-  heroGift: string;
+  imageGallery: { url: string; description: string }[];
+  heroVideo: string;
   heroTitle: string;
   heroDescription: string;
+  featured: boolean;
   deliverables: string[];
-  images: string[];
-  components: any[];
+  components: Quote | TextSlider | ImageTextGalleryProps;
   bottomVideoLink: string;
 };
 
 export type WorkPreview = Pick<
-  Work,
+  WorkTemplateProps,
   "name" | "slug" | "imagePreview" | "tags" | "date"
 >;
-
-export type Quote = {
-  quote: string;
-  author: string;
-};
 
 export type CarouselSlideProps = {
   title: string;
   description: string;
   image: string;
   link: string;
-};
-
-export type WorkTemplateProps = {
-  name: string;
-  slug: string;
-  heroVideo: string;
-  imagePreview: string;
-  tags: string[];
-  imageGallery: { url: string; description: string }[];
-  startYear: number;
-  endYear?: number;
-  customComponents: any[];
-  featured: boolean;
-  heroTitle: string;
-  heroDescription: string;
-  deliverables: string[];
-  bottomVideoLink: string;
 };

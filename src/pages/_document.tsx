@@ -20,6 +20,18 @@ export default function Document() {
           as="video"
           type="video/mp4"
         />
+        <link
+          rel="preload"
+          href="/images/textures/paper.jpg"
+          as="image"
+          type="image/jpg"
+        />
+        <link
+          rel="preload"
+          href="/images/textures/texture.jpg"
+          as="image"
+          type="image/jpg"
+        />
       </Head>
       <body>
         <Main />

@@ -4,6 +4,7 @@ import { WorkTemplateProps } from "@/models";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
+  console.log("data", data);
   return (
     <PageLayout>
       <div className="container">aca</div>

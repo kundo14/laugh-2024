@@ -5,6 +5,36 @@ const client = createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
+export const getComponent = (component) => {
+  const componentType = component.sys.contentType.sys.id;
+
+  switch (componentType) {
+    case "quoteComponent":
+      return {
+        type: "quote",
+        quote: component.fields.quote,
+        author: component.fields.author,
+      };
+    case "slidingTextComponent":
+      return {
+        type: "slidingText",
+        text: component.fields.text,
+      };
+    case "imageTextGallery":
+      return {
+        type: "imageTextGallery",
+        items: component.fields.components.map((component) => {
+          return {
+            text: component.fields.name,
+            image: `https:${component.fields.image.fields.file.url}`,
+          };
+        }),
+      };
+      default:
+        return null;
+    }
+}
+
 export const getWorkTemplate = async (slug) => {
   const page = await client.getEntries({
     content_type: "workTemplate",
@@ -24,14 +54,16 @@ export const getWorkTemplate = async (slug) => {
         description: image.fields.description,
       };
     }),
-    startYear: page.items[0].fields.startYear,
-    customComponents: page.items[0].fields.customComponents,
-    endYear: page.items[0].fields.endYear,
+    date: {
+      start: page.items[0].fields.startYear,
+      end: page.items[0].fields.endYear,
+    },
     featured: page.items[0].fields.featured,
     heroTitle: page.items[0].fields.heroTitle,
     deroDescription: page.items[0].fields.heroDescription,
     deliverables: page.items[0].fields.deliverables,
     bottomVideoLink: page.items[0].fields.bottomVideoLink,
+    components: page.items[0].fields.customComponents.map((component) => getComponent(component)),
   };
 
   return cleanWork;
