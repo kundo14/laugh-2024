@@ -9,6 +9,7 @@ import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { CustomDraggable } from "@/components/common/draggable";
 import FadeIn from "@/components/common/fadeIn";
+import { getWorksRoutes } from "@/lib/contentful/api";
 
 const featuredStaticWorks: WorkPreview[] = [
   {

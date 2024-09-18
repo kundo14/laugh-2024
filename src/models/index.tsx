@@ -32,3 +32,20 @@ export type CarouselSlideProps = {
   image: string;
   link: string;
 };
+
+export type WorkTemplateProps = {
+  name: string;
+  slug: string;
+  heroVideo: string;
+  imagePreview: string;
+  tags: string[];
+  imageGallery: { url: string; description: string }[];
+  startYear: number;
+  endYear?: number;
+  customComponents: any[];
+  featured: boolean;
+  heroTitle: string;
+  heroDescription: string;
+  deliverables: string[];
+  bottomVideoLink: string;
+};
