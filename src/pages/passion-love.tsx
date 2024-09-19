@@ -4,6 +4,7 @@ import { defaultMeta } from "@/components/common/head";
 import { TextAndImages } from "@/components/sections/verticals/text-and-images";
 import FadeIn from "@/components/common/fadeIn";
 import { TextMarquee } from "@/components/common/text-marquee";
+import ScrollGrow from "@/components/common/glow-up-image";
 
 export default function PassionLove() {
   return (
@@ -41,28 +42,28 @@ export default function PassionLove() {
       />
       <div className="container">
         <div className="flex-1 flex flex-col gap-2">
-          <FadeIn delay={0.3}>
+          <ScrollGrow>
             <img
               src="/images/assets/work-1.jpg"
               alt="work hero"
-              className="w-full h-auto"
+              className="w-full max-w-full h-auto"
             />
-          </FadeIn>
+          </ScrollGrow>
           <div className="grid sm:grid-cols-2 gap-2">
-            <FadeIn delay={0.6}>
+            <ScrollGrow>
               <img
                 src="/images/assets/work-vertical-1.jpg"
                 alt="work hero"
-                className="w-full h-auto"
+                className="w-full max-w-full h-auto"
               />
-            </FadeIn>
-            <FadeIn delay={0.9}>
+            </ScrollGrow>
+            <ScrollGrow>
               <img
                 src="/images/assets/work-vertical-2.jpg"
                 alt="work hero"
-                className="hidden sm:flex w-full h-auto"
+                className="hidden sm:flex w-full max-w-full h-auto"
               />
-            </FadeIn>
+            </ScrollGrow>
           </div>
         </div>
       </div>

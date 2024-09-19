@@ -9,6 +9,7 @@ import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { CustomDraggable } from "@/components/common/draggable";
 import FadeIn from "@/components/common/fadeIn";
+import ScrollGrow from "@/components/common/glow-up-image";
 
 const featuredStaticWorks: WorkPreview[] = [
   {
@@ -173,20 +174,20 @@ function Work() {
             </FadeIn>
 
             <div className="grid sm:grid-cols-2 gap-2">
-              <FadeIn delay={0.3}>
+              <ScrollGrow>
                 <img
                   src="/images/assets/work-vertical-1.jpg"
                   alt="work hero"
                   className="w-full h-auto"
                 />
-              </FadeIn>
-              <FadeIn delay={0.6}>
+              </ScrollGrow>
+              <ScrollGrow>
                 <img
                   src="/images/assets/work-vertical-2.jpg"
                   alt="work hero"
                   className="hidden sm:flex w-full h-auto"
                 />
-              </FadeIn>
+              </ScrollGrow>
             </div>
           </div>
           <div className="hidden sticky top-32 sm:flex flex-col gap-3 group">

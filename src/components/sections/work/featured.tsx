@@ -7,6 +7,7 @@ import { WorkPreview as WorkPreviewProps } from "@/models";
 import useMedia from "use-media";
 import FadeIn from "@/components/common/fadeIn";
 import { useRouter } from "next/router";
+import ScrollGrow from "@/components/common/glow-up-image";
 
 export const FeaturedWorks = ({
   works,
@@ -117,9 +118,9 @@ export const FeaturedWorks = ({
         </div>
         <div className="flex flex-col gap-12 xl:gap-20 flex-1 z-10 mt-12 pb-40 md:pb-0 md:mt-0">
           {works.map((work, index) => (
-            <FadeIn key={index} delay={index * 0.1}>
+            <ScrollGrow key={index} delay={index * 0.1}>
               <WorkPreview variant="dark" work={work} size="large" />
-            </FadeIn>
+            </ScrollGrow>
           ))}
         </div>
       </div>
