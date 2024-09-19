@@ -5,7 +5,7 @@ import { ImageGallery } from "@/components/sections/works/image-gallery";
 import { getWorksRoutes, getWorkTemplate } from "@/lib/contentful/api";
 import { WorkTemplateProps } from "@/models";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { SwitchComponents } from "./switch-components";
+import { SwitchComponents } from "../../components/sections/works/switch-components";
 
 const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
   console.log("data", data);
