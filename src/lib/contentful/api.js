@@ -17,13 +17,13 @@ export const getComponent = (component) => {
       };
     case "slidingTextComponent":
       return {
-        type: "slidingText",
+        type: "text-slider",
         text: component.fields.text,
       };
     case "imageTextGallery":
       return {
-        type: "imageTextGallery",
-        items: component.fields.components.map((component) => {
+        type: "image-text-gallery",
+        images: component.fields.components.map((component) => {
           return {
             text: component.fields.name,
             image: `https:${component.fields.image.fields.file.url}`,

@@ -5,6 +5,7 @@ import { ImageGallery } from "@/components/sections/works/image-gallery";
 import { getWorksRoutes, getWorkTemplate } from "@/lib/contentful/api";
 import { WorkTemplateProps } from "@/models";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { SwitchComponents } from "./switch-components";
 
 const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
   console.log("data", data);
@@ -22,7 +23,10 @@ const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
       <div className="container relative z-40 !mt-16">
         <WorkHeroData work={data} className="!mb-8 sm:!mb-16" />
         <ImageGallery images={data.imageGallery} />
-      </div>
+      </div>{" "}
+      {data.components.map((component, index) => (
+        <SwitchComponents key={index} component={component} />
+      ))}
     </WorkPageLayout>
   );
 };

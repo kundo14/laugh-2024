@@ -1,9 +1,11 @@
 export type Quote = {
+  type: "quote";
   quote: string;
   author: string;
 };
 
 export type TextSlider = {
+  type: "text-slider";
   text: string;
 };
 
@@ -12,7 +14,12 @@ export type ImageTextProps = {
   text: string;
 };
 
-export type ImageTextGalleryProps = ImageTextProps[];
+export type ImageTextGalleryProps = {
+  type: "image-text-gallery";
+  images: ImageTextProps[];
+};
+
+export type CustomComponent = Quote | TextSlider | ImageTextGalleryProps;
 
 export type WorkTemplateProps = {
   name: string;
@@ -29,7 +36,7 @@ export type WorkTemplateProps = {
   heroDescription: any;
   featured: boolean;
   deliverables: string[];
-  components: Quote | TextSlider | ImageTextGalleryProps;
+  components: CustomComponent[];
   bottomVideoLink: string;
 };
 
