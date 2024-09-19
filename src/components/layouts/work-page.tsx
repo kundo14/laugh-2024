@@ -72,8 +72,10 @@ const WorkPageLayout = ({
               loading="lazy"
             />
           </div>
-          <ScrollParallax className="z-10">
-            <p className="text-white text-32 uppercase font-archivo">{name}</p>
+          <ScrollParallax className="z-10" parallaxSpeed={0.8}>
+            <p className="text-white text-24 sm:text-32 uppercase font-archivo">
+              {name}
+            </p>
           </ScrollParallax>
         </div>
         <motion.main

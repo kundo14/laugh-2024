@@ -1,3 +1,4 @@
+import FadeIn from "@/components/common/animations/fade-in";
 import { Quote as QuoteComponent } from "@/components/common/dynamic-sections/quote";
 import { TextMarquee } from "@/components/common/text-marquee";
 import { CustomComponent } from "@/models";
@@ -10,15 +11,17 @@ export const SwitchComponents = ({
   switch (component.type) {
     case "quote":
       return (
-        <div className="container !my-40 flex items-center justify-center">
-          <QuoteComponent
-            quote={{
-              quote: component.quote,
-              author: component.author,
-              type: "quote",
-            }}
-          />
-        </div>
+        <FadeIn>
+          <div className="container !my-40 flex items-center justify-center">
+            <QuoteComponent
+              quote={{
+                quote: component.quote,
+                author: component.author,
+                type: "quote",
+              }}
+            />
+          </div>
+        </FadeIn>
       );
     case "text-slider":
       return <TextMarquee text={component.text} color="black" />;

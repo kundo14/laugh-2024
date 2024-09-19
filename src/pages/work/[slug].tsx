@@ -8,7 +8,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { SwitchComponents } from "../../components/sections/works/switch-components";
 
 const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
-  console.log("data", data);
   return (
     <WorkPageLayout
       headProps={{
