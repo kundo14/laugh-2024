@@ -24,9 +24,12 @@ export const WorkPreview = ({
       <img
         src={work.imagePreview}
         alt={`work image for ${work.name}`}
-        className={cn("border w-full", {
+        className={cn("border object-cover", {
           "border-gray-700": variant === "dark",
           "border-gray-300": variant === "light",
+          "min-w-[320px] w-full md:w-[420px] h-[180px] sm:h-[220px]":
+            size === "small",
+          "w-full h-auto": size === "large",
         })}
       />
       <p
@@ -48,14 +51,17 @@ export const WorkPreview = ({
         {work.name}
       </p>
       <div
-        className={cn("flex gap-2 items-center", {
-          "lg:mt-1": size === "large",
-        })}
+        className={cn(
+          "flex gap-y-1 gap-x-2 items-center flex-wrap pr-8 flex-1",
+          {
+            "lg:mt-1": size === "large",
+          }
+        )}
       >
         {work.tags.map((tag, index) => (
           <span
             key={index}
-            className={cn("!text-12 uppercase px-3 py-1 border", {
+            className={cn("!text-12 uppercase px-3 py-1 border min-w-max", {
               "text-gray-300 border-gray-700 bg-black": variant === "dark",
               "text-black border-black": variant === "light",
             })}

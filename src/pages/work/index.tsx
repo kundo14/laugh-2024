@@ -9,28 +9,29 @@ import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { CustomDraggable } from "@/components/common/draggable";
 import FadeIn from "@/components/common/fadeIn";
-import { getWorksRoutes } from "@/lib/contentful/api";
 
 const featuredStaticWorks: WorkPreview[] = [
   {
-    name: "La Bombonera Regresa",
-    date: {
-      start: 2021,
-      end: 2021,
-    },
-    imagePreview: "/works/boca.jpg",
-    slug: "la-bombonera-regresa",
-    tags: ["buenos aires", "studios"],
-  },
-  {
-    name: "EA Sports FIFA",
+    name: "La Casa Oficial",
     date: {
       start: 2023,
       end: 2023,
     },
-    imagePreview: "/works/fifa.jpg",
-    slug: "ea-sports-fifa",
-    tags: ["caba", "360"],
+    imagePreview:
+      "https://images.ctfassets.net/5gxggc55g9oq/37z7SXI9LZ2YXcjdO7Qzf0/3dce2008d10b32bc5a02056da3142e45/DSCF6318_11zon.jpg",
+    slug: "/la-casa-oficial",
+    tags: ["buenos aires", "studios", "passion love"],
+  },
+  {
+    name: "Corazón Argento",
+    date: {
+      start: 2022,
+      end: 2023,
+    },
+    imagePreview:
+      "https://images.ctfassets.net/5gxggc55g9oq/CeQGKmz9AFdmRIvCwiWjC/0ff3c68669a86400470da3b732f28350/09-28_BiPlay-RODAJE-Dia-1_0176_11zon.jpg",
+    slug: "/bplay-corazon-argento",
+    tags: ["buenos aires", "studios", "apuestas deportivas"],
   },
   {
     name: "La Bombonera Regresa",
@@ -39,7 +40,7 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2021,
     },
     imagePreview: "/works/boca.jpg",
-    slug: "la-bombonera-regresa",
+    slug: "/bplay-corazon-argento",
     tags: ["buenos aires", "passion love"],
   },
   {
@@ -49,7 +50,7 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2023,
     },
     imagePreview: "/works/heroes.jpg",
-    slug: "adidas",
+    slug: "/bplay-corazon-argento",
     tags: ["madrid", "passion love"],
   },
   {
@@ -59,14 +60,42 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2023,
     },
     imagePreview: "/works/fifa.jpg",
-    slug: "ea-sports-fifa",
+    slug: "/bplay-corazon-argento",
     tags: ["caba", "studios"],
+  },
+  {
+    name: "La Bombonera Regresa",
+    date: {
+      start: 2021,
+      end: 2021,
+    },
+    imagePreview: "/works/boca.jpg",
+    slug: "/bplay-corazon-argento",
+    tags: ["buenos aires", "360"],
+  },
+  {
+    name: "Adidas",
+    date: {
+      start: 2023,
+      end: 2023,
+    },
+    imagePreview: "/works/heroes.jpg",
+    slug: "/bplay-corazon-argento",
+    tags: ["madrid", "360"],
+  },
+  {
+    name: "EA Sports FIFA",
+    date: {
+      start: 2023,
+      end: 2023,
+    },
+    imagePreview: "/works/fifa.jpg",
+    slug: "/bplay-corazon-argento",
+    tags: ["caba", "360"],
   },
 ];
 
-const allWorks = featuredStaticWorks
-  .concat(featuredStaticWorks)
-  .concat(featuredStaticWorks);
+const allWorks = featuredStaticWorks.concat(featuredStaticWorks);
 
 const submenu = [
   {

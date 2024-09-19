@@ -1,6 +1,6 @@
 import { CustomDraggable } from "@/components/common/draggable";
 import { cn } from "@/lib/cn";
-import { Work } from "@/models";
+import { WorkTemplateProps } from "@/models";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -8,7 +8,7 @@ export const WorkHeroData = ({
   work,
   className,
 }: {
-  work: Work;
+  work: WorkTemplateProps;
   className?: string;
 }) => {
   return (
