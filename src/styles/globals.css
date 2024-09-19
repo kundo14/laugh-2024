@@ -75,11 +75,11 @@ b {
 }
 
 /* we add a custom underline using scratches: /public/images/scratches/yellow-underline.svg */
-i {
+.custom_underline {
   position: relative;
 }
 
-i::after {
+.custom_underline::after {
   content: '';
   position: absolute;
   bottom: -14px;

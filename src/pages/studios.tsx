@@ -2,9 +2,9 @@ import * as React from "react";
 import VerticalPageLayout from "@/components/layouts/vertical-page";
 import { defaultMeta } from "@/components/common/head";
 import { TextAndImages } from "@/components/sections/verticals/text-and-images";
-import FadeIn from "@/components/common/fadeIn";
+import FadeIn from "@/components/common/animations/fade-in";
 import { TextMarquee } from "@/components/common/text-marquee";
-import ScrollGrow from "@/components/common/glow-up-image";
+import ScrollGrow from "@/components/common/animations/glow-up-image";
 
 export default function StudiosPage() {
   return (

@@ -4,7 +4,7 @@ import { defaultMeta } from "@/components/common/head";
 import { EmblaCarouselAutoScroll } from "@/components/design-system/carousel-autoscroll";
 import { cn } from "@/lib/cn";
 import { AnimatePresence, motion } from "framer-motion";
-import FadeIn from "@/components/common/fadeIn";
+import FadeIn from "@/components/common/animations/fade-in";
 
 const projects = [
   {
@@ -80,7 +80,7 @@ export default function Home() {
           >
             <FadeIn>
               <p>
-                <i>WE POWER PASSION</i>
+                <i className="custom_underline">WE POWER PASSION</i>
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>

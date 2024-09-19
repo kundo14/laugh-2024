@@ -5,9 +5,9 @@ import { WorkPreview } from "@/components/common/work-preview";
 import { cn } from "@/lib/cn";
 import { WorkPreview as WorkPreviewProps } from "@/models";
 import useMedia from "use-media";
-import FadeIn from "@/components/common/fadeIn";
+import FadeIn from "@/components/common/animations/fade-in";
 import { useRouter } from "next/router";
-import ScrollGrow from "@/components/common/glow-up-image";
+import ScrollGrow from "@/components/common/animations/glow-up-image";
 
 export const FeaturedWorks = ({
   works,

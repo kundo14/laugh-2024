@@ -60,7 +60,7 @@ export const getWorkTemplate = async (slug) => {
     },
     featured: page.items[0].fields.featured,
     heroTitle: page.items[0].fields.heroTitle,
-    deroDescription: page.items[0].fields.heroDescription,
+    heroDescription: page.items[0].fields.heroDescription,
     deliverables: page.items[0].fields.deliverables,
     bottomVideoLink: page.items[0].fields.bottomVideoLink,
     components: page.items[0].fields.customComponents.map((component) => getComponent(component)),

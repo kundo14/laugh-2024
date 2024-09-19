@@ -25,8 +25,8 @@ export type WorkTemplateProps = {
   };
   imageGallery: { url: string; description: string }[];
   heroVideo: string;
-  heroTitle: string;
-  heroDescription: string;
+  heroTitle: any;
+  heroDescription: any;
   featured: boolean;
   deliverables: string[];
   components: Quote | TextSlider | ImageTextGalleryProps;

@@ -8,8 +8,8 @@ import { FeaturedWorks } from "@/components/sections/work/featured";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { CustomDraggable } from "@/components/common/draggable";
-import FadeIn from "@/components/common/fadeIn";
-import ScrollGrow from "@/components/common/glow-up-image";
+import FadeIn from "@/components/common/animations/fade-in";
+import ScrollGrow from "@/components/common/animations/glow-up-image";
 
 const featuredStaticWorks: WorkPreview[] = [
   {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import FadeIn from "@/components/common/fadeIn";
+import FadeIn from "@/components/common/animations/fade-in";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import Markdown from "react-markdown";

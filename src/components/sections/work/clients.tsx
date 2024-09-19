@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import FadeIn from "@/components/common/fadeIn";
+import FadeIn from "@/components/common/animations/fade-in";
 import { FeaturedWorks } from "./featured";
 import { cn } from "@/lib/cn";
 import { CustomDraggable } from "@/components/common/draggable";
