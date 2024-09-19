@@ -11,25 +11,25 @@ const projects = [
     title: "Adidas",
     description: "Adidas Perú",
     video: "/gifs/adidas.mp4",
-    link: "/work-la-bombonera-regresa",
+    link: "/work/la-casa-oficial",
   },
   {
     title: "BPLAY",
     description: "Description 2",
     video: "/gifs/adidas.mp4",
-    link: "/bplay",
+    link: "/work/bplay-corazon-argento",
   },
   {
     title: "Concacaf",
     description: "Description 3",
     video: "/gifs/adidas.mp4",
-    link: "/concacaf",
+    link: "/work/la-casa-oficial",
   },
   {
     title: "Ea Sports",
     description: "Description 3",
     video: "/gifs/adidas.mp4",
-    link: "/ea-sports",
+    link: "/work/bplay-corazon-argento",
   },
 ];
 

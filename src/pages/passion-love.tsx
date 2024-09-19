@@ -15,7 +15,7 @@ export default function PassionLove() {
       logo={
         <img
           src="/images/logos/passion-love.svg"
-          className="w-[200px] h-auto"
+          className="w-[160px] sm:w-[200px] h-auto"
           alt="home logo"
         />
       }
@@ -32,6 +32,7 @@ export default function PassionLove() {
           markdown={
             "**Our passion for projects is unmatched.**\n\nWe're fans at heart, bringing our love for the game into everything we do.\n\nWe create special teams for our partners with an unwavering commitment.\n\nWe build engaging communities on social media, craft creative strategy and high-quality productions, and provide expert management for sports sponsorships.\n\nEach partner shows how much we care about the game and giving our best every time."
           }
+          color="red"
         />
       </div>
       <TextMarquee

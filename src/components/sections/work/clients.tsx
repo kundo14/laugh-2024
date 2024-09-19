@@ -91,8 +91,16 @@ export const Clients = ({ className }: { className?: string }) => {
   return (
     <div
       id="clients"
-      className={cn("flex flex-col w-full items-center", className)}
+      className={cn("flex flex-col w-full items-center relative", className)}
     >
+      <CustomDraggable>
+        <img
+          src={"/images/stickers/pelota.png"}
+          alt="sticker"
+          className="w-[160px] sm:w-[180px] h-auto absolute -top-8 md:top-0 lg:top-12 right-0"
+          draggable={false}
+        />
+      </CustomDraggable>
       <div className="flex flex-col items-center text-18 italic uppercase leading-[1.8] text-center">
         <FadeIn>
           <p className="font-light">we have worked with some of the most</p>
@@ -107,7 +115,6 @@ export const Clients = ({ className }: { className?: string }) => {
                 draggable={false}
               />
             </CustomDraggable>
-            {""}
             <span className="font-bold">ambitious and exciting brands</span>
           </div>
         </FadeIn>

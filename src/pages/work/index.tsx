@@ -177,7 +177,7 @@ function Work() {
       </div>
       {/* <WorkHeroData work={works[0]} className="relative z-40" /> */}
       <FeaturedWorks
-        works={featuredStaticWorks}
+        works={featuredStaticWorks.slice(0, 3)}
         className="z-40 relative mb-20"
       />
       <div className="!py-16 z-40 relative overflow-x-hidden">

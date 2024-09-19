@@ -7,6 +7,7 @@ import Head, { HeadProps } from "../common/head";
 import { Nav } from "../common/nav";
 import { Footer } from "../common/footer";
 import SmoothScrolling from "../common/scroll";
+import FadeIn from "../common/fadeIn";
 
 const noNavPaths = ["/404"];
 
@@ -68,7 +69,7 @@ const VerticalPageLayout = ({
             }
           )}
         >
-          {logo}
+          <FadeIn>{logo}</FadeIn>
         </div>
         <motion.main
           className={cn("", className)}

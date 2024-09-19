@@ -6,6 +6,7 @@ import { cn } from "@/lib/cn";
 import { WorkPreview as WorkPreviewProps } from "@/models";
 import useMedia from "use-media";
 import FadeIn from "@/components/common/fadeIn";
+import { useRouter } from "next/router";
 
 export const FeaturedWorks = ({
   works,
@@ -16,6 +17,9 @@ export const FeaturedWorks = ({
 }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const isMobile = useMedia({ maxWidth: "768px" });
+  const router = useRouter();
+
+  const { pathname } = router;
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -36,11 +40,55 @@ export const FeaturedWorks = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
 
+  const stickers = React.useMemo(() => {
+    const possibleImages = [
+      "/images/stickers/botines.png",
+      "/images/stickers/pelota.png",
+      "/images/stickers/pinguino.png",
+      "/images/stickers/maradona.png",
+      "/images/stickers/colombia.png",
+      "/images/stickers/argentina.png",
+    ];
+
+    // pick 2 randoms that shound't be the same
+    const randomImage1 =
+      possibleImages[Math.floor(Math.random() * possibleImages.length)];
+
+    const randomImage2 = possibleImages.filter(
+      (image) => image !== randomImage1
+    )[Math.floor(Math.random() * (possibleImages.length - 1))];
+
+    return {
+      first: randomImage1,
+      second: randomImage2,
+    };
+  }, [pathname]);
+
   return (
     <div
       id="featured"
-      className={cn("bg-black py-20 sm:py-28 md:py-32 w-full", className)}
+      className={cn(
+        "bg-black py-20 sm:py-28 md:py-32 w-full relative",
+        className
+      )}
     >
+      {/* STICKERS */}
+      <CustomDraggable>
+        <img
+          src={stickers.first}
+          alt="sticker"
+          className="hidden md:flex w-[160px] sm:w-[180px] md:w-[220px] h-auto absolute top-[420px] left-12"
+          draggable={false}
+        />
+      </CustomDraggable>
+      <CustomDraggable>
+        <img
+          src={stickers.second}
+          alt="sticker"
+          className="hidden md:flex w-[160px] sm:w-[180px] md:w-[220px] h-auto absolute top-[70%] left-32 lg:left-64"
+          draggable={false}
+        />
+      </CustomDraggable>
       <div className="container flex flex-col md:flex-row items-start justify-between md:gap-12 lg:gap-20 xl:gap-32">
         <div
           ref={ref}
