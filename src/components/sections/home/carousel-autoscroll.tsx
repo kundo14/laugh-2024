@@ -4,7 +4,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Link from "next/link";
 import { useMedia } from "use-media";
-import { cn } from "@/lib/cn";
 
 export const EmblaCarouselAutoScroll = ({
   slides,

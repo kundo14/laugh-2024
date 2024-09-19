@@ -1,10 +1,12 @@
 import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
-import { EmblaCarouselAutoScroll } from "@/components/design-system/carousel-autoscroll";
+import { EmblaCarouselAutoScroll } from "@/components/sections/home/carousel-autoscroll";
 import { cn } from "@/lib/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import FadeIn from "@/components/common/animations/fade-in";
+import { useMedia } from "use-media";
+import { EmblaCarouselMobile } from "@/components/sections/home/mobile-carousel";
 
 const projects = [
   {
@@ -37,6 +39,7 @@ export default function Home() {
   const [playingProject, setPlayingProject] = React.useState<null | number>(
     null
   );
+  const isMobile = useMedia({ maxWidth: "768px" });
   return (
     <PageLayout
       headProps={{
@@ -107,12 +110,21 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full absolute bottom-0 left-0 mb-4">
-          <EmblaCarouselAutoScroll
-            slides={projects}
-            options={{ direction: "ltr", loop: true }}
-            setPlayingProject={setPlayingProject}
-            playingProject={playingProject}
-          />
+          {!isMobile ? (
+            <EmblaCarouselAutoScroll
+              slides={projects}
+              options={{ direction: "ltr", loop: true }}
+              setPlayingProject={setPlayingProject}
+              playingProject={playingProject}
+            />
+          ) : (
+            <EmblaCarouselMobile
+              slides={projects}
+              options={{ direction: "ltr", loop: true }}
+              setPlayingProject={setPlayingProject}
+              playingProject={playingProject}
+            />
+          )}
         </div>
       </div>
     </PageLayout>

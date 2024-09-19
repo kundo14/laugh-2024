@@ -1,11 +1,11 @@
+import * as React from "react";
 import { CustomDraggable } from "@/components/common/draggable";
 import { cn } from "@/lib/cn";
 import { WorkTemplateProps } from "@/models";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { renderBody } from "@/lib/contentful/renderer";
 import ScrollParallax from "@/components/common/animations/parallax";
 import FadeIn from "@/components/common/animations/fade-in";
+import { useRouter } from "next/router";
 
 export const WorkHeroData = ({
   work,
@@ -14,6 +14,38 @@ export const WorkHeroData = ({
   work: WorkTemplateProps;
   className?: string;
 }) => {
+  const router = useRouter();
+  const { pathname } = router;
+
+  const stickers = React.useMemo(() => {
+    const possibleImages = [
+      "/images/stickers/botines.png",
+      "/images/stickers/joystick.png",
+      "/images/stickers/pelota.png",
+      "/images/stickers/tv.png",
+      "/images/stickers/camara.png",
+      "/images/stickers/cervezas.png",
+      "/images/stickers/copa-america.png",
+      "/images/stickers/libertadores.png",
+      "/images/stickers/mundial.png",
+      "/images/stickers/sifon.png",
+      "/images/stickers/maradona.png",
+    ];
+
+    // pick 2 randoms that shound't be the same
+    const randomImage1 =
+      possibleImages[Math.floor(Math.random() * possibleImages.length)];
+
+    const randomImage2 = possibleImages.filter(
+      (image) => image !== randomImage1
+    )[Math.floor(Math.random() * (possibleImages.length - 1))];
+
+    return {
+      first: randomImage1,
+      second: randomImage2,
+    };
+  }, [pathname]);
+
   return (
     <div
       className={cn(
@@ -21,7 +53,17 @@ export const WorkHeroData = ({
         className
       )}
     >
-      <div className="flex items-start justify-between sm:flex-col w-full sm:w-max min-w-[140px]">
+      <div className="relative flex items-start justify-between sm:flex-col w-full sm:w-max min-w-[140px]">
+        {/* STICKERS */}
+        <CustomDraggable>
+          <img
+            src={stickers.first}
+            alt="sticker"
+            className="hidden md:flex w-[160px] sm:w-[180px] md:w-[220px] h-auto absolute top-[150%] left-0 z-40"
+            draggable={false}
+          />
+        </CustomDraggable>
+
         <div className="flex flex-col border-t border-gray-500 pt-4">
           <p className="uppercase text-12 text-gray-500 mb-3">year</p>
           <p className="uppercase text-12 text-gray-500">
@@ -65,6 +107,14 @@ export const WorkHeroData = ({
           </div>
         </FadeIn>
       </div>
+      <CustomDraggable>
+        <img
+          src={stickers.second}
+          alt="sticker"
+          className="w-[160px] sm:w-[180px] md:w-[220px] h-auto absolute bottom-8 right-64 z-40"
+          draggable={false}
+        />
+      </CustomDraggable>
       <CustomDraggable>
         <img
           src="/images/scratches/yellow-arrow-2.svg"
