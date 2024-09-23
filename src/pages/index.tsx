@@ -18,19 +18,31 @@ const projects = [
   {
     title: "BPLAY",
     description: "Description 2",
-    video: "/gifs/adidas.mp4",
+    video: "/gifs/bplay.mp4",
     link: "/work/bplay-corazon-argento",
   },
   {
-    title: "Concacaf",
+    title: "Corona",
     description: "Description 3",
-    video: "/gifs/adidas.mp4",
+    video: "/gifs/corona.mp4",
     link: "/work/la-casa-oficial",
   },
   {
-    title: "Ea Sports",
+    title: "Ea",
     description: "Description 3",
-    video: "/gifs/adidas.mp4",
+    video: "/gifs/ea.mp4",
+    link: "/work/bplay-corazon-argento",
+  },
+  {
+    title: "Netflix",
+    description: "Description 3",
+    video: "/gifs/netflix.mp4",
+    link: "/work/bplay-corazon-argento",
+  },
+  {
+    title: "Puma",
+    description: "Description 3",
+    video: "/gifs/puma.mp4",
     link: "/work/bplay-corazon-argento",
   },
 ];

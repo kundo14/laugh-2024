@@ -22,6 +22,26 @@ export default function Document() {
         />
         <link
           rel="preload"
+          href="/gifs/bplay.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link rel="preload" href="/gifs/puma.mp4" as="video" type="video/mp4" />
+        <link
+          rel="preload"
+          href="/gifs/corona.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link
+          rel="preload"
+          href="/gifs/netflix.mp4"
+          as="video"
+          type="video/mp4"
+        />
+        <link rel="preload" href="/gifs/ea.mp4" as="video" type="video/mp4" />
+        <link
+          rel="preload"
           href="/images/textures/paper.jpg"
           as="image"
           type="image/jpg"
