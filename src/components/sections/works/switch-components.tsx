@@ -8,6 +8,7 @@ export const SwitchComponents = ({
 }: {
   component: CustomComponent;
 }) => {
+  if (!component || !component.type) return null;
   switch (component.type) {
     case "quote":
       return (

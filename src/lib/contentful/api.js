@@ -6,6 +6,11 @@ const client = createClient({
 });
 
 export const getComponent = (component) => {
+
+  if (!component || !component.sys || !component.sys.contentType || !component.sys.contentType.sys || !component.sys.contentType.sys.id) {
+    return null;
+  }
+
   const componentType = component.sys.contentType.sys.id;
 
   switch (componentType) {
@@ -63,11 +68,46 @@ export const getWorkTemplate = async (slug) => {
     heroDescription: page.items[0].fields.heroDescription,
     deliverables: page.items[0].fields.deliverables,
     bottomVideoLink: page.items[0].fields.bottomVideoLink,
-    components: page.items[0].fields.customComponents.map((component) => getComponent(component)),
+    components: page.items[0].fields.customComponents && page.items[0].fields.customComponents.map((component) => getComponent(component)),
   };
 
   return cleanWork;
 }
+
+export const getWorksByTag = async (tag) => {
+  try {
+    // Ensure that the tag is passed in lowercase
+    const page = await client.getEntries({
+      content_type: "workTemplate",
+      "fields.tags[in]": tag.toLowerCase(), // Use [in] operator to filter by the tag
+      include: 5, // Include nested data if needed
+    });
+
+    if (!page.items.length) {
+      return []; // Return an empty array if no works are found
+    }
+
+    // Map the results to return the relevant data
+    const cleanWorks = page.items.map((item) => ({
+      name: item.fields.name,
+      slug: item.fields.slug,
+      imagePreview: `https:${item.fields.imagePreview.fields.file.url}`,
+      tags: item.fields.tags,
+      date: {
+        start: item.fields.startYear,
+        end: item.fields.endYear,
+      },
+      featured: item.fields.featured,
+    }));
+
+    return cleanWorks;
+  } catch (error) {
+    console.error("Error fetching works by tag:", error);
+    return []; // Return an empty array if an error occurs
+  }
+};
+
+
 
 export const getWorksRoutes = async () => {
   const page = await client.getEntries({

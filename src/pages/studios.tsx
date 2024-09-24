@@ -2,11 +2,14 @@ import * as React from "react";
 import VerticalPageLayout from "@/components/layouts/vertical-page";
 import { defaultMeta } from "@/components/common/head";
 import { TextAndImages } from "@/components/sections/verticals/text-and-images";
-import FadeIn from "@/components/common/animations/fade-in";
 import { TextMarquee } from "@/components/common/text-marquee";
 import ScrollGrow from "@/components/common/animations/glow-up-image";
+import { GetStaticProps } from "next";
+import { getWorksByTag } from "@/lib/contentful/api";
+import { WorkPreview } from "@/models";
+import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 
-export default function StudiosPage() {
+export default function StudiosPage({ works }: { works: WorkPreview[] }) {
   return (
     <VerticalPageLayout
       headProps={{
@@ -67,6 +70,9 @@ export default function StudiosPage() {
           </div>
         </div>
       </div>
+      <div className="!py-16 z-40 relative overflow-x-hidden mt-20">
+        <ScrollableWorks works={works} title="Works" />
+      </div>
       <img
         src="/images/textures/paper.jpg"
         className="w-full h-full absolute top-0 left-0 opacity-10 z-0"
@@ -75,3 +81,11 @@ export default function StudiosPage() {
     </VerticalPageLayout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const works = await getWorksByTag("studios");
+
+  return {
+    props: { works },
+  };
+};

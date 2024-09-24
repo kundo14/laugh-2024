@@ -42,7 +42,7 @@ export type WorkTemplateProps = {
 
 export type WorkPreview = Pick<
   WorkTemplateProps,
-  "name" | "slug" | "imagePreview" | "tags" | "date"
+  "name" | "slug" | "imagePreview" | "tags" | "date" | "featured"
 >;
 
 export type CarouselSlideProps = {

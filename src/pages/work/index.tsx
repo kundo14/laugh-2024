@@ -20,8 +20,9 @@ const featuredStaticWorks: WorkPreview[] = [
     },
     imagePreview:
       "https://images.ctfassets.net/5gxggc55g9oq/37z7SXI9LZ2YXcjdO7Qzf0/3dce2008d10b32bc5a02056da3142e45/DSCF6318_11zon.jpg",
-    slug: "/la-casa-oficial",
+    slug: "la-casa-oficial",
     tags: ["buenos aires", "studios", "passion love"],
+    featured: true,
   },
   {
     name: "Corazón Argento",
@@ -31,8 +32,9 @@ const featuredStaticWorks: WorkPreview[] = [
     },
     imagePreview:
       "https://images.ctfassets.net/5gxggc55g9oq/CeQGKmz9AFdmRIvCwiWjC/0ff3c68669a86400470da3b732f28350/09-28_BiPlay-RODAJE-Dia-1_0176_11zon.jpg",
-    slug: "/bplay-corazon-argento",
+    slug: "bplay-corazon-argento",
     tags: ["buenos aires", "studios", "apuestas deportivas"],
+    featured: true,
   },
   {
     name: "La Bombonera Regresa",
@@ -41,8 +43,9 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2021,
     },
     imagePreview: "/works/boca.jpg",
-    slug: "/bplay-corazon-argento",
+    slug: "bplay-corazon-argento",
     tags: ["buenos aires", "passion love"],
+    featured: true,
   },
   {
     name: "Adidas",
@@ -51,8 +54,9 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2023,
     },
     imagePreview: "/works/heroes.jpg",
-    slug: "/bplay-corazon-argento",
+    slug: "bplay-corazon-argento",
     tags: ["madrid", "passion love"],
+    featured: false,
   },
   {
     name: "EA Sports FIFA",
@@ -61,8 +65,9 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2023,
     },
     imagePreview: "/works/fifa.jpg",
-    slug: "/bplay-corazon-argento",
+    slug: "bplay-corazon-argento",
     tags: ["caba", "studios"],
+    featured: false,
   },
   {
     name: "La Bombonera Regresa",
@@ -71,8 +76,9 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2021,
     },
     imagePreview: "/works/boca.jpg",
-    slug: "/bplay-corazon-argento",
+    slug: "bplay-corazon-argento",
     tags: ["buenos aires", "360"],
+    featured: false,
   },
   {
     name: "Adidas",
@@ -81,8 +87,9 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2023,
     },
     imagePreview: "/works/heroes.jpg",
-    slug: "/bplay-corazon-argento",
+    slug: "bplay-corazon-argento",
     tags: ["madrid", "360"],
+    featured: false,
   },
   {
     name: "EA Sports FIFA",
@@ -91,8 +98,9 @@ const featuredStaticWorks: WorkPreview[] = [
       end: 2023,
     },
     imagePreview: "/works/fifa.jpg",
-    slug: "/bplay-corazon-argento",
+    slug: "bplay-corazon-argento",
     tags: ["caba", "360"],
+    featured: false,
   },
 ];
 
@@ -207,22 +215,22 @@ function Work() {
       </div>
       {/* <WorkHeroData work={works[0]} className="relative z-40" /> */}
       <FeaturedWorks
-        works={featuredStaticWorks.slice(0, 3)}
+        works={featuredStaticWorks.filter((w) => w.featured)}
         className="z-40 relative mb-20"
       />
-      <div className="!py-16 z-40 relative overflow-x-hidden">
+      <div id="passion-love" className="!py-16 z-40 relative overflow-x-hidden">
         <ScrollableWorks
           works={allWorks.filter((w) => w.tags.includes("passion love"))}
           title="Passion Love"
         />
       </div>
-      <div className="!py-16 z-40 relative overflow-x-hidden">
+      <div id="studios" className="!py-16 z-40 relative overflow-x-hidden">
         <ScrollableWorks
           works={allWorks.filter((w) => w.tags.includes("studios"))}
           title="Studios"
         />
       </div>
-      <div className="!py-16 z-40 relative overflow-x-hidden">
+      <div id="360" className="!py-16 z-40 relative overflow-x-hidden">
         <ScrollableWorks
           works={allWorks.filter((w) => w.tags.includes("360"))}
           title="360"

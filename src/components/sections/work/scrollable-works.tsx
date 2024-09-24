@@ -12,7 +12,7 @@ export const ScrollableWorks = ({
   className?: string;
 }) => {
   return (
-    <div id="passion-love" className={cn("flex flex-col", className)}>
+    <div className={cn("flex flex-col", className)}>
       <EmblaCarouselWorks
         slides={works}
         title={title}
