@@ -24,7 +24,7 @@ export const WorkPreview = ({
       <img
         src={work.imagePreview}
         alt={`work image for ${work.name}`}
-        className={cn("border object-cover", {
+        className={cn("border object-cover rounded", {
           "border-gray-700": variant === "dark",
           "border-gray-300": variant === "light",
           "min-w-[320px] w-full md:w-[420px] h-[180px] sm:h-[220px]":

@@ -47,7 +47,5 @@ export type WorkPreview = Pick<
 
 export type CarouselSlideProps = {
   title: string;
-  description: string;
   image: string;
-  link: string;
 };

@@ -18,7 +18,7 @@ export const ImageGallery = ({
               <img
                 src={images[0].url}
                 alt="gallery image"
-                className="w-full h-auto"
+                className="w-full h-auto rounded"
               />
             </ScrollGrow>
           </div>
@@ -31,7 +31,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index}`}
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded"
                 />
               </ScrollGrow>
             ))}
@@ -44,7 +44,7 @@ export const ImageGallery = ({
               <img
                 src={images[0].url}
                 alt="gallery image"
-                className="w-full h-auto max-h-[820px] object-cover"
+                className="w-full h-auto max-h-[820px] object-cover rounded"
               />
             </ScrollGrow>
             {images.slice(1).map((image, index) => (
@@ -52,7 +52,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded"
                 />
               </ScrollGrow>
             ))}
@@ -66,7 +66,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index}`}
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded"
                 />
               </ScrollGrow>
             ))}
@@ -80,7 +80,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index}`}
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded"
                 />
               </ScrollGrow>
             ))}

@@ -50,7 +50,7 @@ export default function PassionLove({ works }: { works: WorkPreview[] }) {
             <img
               src="/images/assets/work-1.jpg"
               alt="work hero"
-              className="w-full max-w-full h-auto"
+              className="w-full max-w-full h-auto rounded"
             />
           </ScrollGrow>
           <div className="grid sm:grid-cols-2 gap-2">
@@ -58,14 +58,14 @@ export default function PassionLove({ works }: { works: WorkPreview[] }) {
               <img
                 src="/images/assets/work-vertical-1.jpg"
                 alt="work hero"
-                className="w-full max-w-full h-auto"
+                className="w-full max-w-full h-auto rounded"
               />
             </ScrollGrow>
             <ScrollGrow>
               <img
                 src="/images/assets/work-vertical-2.jpg"
                 alt="work hero"
-                className="hidden sm:flex w-full max-w-full h-auto"
+                className="hidden sm:flex w-full max-w-full h-auto rounded"
               />
             </ScrollGrow>
           </div>

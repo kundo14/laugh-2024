@@ -89,7 +89,7 @@ export const TextAndImages = ({
             <img
               src={image}
               alt={`vertical - ${index}`}
-              className="w-full h-auto"
+              className="w-full h-auto rounded"
             />
           </FadeIn>
         ))}

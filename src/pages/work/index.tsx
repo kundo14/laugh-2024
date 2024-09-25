@@ -177,7 +177,7 @@ function Work() {
               <img
                 src="/images/assets/work-1.jpg"
                 alt="work hero"
-                className="w-full h-auto"
+                className="w-full h-auto rounded"
               />
             </FadeIn>
 
@@ -186,14 +186,14 @@ function Work() {
                 <img
                   src="/images/assets/work-vertical-1.jpg"
                   alt="work hero"
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded"
                 />
               </ScrollGrow>
               <ScrollGrow>
                 <img
                   src="/images/assets/work-vertical-2.jpg"
                   alt="work hero"
-                  className="hidden sm:flex w-full h-auto"
+                  className="hidden sm:flex w-full h-auto rounded"
                 />
               </ScrollGrow>
             </div>

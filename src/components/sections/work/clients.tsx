@@ -10,70 +10,94 @@ import { CarouselSlideProps } from "@/models";
 
 const clients: CarouselSlideProps[] = [
   {
-    title: "adidas",
-    image: "/images/clients/1.svg",
-    description: "adidas",
-    link: "/work/adidas",
+    title: "first",
+    image: "/images/clients/clientes-01.svg",
   },
   {
-    title: "easports",
-    image: "/images/clients/2.svg",
-    description: "easports",
-    link: "/work/easports",
+    title: "second",
+    image: "/images/clients/clientes-02.svg",
   },
   {
-    title: "arg",
-    image: "/images/clients/3.svg",
-    description: "arg",
-    link: "/work/arg",
+    title: "third",
+    image: "/images/clients/clientes-03.svg",
   },
   {
-    title: "netflix",
-    image: "/images/clients/4.svg",
-    description: "netflix",
-    link: "/work/netflix",
+    title: "fourth",
+    image: "/images/clients/clientes-04.svg",
   },
   {
-    title: "nike",
-    image: "/images/clients/5.svg",
-    description: "netflix",
-    link: "/work/netflix",
+    title: "fifth",
+    image: "/images/clients/clientes-05.svg",
   },
   {
-    title: "arg2",
-    image: "/images/clients/3.svg",
-    description: "netflix",
-    link: "/work/netflix",
+    title: "sixth",
+    image: "/images/clients/clientes-06.svg",
   },
   {
-    title: "adidas2",
-    image: "/images/clients/1.svg",
-    description: "netflix",
-    link: "/work/netflix",
+    title: "seventh",
+    image: "/images/clients/clientes-07.svg",
   },
   {
-    title: "nike2",
-    image: "/images/clients/5.svg",
-    description: "netflix",
-    link: "/work/netflix",
+    title: "eighth",
+    image: "/images/clients/clientes-08.svg",
   },
   {
-    title: "easports2",
-    image: "/images/clients/2.svg",
-    description: "netflix",
-    link: "/work/netflix",
+    title: "ninth",
+    image: "/images/clients/clientes-09.svg",
   },
   {
-    title: "netflix2",
-    image: "/images/clients/4.svg",
-    description: "netflix",
-    link: "/work/netflix",
+    title: "tenth",
+    image: "/images/clients/clientes-10.svg",
+  },
+  {
+    title: "eleventh",
+    image: "/images/clients/clientes-11.svg",
+  },
+  {
+    title: "twelfth",
+    image: "/images/clients/clientes-12.svg",
+  },
+  {
+    title: "thirteenth",
+    image: "/images/clients/clientes-13.svg",
+  },
+  {
+    title: "fourteenth",
+    image: "/images/clients/clientes-14.svg",
+  },
+  {
+    title: "fifteenth",
+    image: "/images/clients/clientes-15.svg",
+  },
+  {
+    title: "sixteenth",
+    image: "/images/clients/clientes-16.svg",
+  },
+  {
+    title: "seventeenth",
+    image: "/images/clients/clientes-17.svg",
+  },
+  {
+    title: "eighteenth",
+    image: "/images/clients/clientes-18.svg",
+  },
+  {
+    title: "nineteenth",
+    image: "/images/clients/clientes-19.svg",
+  },
+  {
+    title: "twentieth",
+    image: "/images/clients/clientes-20.svg",
+  },
+  {
+    title: "twenty-first",
+    image: "/images/clients/clientes-21.svg",
   },
 ];
 
 export const Clients = ({ className }: { className?: string }) => {
   const [visibleClients, setVisibleClients] = React.useState(
-    clients.slice(0, 5)
+    clients.slice(0, 7)
   );
   const [index, setIndex] = React.useState(0);
   const [playingClient, setPlayingClient] = React.useState<null | number>(null);
@@ -82,8 +106,8 @@ export const Clients = ({ className }: { className?: string }) => {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 5) % clients.length);
-      setVisibleClients(clients.slice(index, index + 5));
+      setIndex((prevIndex) => (prevIndex + 7) % clients.length);
+      setVisibleClients(clients.slice(index, index + 7));
     }, 3000); // Change logos every 3 seconds
     return () => clearInterval(interval);
   }, [index]);
@@ -131,7 +155,7 @@ export const Clients = ({ className }: { className?: string }) => {
           ))}
         </Marquee>
       ) : (
-        <div className="grid grid-cols-5 gap-x-12 lg:gap-x-16 xl:gap-x-20 mt-12 h-[160px]">
+        <div className="grid grid-cols-5 xl:grid-cols-7 gap-x-12 lg:gap-x-16 xl:gap-x-20 mt-12 h-[180px] items-center">
           {visibleClients.map((client, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <AnimatePresence mode="wait">

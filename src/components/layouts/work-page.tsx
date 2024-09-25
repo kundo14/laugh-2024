@@ -64,7 +64,7 @@ const WorkPageLayout = ({
           )}
         >
           <div className="p-2 absolute top-0 left-0 w-full h-full z-0">
-            <div className="absolute top-2 left-2 w-[calc(100%-16px)] h-[calc(100%-16px)] bg-black opacity-50 z-0" />
+            <div className="absolute top-2 left-2 w-[calc(100%-16px)] h-[calc(100%-16px)] bg-black opacity-50 z-0 rounded" />
             <img
               src={bg}
               alt={`bg - ${name}`}
