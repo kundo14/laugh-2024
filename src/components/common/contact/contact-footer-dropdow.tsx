@@ -9,8 +9,10 @@ import { cn } from "@/lib/cn";
 
 export const ContactFooterDropdown = ({
   color,
+  textWhite,
 }: {
   color?: "red" | "gold" | "yellow";
+  textWhite?: boolean;
 }) => {
   const router = useRouter();
   return (
@@ -19,11 +21,13 @@ export const ContactFooterDropdown = ({
         <button
           name="contact"
           className={cn(
-            "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150 !text-black",
+            "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
             {
               scratch: color === "yellow" || !color,
               scratch_red: color === "red",
               scratch_gold: color === "gold",
+              "!text-white": textWhite,
+              "!text-black": !textWhite,
             }
           )}
         >

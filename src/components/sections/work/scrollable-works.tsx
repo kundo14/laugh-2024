@@ -6,14 +6,17 @@ export const ScrollableWorks = ({
   works,
   title,
   className,
+  textWhite,
 }: {
   works: WorkPreviewProps[];
   title: string;
   className?: string;
+  textWhite?: boolean;
 }) => {
   return (
     <div className={cn("flex flex-col", className)}>
       <EmblaCarouselWorks
+        textWhite={textWhite}
         slides={works}
         title={title}
         options={{ slidesToScroll: "auto" }}

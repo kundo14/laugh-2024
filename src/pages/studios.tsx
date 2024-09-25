@@ -23,10 +23,13 @@ export default function StudiosPage({ works }: { works: WorkPreview[] }) {
           alt="home logo"
         />
       }
+      noBg
       color="gold"
+      textWhite
     >
       <div className="container relative !mt-20 z-40">
         <TextAndImages
+          textWhite
           images={[
             "/images/assets/film.jpg",
             "/images/assets/mexico.jpg",
@@ -43,13 +46,13 @@ export default function StudiosPage({ works }: { works: WorkPreview[] }) {
         text="Crafting Sports Epics, Frame by Frame, Story by Story"
         color="gold"
       />
-      <div className="container">
+      <div className="container z-50 relative">
         <div className="flex-1 flex flex-col gap-2">
           <ScrollGrow>
             <img
               src="/images/assets/work-1.jpg"
               alt="work hero"
-              className="w-full max-w-full h-auto"
+              className="w-full max-w-full h-auto border border-gray-800"
             />
           </ScrollGrow>
           <div className="grid sm:grid-cols-2 gap-2">
@@ -57,27 +60,23 @@ export default function StudiosPage({ works }: { works: WorkPreview[] }) {
               <img
                 src="/images/assets/work-vertical-1.jpg"
                 alt="work hero"
-                className="w-full max-w-full h-auto"
+                className="w-full max-w-full h-auto border border-gray-800"
               />
             </ScrollGrow>
             <ScrollGrow>
               <img
                 src="/images/assets/work-vertical-2.jpg"
                 alt="work hero"
-                className="hidden sm:flex w-full max-w-full h-auto"
+                className="hidden sm:flex w-full max-w-full h-auto border border-gray-800"
               />
             </ScrollGrow>
           </div>
         </div>
       </div>
       <div className="!py-16 z-40 relative overflow-x-hidden mt-20">
-        <ScrollableWorks works={works} title="Works" />
+        <ScrollableWorks works={works} title="Works" textWhite />
       </div>
-      <img
-        src="/images/textures/paper.jpg"
-        className="w-full h-full absolute top-0 left-0 opacity-10 z-0"
-        alt="texture bg"
-      />
+      <div className="absolute top-0 left-0 w-full h-full z-0 bg-texture"></div>
     </VerticalPageLayout>
   );
 }

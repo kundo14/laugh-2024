@@ -7,14 +7,17 @@ import remarkGfm from "remark-gfm";
 import { useMedia } from "use-media";
 import { useRouter } from "next/router";
 import { CustomDraggable } from "@/components/common/draggable";
+import { cn } from "@/lib/cn";
 
 export const TextAndImages = ({
   images,
   markdown,
   color,
+  textWhite,
 }: {
   images: string[];
   markdown: string;
+  textWhite?: boolean;
   color: "red" | "gold" | "yellow";
 }) => {
   const ref = React.useRef<HTMLDivElement>(null);
@@ -112,11 +115,25 @@ export const TextAndImages = ({
           components={{
             p: ({ children }) => (
               <FadeIn>
-                <p className="mb-4 text-gray-600">{children}</p>
+                <p
+                  className={cn("mb-4", {
+                    "text-gray-400": textWhite,
+                    "text-gray-600": !textWhite,
+                  })}
+                >
+                  {children}
+                </p>
               </FadeIn>
             ),
             strong: ({ children }) => (
-              <b className="font-bold !text-black">{children}</b>
+              <b
+                className={cn("font-bold", {
+                  "text-white": textWhite,
+                  "text-black": !textWhite,
+                })}
+              >
+                {children}
+              </b>
             ),
           }}
         >
@@ -125,7 +142,13 @@ export const TextAndImages = ({
         <FadeIn delay={0.3}>
           <Link
             href="/"
-            className="inline-flex items-center uppercase text-14 mt-8 group relative max-w-max"
+            className={cn(
+              "inline-flex items-center uppercase text-14 mt-8 group relative max-w-max",
+              {
+                "text-white": textWhite,
+                "text-black": !textWhite,
+              }
+            )}
           >
             Contact us
             <ArrowTopRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transform transition-all duration-150" />

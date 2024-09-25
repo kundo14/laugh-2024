@@ -100,24 +100,29 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <p>
-                <b>Welcome to Laugh.</b> An <b>award winning</b> sports
-                marketing agency delivering <b>first class results.</b> We
-                specialize in formulating, building, and scaling strategies
-                across key verticals,{" "}
-                <b>generating revenue from the passion of sports.</b>
+                Laugh is a space{" "}
+                <b className="italic">where we connect brands and fans.</b>
+                <br />
+                Our passion and dedication to the world of sports define our
+                existence.
+                <br />
+                <b>
+                  We live for the thrill of the game, the roar of the crowd, and
+                  the celebration of sporting achievements.
+                </b>
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p>
-                At Laugh, our profound understanding of fans enables us to{" "}
-                <b>enhance the commercial value of sports</b>, from{" "}
-                <b>
-                  maximizing your sponsorship rights, upscaling your online
-                  presence
+                Welcome to <b>Laugh,</b>
+                <br />{" "}
+                <b className="italic">
+                  where sports is not just a passion; It&#39;s a way of Life.
                 </b>
-                , capitalize on key market opportunities with{" "}
-                <b>premium content production.</b>
               </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <p>WE COME TO CREATE, PRODUCE, SPREAD AND LAUGH</p>
             </FadeIn>
           </div>
         </div>

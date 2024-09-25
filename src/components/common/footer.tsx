@@ -24,10 +24,12 @@ const links = [
 
 export const Footer = ({
   className,
+  textWhite,
   color,
 }: {
   className?: string;
   color?: "red" | "gold" | "yellow";
+  textWhite?: boolean;
 }) => {
   return (
     <footer
@@ -42,20 +44,37 @@ export const Footer = ({
           <Link
             href="https://www.instagram.com/weare_laugh/"
             target="_blank"
-            className="uppercase text-16 sm:text-18 text-black mb-1.5 hover:underline max-w-max"
+            className={cn(
+              "uppercase text-16 sm:text-18 mb-1.5 hover:underline max-w-max",
+              {
+                "text-white": textWhite,
+                "text-black": !textWhite,
+              }
+            )}
           >
             instagram
           </Link>
           <Link
             href=""
             target="_blank"
-            className="uppercase text-16 sm:text-18 text-black hover:underline max-w-max"
+            className={cn(
+              "uppercase text-16 sm:text-18 hover:underline max-w-max",
+              {
+                "text-white": textWhite,
+                "text-black": !textWhite,
+              }
+            )}
           >
             youtube
           </Link>
         </div>
         <div className="flex justify-between lg:w-full">
-          <p className="hidden lg:flex text-14 uppercase">
+          <p
+            className={cn("hidden lg:flex text-14 uppercase", {
+              "text-white": textWhite,
+              "text-black": !textWhite,
+            })}
+          >
             ©{new Date().getFullYear()}
           </p>
           <div className="flex items-end lg:items-center gap-6 group">
@@ -64,13 +83,17 @@ export const Footer = ({
                 href={link.url}
                 key={index}
                 className={cn(
-                  "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150"
+                  "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
+                  {
+                    "text-white": textWhite,
+                    "text-black": !textWhite,
+                  }
                 )}
               >
                 {link.label}
               </Link>
             ))}
-            <ContactFooterDropdown color={color} />
+            <ContactFooterDropdown color={color} textWhite={textWhite} />
           </div>
         </div>
       </div>

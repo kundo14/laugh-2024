@@ -30,6 +30,7 @@ const VerticalPageLayout = ({
   headProps,
   children,
   className,
+  textWhite,
   rootClassName,
   logo,
   color,
@@ -39,6 +40,7 @@ const VerticalPageLayout = ({
   children: ReactNode;
   className?: string;
   rootClassName?: string;
+  textWhite?: boolean;
   noBg?: boolean;
   logo: ReactNode;
   color?: "red" | "gold" | "yellow";
@@ -58,7 +60,7 @@ const VerticalPageLayout = ({
       <Head headProps={headProps} />
       <SmoothScrolling>
         <div className="h-px" />
-        <Nav color={color === "red" ? "white" : "black"} />
+        <Nav color={color === "red" || textWhite ? "white" : "black"} />
         <div
           className={cn(
             "flex flex-col items-center justify-center w-full h-screen -mt-[136px]",
@@ -69,7 +71,7 @@ const VerticalPageLayout = ({
             }
           )}
         >
-          <FadeIn>{logo}</FadeIn>
+          <FadeIn className="z-50">{logo}</FadeIn>
         </div>
         <motion.main
           className={cn("", className)}
@@ -80,7 +82,7 @@ const VerticalPageLayout = ({
         >
           {children}
         </motion.main>
-        <Footer className="z-50 relative" color={color} />
+        <Footer className="z-50 relative" color={color} textWhite={textWhite} />
       </SmoothScrolling>
     </div>
   );

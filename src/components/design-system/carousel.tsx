@@ -10,10 +10,12 @@ import pickRandomColor from "@/lib/helpers/pick-random-color";
 export const EmblaCarouselWorks = ({
   slides,
   options,
+  textWhite,
   title,
 }: {
   slides: WorkPreviewProps[];
   options?: EmblaOptionsType;
+  textWhite?: boolean;
   title?: string;
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -43,14 +45,25 @@ export const EmblaCarouselWorks = ({
   return (
     <div className="flex flex-col container">
       <div className="flex items-center w-full justify-between">
-        {title && <p className="text-black uppercase text-16">{title}</p>}
+        {title && (
+          <p
+            className={cn("uppercase text-16", {
+              "text-white": textWhite,
+              "text-black": !textWhite,
+            })}
+          >
+            {title}
+          </p>
+        )}
         <div className="flex gap-6">
           <button
             onClick={scrollPrev}
             className={cn(
-              "text-black text-12 uppercase p-2 rounded-full transition-all duration-150",
+              "text-12 uppercase p-2 rounded-full transition-all duration-150",
               {
                 "opacity-50": prevBtnDisabled,
+                "text-white": textWhite,
+                "text-black": !textWhite,
               }
             )}
             disabled={prevBtnDisabled}
@@ -63,9 +76,11 @@ export const EmblaCarouselWorks = ({
             disabled={nextBtnDisabled}
             name="next"
             className={cn(
-              "text-black text-12 uppercase p-2 rounded-full transition-all duration-150 relative",
+              "text-12 uppercase p-2 rounded-full transition-all duration-150 relative",
               {
                 "opacity-50": nextBtnDisabled,
+                "text-white": textWhite,
+                "text-black": !textWhite,
               }
             )}
           >
@@ -106,7 +121,7 @@ export const EmblaCarouselWorks = ({
                 >
                   <WorkPreview
                     size="small"
-                    variant="light"
+                    variant={textWhite ? "dark" : "light"}
                     work={item}
                     className=""
                   />
