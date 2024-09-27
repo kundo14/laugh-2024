@@ -58,7 +58,7 @@ export const Footer = ({
             href=""
             target="_blank"
             className={cn(
-              "uppercase text-16 sm:text-18 hover:underline max-w-max",
+              "uppercase !text-16 sm:!text-18 hover:underline max-w-max",
               {
                 "text-white": textWhite,
                 "text-black": !textWhite,
@@ -70,7 +70,7 @@ export const Footer = ({
         </div>
         <div className="flex justify-between lg:w-full">
           <p
-            className={cn("hidden lg:flex text-14 uppercase", {
+            className={cn("hidden lg:flex !text-14 uppercase", {
               "text-white": textWhite,
               "text-black": !textWhite,
             })}
@@ -83,7 +83,7 @@ export const Footer = ({
                 href={link.url}
                 key={index}
                 className={cn(
-                  "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
+                  "!text-12 sm:!text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
                   {
                     "text-white": textWhite,
                     "text-black": !textWhite,

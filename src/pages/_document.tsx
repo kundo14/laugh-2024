@@ -52,6 +52,12 @@ export default function Document() {
           as="image"
           type="image/jpg"
         />
+        <link
+          rel="preload"
+          href="/images/textures/black-bg.jpg"
+          as="image"
+          type="image/jpg"
+        />
       </Head>
       <body>
         <Main />

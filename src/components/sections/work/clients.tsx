@@ -102,7 +102,7 @@ export const Clients = ({ className }: { className?: string }) => {
   const [index, setIndex] = React.useState(0);
   const [playingClient, setPlayingClient] = React.useState<null | number>(null);
 
-  const isMobile = useMedia({ maxWidth: "768px" });
+  const isMobile = useMedia({ maxWidth: "1024px" });
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -144,7 +144,7 @@ export const Clients = ({ className }: { className?: string }) => {
         </FadeIn>
       </div>
       {isMobile ? (
-        <Marquee>
+        <Marquee speed={150}>
           {clients.map((client, i) => (
             <img
               key={i}
@@ -155,7 +155,7 @@ export const Clients = ({ className }: { className?: string }) => {
           ))}
         </Marquee>
       ) : (
-        <div className="grid grid-cols-5 xl:grid-cols-7 gap-x-12 lg:gap-x-16 xl:gap-x-20 mt-12 h-[180px] items-center">
+        <div className="grid grid-cols-7 gap-x-12 lg:gap-x-16 xl:gap-x-20 mt-12 h-[180px] items-center">
           {visibleClients.map((client, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <AnimatePresence mode="wait">

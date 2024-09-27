@@ -8,8 +8,9 @@ import { getWorksByTag } from "@/lib/contentful/api";
 import { GetStaticProps } from "next";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
+import Counters from "@/components/sections/verticals/360/counters";
 
-export default function StudiosPage({ works }: { works: WorkPreview[] }) {
+export default function Page({ works }: { works: WorkPreview[] }) {
   return (
     <VerticalPageLayout
       headProps={{
@@ -26,6 +27,7 @@ export default function StudiosPage({ works }: { works: WorkPreview[] }) {
       color="yellow"
     >
       <div className="container relative !mt-20 z-40">
+        <Counters className="my-32" />
         <TextAndImages
           images={[
             "/images/assets/film.jpg",

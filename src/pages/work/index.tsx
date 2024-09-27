@@ -10,101 +10,8 @@ import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { CustomDraggable } from "@/components/common/draggable";
 import FadeIn from "@/components/common/animations/fade-in";
 import ScrollGrow from "@/components/common/animations/glow-up-image";
-
-const featuredStaticWorks: WorkPreview[] = [
-  {
-    name: "La Casa Oficial",
-    date: {
-      start: 2023,
-      end: 2023,
-    },
-    imagePreview:
-      "https://images.ctfassets.net/5gxggc55g9oq/37z7SXI9LZ2YXcjdO7Qzf0/3dce2008d10b32bc5a02056da3142e45/DSCF6318_11zon.jpg",
-    slug: "la-casa-oficial",
-    tags: ["buenos aires", "studios", "passion love"],
-    featured: true,
-  },
-  {
-    name: "Corazón Argento",
-    date: {
-      start: 2022,
-      end: 2023,
-    },
-    imagePreview:
-      "https://images.ctfassets.net/5gxggc55g9oq/CeQGKmz9AFdmRIvCwiWjC/0ff3c68669a86400470da3b732f28350/09-28_BiPlay-RODAJE-Dia-1_0176_11zon.jpg",
-    slug: "bplay-corazon-argento",
-    tags: ["buenos aires", "studios", "apuestas deportivas"],
-    featured: true,
-  },
-  {
-    name: "La Bombonera Regresa",
-    date: {
-      start: 2021,
-      end: 2021,
-    },
-    imagePreview: "/works/boca.jpg",
-    slug: "bplay-corazon-argento",
-    tags: ["buenos aires", "passion love"],
-    featured: true,
-  },
-  {
-    name: "Adidas",
-    date: {
-      start: 2023,
-      end: 2023,
-    },
-    imagePreview: "/works/heroes.jpg",
-    slug: "bplay-corazon-argento",
-    tags: ["madrid", "passion love"],
-    featured: false,
-  },
-  {
-    name: "EA Sports FIFA",
-    date: {
-      start: 2023,
-      end: 2023,
-    },
-    imagePreview: "/works/fifa.jpg",
-    slug: "bplay-corazon-argento",
-    tags: ["caba", "studios"],
-    featured: false,
-  },
-  {
-    name: "La Bombonera Regresa",
-    date: {
-      start: 2021,
-      end: 2021,
-    },
-    imagePreview: "/works/boca.jpg",
-    slug: "bplay-corazon-argento",
-    tags: ["buenos aires", "360"],
-    featured: false,
-  },
-  {
-    name: "Adidas",
-    date: {
-      start: 2023,
-      end: 2023,
-    },
-    imagePreview: "/works/heroes.jpg",
-    slug: "bplay-corazon-argento",
-    tags: ["madrid", "360"],
-    featured: false,
-  },
-  {
-    name: "EA Sports FIFA",
-    date: {
-      start: 2023,
-      end: 2023,
-    },
-    imagePreview: "/works/fifa.jpg",
-    slug: "bplay-corazon-argento",
-    tags: ["caba", "360"],
-    featured: false,
-  },
-];
-
-const allWorks = featuredStaticWorks.concat(featuredStaticWorks);
+import { VideoPlayer } from "@/components/common/youtube-player";
+import { getWorks } from "@/lib/contentful/api";
 
 const submenu = [
   {
@@ -129,7 +36,7 @@ const submenu = [
   },
 ];
 
-function Work() {
+function Work({ works }: { works: WorkPreview[] }) {
   return (
     <PageLayout
       headProps={{
@@ -173,15 +80,11 @@ function Work() {
         </div>
         <div className="w-full flex items-start gap-8 lg:gap-16 mt-4 xl:mt-12">
           <div className="flex-1 flex flex-col gap-2">
-            <FadeIn delay={0.3}>
-              <img
-                src="/images/assets/work-1.jpg"
-                alt="work hero"
-                className="w-full h-auto rounded"
-              />
+            <FadeIn delay={0.3} className="flex">
+              <VideoPlayer video="https://www.youtube.com/watch?v=7w4n_gKeFe4" />
             </FadeIn>
 
-            <div className="grid sm:grid-cols-2 gap-2">
+            <div className="grid md:grid-cols-2 gap-2">
               <ScrollGrow>
                 <img
                   src="/images/assets/work-vertical-1.jpg"
@@ -193,12 +96,12 @@ function Work() {
                 <img
                   src="/images/assets/work-vertical-2.jpg"
                   alt="work hero"
-                  className="hidden sm:flex w-full h-auto rounded"
+                  className="hidden md:flex w-full h-auto rounded"
                 />
               </ScrollGrow>
             </div>
           </div>
-          <div className="hidden sticky top-32 sm:flex flex-col gap-3 group">
+          <div className="hidden sticky top-32 md:flex flex-col gap-3 group">
             {submenu.map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <Link
@@ -215,29 +118,36 @@ function Work() {
       </div>
       {/* <WorkHeroData work={works[0]} className="relative z-40" /> */}
       <FeaturedWorks
-        works={featuredStaticWorks.filter((w) => w.featured)}
+        works={works.filter((w) => w.featured)}
         className="z-40 relative mb-20"
       />
       <div id="passion-love" className="!py-16 z-40 relative overflow-x-hidden">
         <ScrollableWorks
-          works={allWorks.filter((w) => w.tags.includes("passion love"))}
+          works={works.filter((w) => w.tags.includes("passion love"))}
           title="Passion Love"
         />
       </div>
       <div id="studios" className="!py-16 z-40 relative overflow-x-hidden">
         <ScrollableWorks
-          works={allWorks.filter((w) => w.tags.includes("studios"))}
+          works={works.filter((w) => w.tags.includes("studios"))}
           title="Studios"
         />
       </div>
       <div id="360" className="!py-16 z-40 relative overflow-x-hidden">
         <ScrollableWorks
-          works={allWorks.filter((w) => w.tags.includes("360"))}
+          works={works.filter((w) => w.tags.includes("360"))}
           title="360"
         />
       </div>
     </PageLayout>
   );
+}
+
+export async function getStaticProps() {
+  const works = await getWorks();
+  return {
+    props: { works },
+  };
 }
 
 export default Work;

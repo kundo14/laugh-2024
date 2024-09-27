@@ -107,6 +107,27 @@ export const getWorksByTag = async (tag) => {
   }
 };
 
+export const getWorks = async () => {
+  const page = await client.getEntries({
+    content_type: "workTemplate",
+    include: 5,
+  });
+
+  const cleanWorks = page.items.map((item) => ({
+    name: item.fields.name,
+    slug: item.fields.slug,
+    imagePreview: `https:${item.fields.imagePreview.fields.file.url}`,
+    tags: item.fields.tags,
+    date: {
+      start: item.fields.startYear,
+      end: item.fields.endYear,
+    },
+    featured: item.fields.featured,
+  }))
+
+  return cleanWorks;
+};
+
 
 
 export const getWorksRoutes = async () => {
