@@ -34,11 +34,13 @@ const WorkPageLayout = ({
   rootClassName,
   name,
   bg,
+  textWhite,
 }: {
   headProps?: HeadProps;
   children: ReactNode;
   className?: string;
   rootClassName?: string;
+  textWhite?: boolean;
   bg: string;
   name: ReactNode;
 }) => {
@@ -46,7 +48,12 @@ const WorkPageLayout = ({
   const { pathname } = router;
 
   return (
-    <div className={cn("text-16 text-black relative", rootClassName)}>
+    <div
+      className={cn("text-16 relative", rootClassName, {
+        "text-white bg-black": textWhite,
+        "text-black bg-white": !textWhite,
+      })}
+    >
       <style jsx global>{`
         :root {
           --font-archivo: ${archivo.style.fontFamily};
@@ -57,7 +64,7 @@ const WorkPageLayout = ({
       <Head headProps={headProps} />
       <SmoothScrolling>
         <div className="h-px" />
-        <Nav color={"white"} />
+        <Nav color={textWhite ? "white" : "black"} />
         <div
           className={cn(
             "flex flex-col items-center justify-center w-full h-screen -mt-[136px] relative"
@@ -87,7 +94,7 @@ const WorkPageLayout = ({
         >
           {children}
         </motion.main>
-        <Footer className="z-50 relative" />
+        <Footer className="z-50 relative" color="white" textWhite />
       </SmoothScrolling>
     </div>
   );

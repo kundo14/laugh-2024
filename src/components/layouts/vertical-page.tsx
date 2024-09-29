@@ -49,7 +49,12 @@ const VerticalPageLayout = ({
   const { pathname } = router;
 
   return (
-    <div className={cn("text-16 text-black relative", rootClassName)}>
+    <div
+      className={cn("text-16 relative", rootClassName, {
+        "text-white bg-black": textWhite,
+        "text-black bg-white": !textWhite,
+      })}
+    >
       <style jsx global>{`
         :root {
           --font-archivo: ${archivo.style.fontFamily};

@@ -9,9 +9,11 @@ import { useRouter } from "next/router";
 
 export const WorkHeroData = ({
   work,
+  textWhite,
   className,
 }: {
   work: WorkTemplateProps;
+  textWhite?: boolean;
   className?: string;
 }) => {
   const router = useRouter();
@@ -102,7 +104,12 @@ export const WorkHeroData = ({
           </div>
         </FadeIn>
         <FadeIn delay={0.3}>
-          <div className="text-16 text-gray-800 leading-[1.8]">
+          <div
+            className={cn("text-16 leading-[1.8]", {
+              "text-gray-400": textWhite,
+              "text-gray-800": !textWhite,
+            })}
+          >
             {renderBody(work.heroDescription)}
           </div>
         </FadeIn>

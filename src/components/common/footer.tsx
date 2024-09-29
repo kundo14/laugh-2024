@@ -28,7 +28,7 @@ export const Footer = ({
   color,
 }: {
   className?: string;
-  color?: "red" | "gold" | "yellow";
+  color?: "red" | "gold" | "yellow" | "white";
   textWhite?: boolean;
 }) => {
   return (
@@ -104,6 +104,7 @@ export const Footer = ({
             "text-red": color === "red",
             "text-yellow": color === "yellow",
             "text-gold": color === "gold",
+            "text-white": textWhite,
             "text-black": !color,
           }
         )}

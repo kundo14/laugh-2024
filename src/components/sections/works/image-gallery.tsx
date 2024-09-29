@@ -18,7 +18,7 @@ export const ImageGallery = ({
               <img
                 src={images[0].url}
                 alt="gallery image"
-                className="w-full h-auto rounded"
+                className="w-full h-auto rounded border border-gray-800"
               />
             </ScrollGrow>
           </div>
@@ -31,7 +31,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index}`}
-                  className="w-full h-auto rounded"
+                  className="w-full h-auto rounded border border-gray-800"
                 />
               </ScrollGrow>
             ))}
@@ -44,7 +44,7 @@ export const ImageGallery = ({
               <img
                 src={images[0].url}
                 alt="gallery image"
-                className="w-full h-auto max-h-[820px] object-cover rounded"
+                className="w-full h-auto max-h-[820px] object-cover rounded border border-gray-800"
               />
             </ScrollGrow>
             {images.slice(1).map((image, index) => (
@@ -52,7 +52,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index + 1}`}
-                  className="w-full h-full object-cover rounded"
+                  className="w-full h-full object-cover rounded border border-gray-800"
                 />
               </ScrollGrow>
             ))}
@@ -66,7 +66,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index}`}
-                  className="w-full h-auto rounded"
+                  className="w-full h-auto rounded border border-gray-800"
                 />
               </ScrollGrow>
             ))}
@@ -80,7 +80,7 @@ export const ImageGallery = ({
                 <img
                   src={image.url}
                   alt={`gallery image ${index}`}
-                  className="w-full h-auto rounded"
+                  className="w-full h-auto rounded border border-gray-800"
                 />
               </ScrollGrow>
             ))}

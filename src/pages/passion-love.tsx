@@ -78,7 +78,6 @@ export default function PassionLove({ works }: { works: WorkPreview[] }) {
         src="/images/textures/paper.jpg"
         className="w-full h-full absolute top-0 left-0 opacity-10 z-0"
         alt="texture bg"
-        fetchPriority="high"
       />
     </VerticalPageLayout>
   );

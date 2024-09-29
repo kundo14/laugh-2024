@@ -15,6 +15,7 @@ export const SwitchComponents = ({
         <FadeIn>
           <div className="container !my-40 flex items-center justify-center">
             <QuoteComponent
+              textWhite
               quote={{
                 quote: component.quote,
                 author: component.author,

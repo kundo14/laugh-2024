@@ -18,9 +18,10 @@ const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
       }}
       bg={data.heroVideo}
       name={data.name}
+      textWhite
     >
       <div className="container relative z-40 !mt-16">
-        <WorkHeroData work={data} className="!mb-8 sm:!mb-16" />
+        <WorkHeroData work={data} className="!mb-8 sm:!mb-16" textWhite />
         <ImageGallery images={data.imageGallery} />
       </div>{" "}
       {data.components.map((component, index) => (

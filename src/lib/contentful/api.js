@@ -116,7 +116,7 @@ export const getWorks = async () => {
   const cleanWorks = page.items.map((item) => ({
     name: item.fields.name,
     slug: item.fields.slug,
-    imagePreview: `https:${item.fields.imagePreview.fields.file.url}`,
+    imagePreview: item.fields.imagePreview.fields ? `https:${item.fields.imagePreview.fields.file.url}` : null,
     tags: item.fields.tags,
     date: {
       start: item.fields.startYear,

@@ -11,7 +11,7 @@ export const ContactFooterDropdown = ({
   color,
   textWhite,
 }: {
-  color?: "red" | "gold" | "yellow";
+  color?: "red" | "gold" | "yellow" | "white";
   textWhite?: boolean;
 }) => {
   const router = useRouter();
@@ -23,7 +23,7 @@ export const ContactFooterDropdown = ({
           className={cn(
             "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
             {
-              scratch: color === "yellow" || !color,
+              scratch: color === "yellow" || color === "white" || !color,
               scratch_red: color === "red",
               scratch_gold: color === "gold",
               "!text-white": textWhite,
