@@ -99,7 +99,7 @@ export default function Home() {
         <div className="container">
           <div
             className={cn(
-              "flex flex-col gap-6 !max-w-[520px] !text-12 uppercase leading-[1.8] mt-20 sm:mt-32 transition-all duration-300",
+              "flex flex-col gap-6 !max-w-[520px] !text-12 uppercase leading-[1.8] mt-8 sm:mt-32 transition-all duration-300",
               {
                 "text-white": playingProject !== null,
               }
@@ -143,7 +143,7 @@ export default function Home() {
             </FadeIn>
           </div>
         </div>
-        <div className="w-full absolute bottom-0 left-0 mb-4">
+        <div className="w-full absolute bottom-0 left-0 mb-2">
           {!isMobile ? (
             <EmblaCarouselAutoScroll
               slides={projects}
