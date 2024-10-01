@@ -8,6 +8,7 @@ import { Nav } from "../common/nav";
 import { Footer } from "../common/footer";
 import SmoothScrolling from "../common/scroll";
 import FadeIn from "../common/animations/fade-in";
+import { CustomDraggable } from "../common/draggable";
 
 const noNavPaths = ["/404"];
 
@@ -68,7 +69,7 @@ const VerticalPageLayout = ({
         <Nav color={color === "red" || textWhite ? "white" : "black"} />
         <div
           className={cn(
-            "flex flex-col items-center justify-center w-full h-screen -mt-[136px]",
+            "relative flex flex-col items-center justify-center w-full h-screen -mt-[136px]",
             {
               "bg-red": color === "red" && !noBg,
               "bg-gold": color === "gold" && !noBg,
@@ -76,6 +77,14 @@ const VerticalPageLayout = ({
             }
           )}
         >
+          <CustomDraggable>
+            <img
+              src={"/images/scratches/gold-arrow.svg"}
+              alt="sticker"
+              className="w-[100px] sm:w-[120px] lg:w-[160px] h-auto absolute bottom-16 right-24 z-40"
+              draggable={false}
+            />
+          </CustomDraggable>
           <FadeIn className="z-50">{logo}</FadeIn>
         </div>
         <motion.main

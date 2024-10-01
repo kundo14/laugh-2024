@@ -82,6 +82,7 @@ export default function Home() {
             autoPlay
             loop
             muted
+            playsInline
             ref={ref}
             src={projects[playingProject].video}
             className="w-full h-[100svh] absolute top-0 left-0 object-cover"
@@ -143,7 +144,7 @@ export default function Home() {
             </FadeIn>
           </div>
         </div>
-        <div className="w-full absolute bottom-0 left-0 mb-2">
+        <div className="w-full absolute bottom-0 left-0 pb-2 lg:pb-6">
           {!isMobile ? (
             <EmblaCarouselAutoScroll
               slides={projects}
