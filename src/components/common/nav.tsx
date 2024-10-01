@@ -10,7 +10,7 @@ import {
 import { ContactDropdown } from "./contact/contact-nav-dropdown";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
-import { Logo } from "./logos/laugh";
+import { BigLogo, Logo } from "./logos/laugh";
 
 export const links = [
   {
@@ -63,7 +63,11 @@ export const Nav = ({
         "text-black": color === "black",
       })}
     >
-      <div className="flex items-center justify-between relative flex-1 text-current">
+      <div
+        className={cn(
+          "flex items-center justify-between relative flex-1 text-current"
+        )}
+      >
         <Link
           href="/"
           aria-label="logo home"
@@ -73,7 +77,11 @@ export const Nav = ({
             "text-black": color === "black",
           })}
         >
-          <Logo className="text-current" />
+          {router.asPath === "/" ? (
+            <BigLogo className="text-current" />
+          ) : (
+            <Logo className="text-current" />
+          )}
         </Link>
         <div className="hidden sm:flex flex-col absolute top-0 right-0 sm:relative sm:flex-row items-end sm:items-center gap-2 sm:gap-6 group">
           {links.map((link) => (

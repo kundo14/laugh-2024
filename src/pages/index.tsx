@@ -51,7 +51,17 @@ export default function Home() {
   const [playingProject, setPlayingProject] = React.useState<null | number>(
     null
   );
+  const ref = React.useRef<HTMLVideoElement>(null);
+
   const isMobile = useMedia({ maxWidth: "768px" });
+
+  React.useEffect(() => {
+    // play project video in mobile screens by default
+    if (isMobile && playingProject !== null) {
+      ref.current?.play();
+    }
+  }, []);
+
   return (
     <PageLayout
       headProps={{
@@ -72,30 +82,35 @@ export default function Home() {
             autoPlay
             loop
             muted
+            ref={ref}
             src={projects[playingProject].video}
             className="w-full h-[100svh] absolute top-0 left-0 object-cover"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
+            controls={false}
           />
         )}
       </AnimatePresence>
 
       {/* so we get the full screen. We dont take into account the nav */}
-      <div className="h-[calc(100svh-140px)] max-h-[calc(100svh-140px)] sm:h-[calc(100vh-137px)] sm:max-h-[calc(100vh-137px)] w-full overflow-hidden flex flex-col relative">
+      <div className="h-[calc(100svh-182px)] max-h-[calc(100svh-182px)] sm:h-[calc(100vh-170px)] sm:max-h-[calc(100vh-170px)] w-full overflow-hidden flex flex-col relative">
         <div className="container">
           <div
             className={cn(
-              "flex flex-col gap-6 !max-w-[420px] !text-12 uppercase leading-[1.8] mt-20 sm:mt-32 transition-all duration-300",
+              "flex flex-col gap-6 !max-w-[520px] !text-12 uppercase leading-[1.8] mt-20 sm:mt-32 transition-all duration-300",
               {
                 "text-white": playingProject !== null,
               }
             )}
           >
             <FadeIn>
-              <p>
-                <i className="custom_underline">WE POWER PASSION</i>
+              <p className="uppercase font-archivoBlack text-24 md:text-48 inline-flex items-center leading-none">
+                We power
+                <span className="font-masker text-yellow text-48 md:text-[72px] ml-6">
+                  PASSION
+                </span>
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -122,7 +137,9 @@ export default function Home() {
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <p>WE COME TO CREATE, PRODUCE, SPREAD AND LAUGH</p>
+              <p className="custom_underline">
+                WE COME TO CREATE, PRODUCE, SPREAD AND <b>LAUGH</b>
+              </p>
             </FadeIn>
           </div>
         </div>

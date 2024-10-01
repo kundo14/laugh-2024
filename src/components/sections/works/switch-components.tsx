@@ -26,10 +26,10 @@ export const SwitchComponents = ({
         </FadeIn>
       );
     case "text-slider":
-      return <TextMarquee text={component.text} color="black" />;
+      return <TextMarquee text={component.text} color="white" />;
     case "image-text-gallery":
       return (
-        <div>
+        <div className="container !my-40">
           {component.images.map((image, index) => (
             <div key={index}>
               <img src={image.image} alt="" />

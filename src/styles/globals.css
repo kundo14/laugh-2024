@@ -88,7 +88,6 @@ b {
   height: 12px;
   max-height: 12px;
   background-image: url('/images/scratches/yellow-underline.svg');
-  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -139,9 +138,9 @@ b {
   transition: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
-  font-size: 180px;
-  margin-right: 120px;
-  letter-spacing: -0.08em;                
+  font-size: 120px;
+  margin-right: 80px;
+  letter-spacing: -0.02em;                
 }
 
 /* cursor */
@@ -172,14 +171,6 @@ b {
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.2s ease-in-out;
 } */
 
-
-/* mediascreen for slide */
-@media screen and (max-width: 1024px) {
-  .slide {
-    font-size: 120px;
-    margin-right: 80px;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .slide {

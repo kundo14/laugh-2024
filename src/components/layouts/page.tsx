@@ -7,6 +7,10 @@ import Head, { HeadProps } from "../common/head";
 import { Nav } from "../common/nav";
 import { Footer } from "../common/footer";
 import SmoothScrolling from "../common/scroll";
+import localFont from "next/font/local";
+
+// Font files can be colocated inside of `pages`
+const masker = localFont({ src: "./masker-area.otf" });
 
 const noNavPaths = ["/404"];
 
@@ -52,6 +56,7 @@ const PageLayout = ({
           --font-archivo: ${archivo.style.fontFamily};
           --font-archivoBlack: ${archivoBlack.style.fontFamily};
           --font-playfairDisplay: ${playfairDisplay.style.fontFamily};
+          --font-masker: ${masker.style.fontFamily};
         }
       `}</style>
       <Head headProps={headProps} />

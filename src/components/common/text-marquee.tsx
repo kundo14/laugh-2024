@@ -6,7 +6,7 @@ const Text = ({
   color,
 }: {
   children: React.ReactNode;
-  color: "red" | "gold" | "yellow" | "black";
+  color: "red" | "gold" | "yellow" | "black" | "white";
 }) => {
   return (
     <div
@@ -17,6 +17,7 @@ const Text = ({
           "text-gold": color === "gold",
           "text-yellow": color === "yellow",
           "text-black": color === "black",
+          "text-white": color === "white",
         }
       )}
     >
@@ -30,10 +31,10 @@ export const TextMarquee = ({
   color,
 }: {
   text: string;
-  color: "red" | "gold" | "yellow" | "black";
+  color: "red" | "gold" | "yellow" | "black" | "white";
 }) => {
   return (
-    <Marquee speed={200} className="py-8">
+    <Marquee speed={200} className="py-16">
       <Text color={color}>{text}</Text>
       <Text color={color}>{text}</Text>
       <Text color={color}>{text}</Text>

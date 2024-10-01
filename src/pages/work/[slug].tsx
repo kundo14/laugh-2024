@@ -6,6 +6,8 @@ import { getWorksRoutes, getWorkTemplate } from "@/lib/contentful/api";
 import { WorkTemplateProps } from "@/models";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { SwitchComponents } from "../../components/sections/works/switch-components";
+import FadeIn from "@/components/common/animations/fade-in";
+import { VideoPlayer } from "@/components/common/youtube-player";
 
 const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
   return (
@@ -27,6 +29,13 @@ const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
       {data.components.map((component, index) => (
         <SwitchComponents key={index} component={component} />
       ))}
+      <div className="container relative z-40">
+        {data.bottomVideoLink && (
+          <FadeIn delay={0.3} className="flex">
+            <VideoPlayer video={data.bottomVideoLink} />
+          </FadeIn>
+        )}
+      </div>
     </WorkPageLayout>
   );
 };

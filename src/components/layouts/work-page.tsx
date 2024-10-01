@@ -80,7 +80,7 @@ const WorkPageLayout = ({
             />
           </div>
           <ScrollParallax className="z-10" parallaxSpeed={0.8}>
-            <p className="text-white text-24 sm:text-32 uppercase font-archivo">
+            <p className="text-white text-24 sm:text-32 uppercase font-archivo text-center px-4 leading-tight">
               {name}
             </p>
           </ScrollParallax>

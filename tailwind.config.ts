@@ -18,6 +18,7 @@ const config: Config = {
       archivo: ["var(--font-archivo)", "sans-serif"],
       archivoBlack: ["var(--font-archivoBlack)", "sans-serif"],
       playfairDisplay: ["var(--font-playfairDisplay)", "serif"],
+      masker: ["var(--font-masker)", "sans-serif"],
     },
     fontSize: {
       12: "12px",
