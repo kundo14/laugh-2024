@@ -2,6 +2,7 @@ import FadeIn from "@/components/common/animations/fade-in";
 import { Quote as QuoteComponent } from "@/components/common/dynamic-sections/quote";
 import { TextMarquee } from "@/components/common/text-marquee";
 import { CustomComponent } from "@/models";
+import { ImageTextGallery } from "./image-text-gallery";
 
 export const SwitchComponents = ({
   component,
@@ -9,6 +10,7 @@ export const SwitchComponents = ({
   component: CustomComponent;
 }) => {
   if (!component || !component.type) return null;
+
   switch (component.type) {
     case "quote":
       return (
@@ -28,15 +30,6 @@ export const SwitchComponents = ({
     case "text-slider":
       return <TextMarquee text={component.text} color="white" />;
     case "image-text-gallery":
-      return (
-        <div className="container !my-40">
-          {component.images.map((image, index) => (
-            <div key={index}>
-              <img src={image.image} alt="" />
-              <p>{image.text}</p>
-            </div>
-          ))}
-        </div>
-      );
+      return <ImageTextGallery component={component} />;
   }
 };

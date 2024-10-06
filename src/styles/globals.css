@@ -91,6 +91,22 @@ b {
   background-repeat: no-repeat;
 }
 
+.richtext_underline {
+  position: relative;
+}
+
+.richtext_underline::after {
+  content: '';
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 10px;
+  background-image: url('/images/scratches/richtext-underline.svg');
+  background-repeat: no-repeat;
+}
+
 .scratch, .scratch_red, .scratch_gold {
   position: relative;
 }

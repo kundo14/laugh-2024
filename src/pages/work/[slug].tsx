@@ -29,7 +29,7 @@ const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
       {data.components.map((component, index) => (
         <SwitchComponents key={index} component={component} />
       ))}
-      <div className="container relative z-40">
+      <div className="container relative z-40 !mt-40">
         {data.bottomVideoLink && (
           <FadeIn delay={0.3} className="flex">
             <VideoPlayer video={data.bottomVideoLink} />

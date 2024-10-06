@@ -8,10 +8,12 @@ const renderBody = (document, size) => {
     renderMark: {
       [MARKS.BOLD]: (text) => <b className="font-archivoBlack">{text}</b>,
       [MARKS.ITALIC]: (text) => <i className="italic font-extralight">{text}</i>,
+      [MARKS.UNDERLINE]: (text) => <span className="richtext_underline">{text}</span>,
     },
+    
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="font-archivo font-normal">{children}</p>
+        <p className="font-archivo font-normal mb-6 leading-relaxed">{children}</p>
       ),
       [INLINES.HYPERLINK]: (node, children) => (
         <Link

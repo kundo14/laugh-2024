@@ -10,7 +10,6 @@ import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 
 export default function PassionLove({ works }: { works: WorkPreview[] }) {
-  console.log(works);
   return (
     <VerticalPageLayout
       headProps={{

@@ -30,7 +30,7 @@ export const getComponent = (component) => {
         type: "image-text-gallery",
         images: component.fields.components.map((component) => {
           return {
-            text: component.fields.name,
+            text: component.fields.text,
             image: `https:${component.fields.image.fields.file.url}`,
           };
         }),

@@ -77,14 +77,16 @@ const VerticalPageLayout = ({
             }
           )}
         >
-          <CustomDraggable>
-            <img
-              src={"/images/scratches/gold-arrow.svg"}
-              alt="sticker"
-              className="w-[100px] sm:w-[120px] lg:w-[160px] h-auto absolute bottom-16 right-24 z-40"
-              draggable={false}
-            />
-          </CustomDraggable>
+          {pathname === "/studios" && (
+            <CustomDraggable>
+              <img
+                src={"/images/scratches/gold-arrow.svg"}
+                alt="sticker"
+                className="w-[100px] sm:w-[120px] lg:w-[160px] h-auto absolute bottom-16 right-24 z-40"
+                draggable={false}
+              />
+            </CustomDraggable>
+          )}
           <FadeIn className="z-50">{logo}</FadeIn>
         </div>
         <motion.main
