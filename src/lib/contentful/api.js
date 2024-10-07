@@ -142,3 +142,21 @@ export const getWorksRoutes = async () => {
 
   return routes;
 };
+
+export const getAboutPage = async () => {
+  const page = await client.getEntries({
+    content_type: "aboutUsPage",
+  });
+
+  const cleanAbout = {
+    peeps: page.items[0].fields.peeps.map((peep) => {
+      return {
+        name: peep.fields.name,
+        role: peep.fields.role,
+        image: `https:${peep.fields.image.fields.file.url}`,
+      };
+    }),
+  };
+
+  return cleanAbout;
+}

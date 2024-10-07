@@ -61,7 +61,7 @@ export const ImageTextGallery = ({
           <img
             src={images[selectedImage].image}
             alt={`images[selectedImage] ${selectedImage}`}
-            className="w-full h-[504px] lg:h-[720px] object-cover"
+            className="w-full h-[504px] lg:h-[720px] object-cover rounded border border-gray-800"
           />
         </ScrollGrow>
 
@@ -77,7 +77,7 @@ export const ImageTextGallery = ({
             />
           </CustomDraggable>
 
-          {renderBody(images[selectedImage].text)}
+          {renderBody(images[selectedImage].text, "dark")}
         </ScrollParallax>
       </div>
       {/* image thumbnails */}
@@ -96,7 +96,7 @@ export const ImageTextGallery = ({
             <img
               src={image.image}
               alt={`images[selectedImage] ${index}`}
-              className={cn("w-full h-full object-cover", {
+              className={cn("w-full h-full object-cover rounded", {
                 // black and white the not selected images
                 "filter grayscale": index !== selectedImage,
                 selected_image: index === selectedImage,

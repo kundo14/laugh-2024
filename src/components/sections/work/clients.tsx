@@ -7,6 +7,7 @@ import { CustomDraggable } from "@/components/common/draggable";
 import { useMedia } from "use-media";
 import Marquee from "react-fast-marquee";
 import { CarouselSlideProps } from "@/models";
+import ScrollParallax from "@/components/common/animations/parallax";
 
 const clients: CarouselSlideProps[] = [
   {
@@ -155,24 +156,38 @@ export const Clients = ({ className }: { className?: string }) => {
           ))}
         </Marquee>
       ) : (
-        <div className="grid grid-cols-7 gap-x-12 lg:gap-x-16 xl:gap-x-20 mt-12 h-[180px] items-center">
-          {visibleClients.map((client, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <AnimatePresence mode="wait">
-                <motion.img
+        <div className="grid grid-cols-7 gap-x-12 lg:gap-x-16 xl:gap-x-20 gap-y-6 mt-12 items-center">
+          {clients.map((client, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <ScrollParallax parallaxSpeed={i * 0.05}>
+                <img
                   key={client.image}
                   src={client.image}
                   alt={client.title}
                   className="w-full h-auto"
-                  initial={{ rotateX: 90, opacity: 0 }}
-                  animate={{ rotateX: 0, opacity: 1 }}
-                  exit={{ rotateX: -90, opacity: 0 }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
                 />
-              </AnimatePresence>
+              </ScrollParallax>
             </FadeIn>
           ))}
         </div>
+        // <div className="grid grid-cols-7 gap-x-12 lg:gap-x-16 xl:gap-x-20 mt-12 h-[180px] items-center">
+        //   {visibleClients.map((client, i) => (
+        //     <FadeIn key={i} delay={i * 0.1}>
+        //       <AnimatePresence mode="wait">
+        //         <motion.img
+        //           key={client.image}
+        //           src={client.image}
+        //           alt={client.title}
+        //           className="w-full h-auto"
+        //           initial={{ rotateX: 90, opacity: 0 }}
+        //           animate={{ rotateX: 0, opacity: 1 }}
+        //           exit={{ rotateX: -90, opacity: 0 }}
+        //           transition={{ duration: 0.6, delay: i * 0.1 }}
+        //         />
+        //       </AnimatePresence>
+        //     </FadeIn>
+        //   ))}
+        // </div>
       )}
     </div>
   );
