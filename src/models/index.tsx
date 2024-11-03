@@ -1,7 +1,7 @@
 export type Quote = {
   type: "quote";
   quote: string;
-  author: string;
+  author?: string | null;
 };
 
 export type TextSlider = {
@@ -37,7 +37,7 @@ export type WorkTemplateProps = {
   featured: boolean;
   deliverables: string[];
   components: CustomComponent[];
-  bottomVideoLink: string;
+  bottomVideoLink?: string | null;
 };
 
 export type WorkPreview = Pick<

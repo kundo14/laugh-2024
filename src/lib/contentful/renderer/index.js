@@ -14,7 +14,7 @@ const renderBody = (document, theme) => {
     
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className={cn("font-archivo font-normal mb-6 leading-relaxed", {
+        <p className={cn("font-archivo font-normal mb-6", {
           'text-white': theme === 'dark',
           'text-gray-800': theme === 'light',
         })}>{children}</p>

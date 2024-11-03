@@ -37,6 +37,7 @@ const PageLayout = ({
   rootClassName,
   withoutBackgroundTexture,
   isPlaying,
+  textWhite,
 }: {
   headProps?: HeadProps;
   children: ReactNode;
@@ -45,6 +46,7 @@ const PageLayout = ({
   rootClassName?: string;
   withoutBackgroundTexture?: boolean;
   isPlaying?: boolean;
+  textWhite?: boolean;
 }) => {
   const router = useRouter();
   const { pathname } = router;
@@ -72,7 +74,13 @@ const PageLayout = ({
         >
           {children}
         </motion.main>
-        {!withoutFooter && <Footer className="z-50 relative" />}
+        {!withoutFooter && (
+          <Footer
+            className="z-50 relative"
+            textWhite={textWhite}
+            color={textWhite ? "white" : undefined}
+          />
+        )}
         {!withoutBackgroundTexture && (
           <img
             src="/images/textures/paper.jpg"

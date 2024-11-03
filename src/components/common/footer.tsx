@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn";
 import Link from "next/link";
-import { ContactDropdown } from "./contact/contact-nav-dropdown";
 import { ContactFooterDropdown } from "./contact/contact-footer-dropdow";
 
 const links = [
@@ -104,7 +103,7 @@ export const Footer = ({
             "text-red": color === "red",
             "text-yellow": color === "yellow",
             "text-gold": color === "gold",
-            "text-white": textWhite,
+            "text-white": textWhite || color === "white",
             "text-black": !color,
           }
         )}
