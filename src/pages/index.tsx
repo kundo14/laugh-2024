@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import FadeIn from "@/components/common/animations/fade-in";
 import { VideoPlayer } from "@/components/common/youtube-player";
 import { CustomDraggable } from "@/components/common/draggable";
+import ScrollParallax from "@/components/common/animations/parallax";
 
 export default function Home() {
   const ref = React.useRef<HTMLVideoElement>(null);
@@ -75,7 +76,7 @@ export default function Home() {
               </p>
             </FadeIn>
           </div>
-          <div className="flex flex-col mx-auto mt-40 items-center">
+          <div className="flex flex-col mx-auto mt-32 items-center">
             <CustomDraggable>
               <img
                 src={"/images/scratches/gold-line-arrow.svg"}
@@ -84,15 +85,32 @@ export default function Home() {
                 draggable={false}
               />
             </CustomDraggable>
-            <FadeIn
-              delay={0.3}
-              className="flex w-full xl:w-[1144px] mt-12 sm:mt-20"
-            >
+            <ScrollParallax>
+              <p className="text-[56px] sm:text-[80px] md:text-[100px] lg:text-[120px] uppercase font-archivo font-black text-yellow leading-none">
+                our <span className="italic">reel</span>
+              </p>
+            </ScrollParallax>
+            <FadeIn delay={0.3} className="flex w-full xl:w-[1144px] mt-12">
               <VideoPlayer
                 video="https://www.youtube.com/watch?v=7w4n_gKeFe4"
                 className="rounded overflow-hidden border border-solid border-gray-800"
               />
             </FadeIn>
+            <AnimatePresence>
+              <motion.video
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="mt-40"
+                src={"/gifs/home-gif.mp4"}
+                controls={false}
+              />
+            </AnimatePresence>
           </div>
         </div>
         {/* <div className="w-full absolute bottom-0 left-0 pb-2 lg:pb-6">

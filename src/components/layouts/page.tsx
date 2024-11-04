@@ -64,7 +64,9 @@ const PageLayout = ({
       <Head headProps={headProps} />
       <SmoothScrolling>
         <div className="h-px" />
-        {!noNavPaths.includes(pathname) && <Nav isPlaying={isPlaying} />}
+        {!noNavPaths.includes(pathname) && (
+          <Nav isPlaying={isPlaying} color={textWhite ? "white" : "black"} />
+        )}
         <motion.main
           className={cn("", className)}
           key={pathname}
