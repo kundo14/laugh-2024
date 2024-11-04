@@ -8,8 +8,71 @@ import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { getWorks } from "@/lib/contentful/api";
 import { cn } from "@/lib/cn";
 import ScrollParallax from "@/components/common/animations/parallax";
+import CarouselRow from "@/components/common/carousel-row";
 
 function Work({ works }: { works: WorkPreview[] }) {
+  function shuffleArray(array: string[]) {
+    const shuffled = array.slice(); // Create a copy to avoid mutating the original array
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  const images = React.useMemo(() => {
+    const possibleImages = [
+      "/images/carousel/1.png",
+      "/images/carousel/2.png",
+      "/images/carousel/3.png",
+      "/images/carousel/4.png",
+      "/images/carousel/5.png",
+      "/images/carousel/6.png",
+      "/images/carousel/7.png",
+      "/images/carousel/8.png",
+      "/images/carousel/9.png",
+      "/images/carousel/10.png",
+      "/images/carousel/11.png",
+      "/images/carousel/12.png",
+      "/images/carousel/13.png",
+      "/images/carousel/14.png",
+      "/images/carousel/15.png",
+      "/images/carousel/16.png",
+      "/images/carousel/17.png",
+      "/images/carousel/18.png",
+      "/images/carousel/19.png",
+      "/images/carousel/20.png",
+      "/images/carousel/21.png",
+      "/images/carousel/22.png",
+      "/images/carousel/23.png",
+      "/images/carousel/24.png",
+      "/images/carousel/25.png",
+      "/images/carousel/26.png",
+      "/images/carousel/27.png",
+      "/images/carousel/28.png",
+      "/images/carousel/29.png",
+      "/images/carousel/30.png",
+      "/images/carousel/31.png",
+      "/images/carousel/32.png",
+      "/images/carousel/33.png",
+    ];
+
+    // Shuffle the possible images array
+    const shuffledImages = shuffleArray(possibleImages);
+
+    // Divide the shuffled array into three parts
+    const chunkSize = Math.ceil(shuffledImages.length / 3);
+    const first = shuffledImages.slice(0, chunkSize);
+    const second = shuffledImages.slice(chunkSize, chunkSize * 2);
+    const third = shuffledImages.slice(chunkSize * 2);
+
+    return {
+      first,
+      second,
+      third,
+    };
+  }, []);
+
   return (
     <PageLayout
       headProps={{
@@ -64,6 +127,17 @@ function Work({ works }: { works: WorkPreview[] }) {
             </ScrollParallax>
           </div>
         </div>
+      </div>
+      <div className="relative z-40 mt-40">
+        <CarouselRow images={images.first} />
+        <CarouselRow
+          images={images.second}
+          size="large"
+          direction={-1}
+          speed={0.1}
+          className="hidden md:flex"
+        />
+        <CarouselRow images={images.third} speed={0.5} />
       </div>
       <div className="container !mt-12 md:!mt-20 z-40 relative">
         <Clients className="!py-40" />
