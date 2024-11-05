@@ -9,6 +9,9 @@ import { getWorks } from "@/lib/contentful/api";
 import { cn } from "@/lib/cn";
 import ScrollParallax from "@/components/common/animations/parallax";
 import CarouselRow from "@/components/common/carousel-row";
+import ScrollGrow from "@/components/common/animations/glow-up-image";
+import FadeIn from "@/components/common/animations/fade-in";
+import { CustomDraggable } from "@/components/common/draggable";
 
 function Work({ works }: { works: WorkPreview[] }) {
   function shuffleArray(array: string[]) {
@@ -129,40 +132,65 @@ function Work({ works }: { works: WorkPreview[] }) {
         </div>
       </div>
       <div className="relative z-40 mt-40">
-        <CarouselRow images={images.first} />
-        <CarouselRow
-          images={images.second}
-          size="large"
-          direction={-1}
-          speed={0.1}
-          className="hidden md:flex"
-        />
-        <CarouselRow images={images.third} speed={0.5} />
+        <FadeIn>
+          <CarouselRow images={images.first} />
+        </FadeIn>
+        <FadeIn>
+          <CarouselRow
+            images={images.second}
+            size="large"
+            direction={-1}
+            speed={0.1}
+            className="hidden md:flex"
+          />
+        </FadeIn>
+        <FadeIn>
+          <CarouselRow images={images.third} speed={0.5} />
+        </FadeIn>
       </div>
-      <div className="container !mt-12 md:!mt-20 z-40 relative">
+      <div className="container justify-center flex flex-col-reverse sm:flex-row items-center !mt-40 relative z-40 gap-20 sm:gap-12 md:gap-20">
+        <ScrollGrow>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-[420px] h-auto"
+            src={"/gifs/let-it-happen.mp4"}
+            controls={false}
+          />
+        </ScrollGrow>
+        <div className="flex flex-col">
+          <FadeIn>
+            <p className="uppercase text-yellow font-archivoBlack text-42 md:text-[64px] lg:text-[80px] font-bold leading-none">
+              let it
+            </p>
+          </FadeIn>
+          <FadeIn className="relative">
+            <p className="uppercase font-archivoBlack text-42 md:text-[64px] lg:text-[80px] font-bold max-w-max ml-8 leading-none">
+              happen
+              <CustomDraggable>
+                <img
+                  src="/images/scratches/yellow-curl-underline.svg"
+                  alt="udnerline"
+                  draggable={false}
+                  className="absolute top-[100%] left-0 w-full h-auto"
+                />
+              </CustomDraggable>
+            </p>
+          </FadeIn>
+        </div>
+      </div>
+      <div className="container z-40 relative">
         <Clients className="!py-40" />
       </div>
-      {/* <WorkHeroData work={works[0]} className="relative z-40" /> */}
-      <FeaturedWorks
-        works={works.filter((w) => w.featured)}
-        className="z-40 relative mb-20"
-      />
-      <div id="passion-love" className="!py-16 z-40 relative overflow-x-hidden">
-        <ScrollableWorks
-          works={works.filter((w) => w.tags.includes("passion love"))}
-          title="Passion Love"
-        />
-      </div>
-      <div id="studios" className="!py-16 z-40 relative overflow-x-hidden">
+      <div
+        id="studios"
+        className="!py-16 -mt-12 z-40 relative overflow-x-hidden"
+      >
         <ScrollableWorks
           works={works.filter((w) => w.tags.includes("studios"))}
           title="Studios"
-        />
-      </div>
-      <div id="360" className="!py-16 z-40 relative overflow-x-hidden">
-        <ScrollableWorks
-          works={works.filter((w) => w.tags.includes("360"))}
-          title="360"
         />
       </div>
     </PageLayout>

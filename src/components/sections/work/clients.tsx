@@ -126,9 +126,9 @@ export const Clients = ({ className }: { className?: string }) => {
           draggable={false}
         />
       </CustomDraggable>
-      <div className="flex flex-col items-center text-18 italic uppercase leading-[1.8] text-center">
+      <div className="flex flex-col items-center text-18 md:text-24 italic uppercase leading-[1.8] md:leading-relaxed text-center">
         <FadeIn>
-          <p className="font-light">we have worked with some of the most</p>
+          <p className="font-light">proud to collaborate with</p>
         </FadeIn>
         <FadeIn delay={0.1}>
           <div className="relative max-w-max">
@@ -140,7 +140,7 @@ export const Clients = ({ className }: { className?: string }) => {
                 draggable={false}
               />
             </CustomDraggable>
-            <span className="font-bold">ambitious and exciting brands</span>
+            <span className="font-bold">sports greatest fans</span>
           </div>
         </FadeIn>
       </div>
