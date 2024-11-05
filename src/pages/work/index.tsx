@@ -12,6 +12,7 @@ import CarouselRow from "@/components/common/carousel-row";
 import ScrollGrow from "@/components/common/animations/glow-up-image";
 import FadeIn from "@/components/common/animations/fade-in";
 import { CustomDraggable } from "@/components/common/draggable";
+import { WorkQuote } from "@/components/sections/work/quote";
 
 function Work({ works }: { works: WorkPreview[] }) {
   function shuffleArray(array: string[]) {
@@ -198,6 +199,8 @@ function Work({ works }: { works: WorkPreview[] }) {
           />
         </div>
       </div>
+
+      <WorkQuote className="mt-32" />
     </PageLayout>
   );
 }

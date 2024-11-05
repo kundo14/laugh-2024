@@ -151,7 +151,7 @@ export const Clients = ({ className }: { className?: string }) => {
               key={i}
               src={client.image}
               alt={client.title}
-              className="w-32 h-auto ml-12 mt-12"
+              className="w-24 sm:w-28 md:w-32 h-auto ml-12 mt-12"
             />
           ))}
         </Marquee>
