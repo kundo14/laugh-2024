@@ -184,14 +184,19 @@ function Work({ works }: { works: WorkPreview[] }) {
       <div className="container z-40 relative">
         <Clients className="!py-40" />
       </div>
-      <div
-        id="studios"
-        className="!py-16 -mt-12 z-40 relative overflow-x-hidden"
-      >
-        <ScrollableWorks
-          works={works.filter((w) => w.tags.includes("studios"))}
-          title="Studios"
-        />
+
+      <div className="flex flex-col z-40 relative">
+        <div className="container !-mb-4 md:!-mb-12">
+          <p className="text-48 sm:text-[64px] md:text-[80px] font-playfairDisplay leading-none">
+            our <span className="font-masker text-yellow">projects</span>
+          </p>
+        </div>
+        <div id="studios" className="!py-16 -mt-12 overflow-x-hidden">
+          <ScrollableWorks
+            works={works.filter((w) => w.tags.includes("studios"))}
+            title=" "
+          />
+        </div>
       </div>
     </PageLayout>
   );

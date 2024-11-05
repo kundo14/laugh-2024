@@ -38,6 +38,7 @@ const PageLayout = ({
   withoutBackgroundTexture,
   isPlaying,
   textWhite,
+  footerWhite,
 }: {
   headProps?: HeadProps;
   children: ReactNode;
@@ -47,6 +48,7 @@ const PageLayout = ({
   withoutBackgroundTexture?: boolean;
   isPlaying?: boolean;
   textWhite?: boolean;
+  footerWhite?: boolean;
 }) => {
   const router = useRouter();
   const { pathname } = router;
@@ -79,8 +81,8 @@ const PageLayout = ({
         {!withoutFooter && (
           <Footer
             className="z-50 relative"
-            textWhite={textWhite}
-            color={textWhite ? "white" : undefined}
+            textWhite={footerWhite}
+            color={footerWhite ? "white" : undefined}
           />
         )}
         {!withoutBackgroundTexture && (
