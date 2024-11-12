@@ -2,8 +2,16 @@ import FadeIn from "@/components/common/animations/fade-in";
 import ScrollParallax from "@/components/common/animations/parallax";
 import { CustomDraggable } from "@/components/common/draggable";
 import { cn } from "@/lib/cn";
+import { WorkPreview } from "@/models";
+import { ScrollableWorks } from "../work/scrollable-works";
 
-export const StudiosSection = ({ className }: { className?: string }) => {
+export const StudiosSection = ({
+  className,
+  works,
+}: {
+  className?: string;
+  works: WorkPreview[];
+}) => {
   return (
     <>
       <div
@@ -174,6 +182,30 @@ export const StudiosSection = ({ className }: { className?: string }) => {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </div>
+
+      {/* WORKS */}
+      <div className="flex flex-col">
+        <FadeIn className="!py-16 z-40 relative overflow-x-hidden mt-12">
+          <ScrollableWorks works={works} title="Works" textWhite />
+        </FadeIn>
+        <div className="flex flex-col items-center mx-auto mt-8 sm:mt-2">
+          <ScrollParallax className="z-10" parallaxSpeed={0.7}>
+            <p className="text-gold font-masker text-32 md:text-[56px] lg:text-[64px] leading-none z-10">
+              we come to
+            </p>
+          </ScrollParallax>
+          <ScrollParallax className="z-10" parallaxSpeed={0.6}>
+            <p className="text-wrap text-center text-white font-black uppercase text-32 md:text-42 xl:text-[56px] leading-tight sm:leading-[1.1]">
+              create, produce
+            </p>
+          </ScrollParallax>
+          <ScrollParallax className="z-10" parallaxSpeed={1}>
+            <p className="text-wrap text-center text-white font-black uppercase text-32 md:text-42 xl:text-[56px] leading-tight sm:leading-[1.1]">
+              spread and laugh
+            </p>
+          </ScrollParallax>
         </div>
       </div>
     </>

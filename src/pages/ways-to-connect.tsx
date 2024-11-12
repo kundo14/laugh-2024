@@ -3,8 +3,8 @@ import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
 import { WorkPreview } from "@/models";
 import { getWorks } from "@/lib/contentful/api";
-import { cn } from "@/lib/cn";
 import { StudiosSection } from "@/components/sections/ways-to-connect/studios";
+import { Section360 } from "@/components/sections/ways-to-connect/360";
 
 function WaysToConnect({ works }: { works: WorkPreview[] }) {
   return (
@@ -19,7 +19,8 @@ function WaysToConnect({ works }: { works: WorkPreview[] }) {
       footerWhite
     >
       <div className="absolute top-0 left-0 w-full h-full z-0 bg-texture"></div>
-      <StudiosSection className="-mt-[136px]" />
+      <StudiosSection className="-mt-[136px]" works={works} />
+      <Section360 />
     </PageLayout>
   );
 }
