@@ -82,7 +82,7 @@ export const StudiosSection = ({
         <div className="px-2 absolute top-0 left-0 w-full h-full z-0">
           <div className="absolute top-0 left-2 w-[calc(100%-16px)] h-[100%] bg-black opacity-70 z-0 rounded" />
           <img
-            src="/images/assets/mexico-1.jpg"
+            src="/images/ways-to-connect/studios/cover.webp"
             alt="studios 2"
             className="rounded object-cover w-full h-full"
           />

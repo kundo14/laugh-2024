@@ -41,7 +41,7 @@ export const WorkPreview = ({
         [{work.date.start}]
       </p>
       <p
-        className={cn("font-semibold uppercase", {
+        className={cn("font-semibold uppercase leading-tight", {
           "!text-white": variant === "dark",
           "!text-black": variant === "light",
           "text-24 lg:text-32": size === "large",
