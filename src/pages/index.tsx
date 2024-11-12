@@ -7,6 +7,7 @@ import FadeIn from "@/components/common/animations/fade-in";
 import { VideoPlayer } from "@/components/common/youtube-player";
 import { CustomDraggable } from "@/components/common/draggable";
 import ScrollParallax from "@/components/common/animations/parallax";
+import ScrollGrow from "@/components/common/animations/glow-up-image";
 
 export default function Home() {
   const ref = React.useRef<HTMLVideoElement>(null);
@@ -97,12 +98,8 @@ export default function Home() {
                 className="rounded overflow-hidden border border-solid border-gray-800"
               />
             </FadeIn>
-            <AnimatePresence>
-              <motion.video
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
+            <ScrollGrow>
+              <video
                 autoPlay
                 loop
                 muted
@@ -111,7 +108,7 @@ export default function Home() {
                 src={"/gifs/home-gif.mp4"}
                 controls={false}
               />
-            </AnimatePresence>
+            </ScrollGrow>
           </div>
         </div>
         {/* <div className="w-full absolute bottom-0 left-0 pb-2 lg:pb-6">

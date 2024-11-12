@@ -2,7 +2,6 @@ import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
 import { Clients } from "@/components/sections/work/clients";
-import { FeaturedWorks } from "@/components/sections/work/featured";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
 import { getWorks } from "@/lib/contentful/api";
@@ -82,6 +81,7 @@ function Work({ works }: { works: WorkPreview[] }) {
       headProps={{
         ...defaultMeta,
         title: "Our Work | Laugh",
+        canonical: "https://wearelaugh.com/work",
       }}
       textWhite
     >

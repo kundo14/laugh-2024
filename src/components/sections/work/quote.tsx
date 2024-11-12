@@ -36,7 +36,7 @@ export const WorkQuote = ({ className }: { className?: string }) => {
             fans,
             <br /> and as true fanatics,
           </b>
-          <br /> we're ready to bring that <b>energy</b> to your brand.
+          <br /> we&apos;re ready to bring that <b>energy</b> to your brand.
         </p>
       </FadeIn>
     </div>
