@@ -22,6 +22,7 @@ export const Section360 = ({ className }: { className?: string }) => {
             loop
             muted
             controls={false}
+            playsInline
           />
         </div>
         <div className="mx-auto px-4 items-center max-w-[1200px] flex flex-col gap-8 mt-32 sm:mt-20 lg:mt-28 xl:mt-32">
@@ -107,6 +108,7 @@ export const Section360 = ({ className }: { className?: string }) => {
                 loop
                 muted
                 controls={false}
+                playsInline
               />
             </ScrollParallax>
             <ScrollParallax parallaxSpeed={0.8}>
@@ -117,6 +119,7 @@ export const Section360 = ({ className }: { className?: string }) => {
                 loop
                 muted
                 controls={false}
+                playsInline
               />
             </ScrollParallax>
             <ScrollParallax parallaxSpeed={1}>
@@ -127,6 +130,7 @@ export const Section360 = ({ className }: { className?: string }) => {
                 loop
                 muted
                 controls={false}
+                playsInline
               />
             </ScrollParallax>
             <ScrollParallax parallaxSpeed={0.2}>

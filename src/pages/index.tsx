@@ -41,6 +41,8 @@ export default function Home() {
             ref={ref}
             src={"/gifs/tvs.mp4"}
             controls={false}
+            // we should preload this cover video
+            preload="auto"
           />
           <div className="w-full h-full absolute top-0 left-0 bg-black opacity-70" />
         </motion.div>

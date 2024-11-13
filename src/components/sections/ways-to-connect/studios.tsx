@@ -29,6 +29,7 @@ export const StudiosSection = ({
             loop
             muted
             controls={false}
+            playsInline
           />
         </div>
         <div className="mx-auto px-4 items-center max-w-[1200px] flex flex-col gap-8 mt-32 sm:mt-20 lg:mt-28 xl:mt-32">
@@ -96,6 +97,7 @@ export const StudiosSection = ({
               loop
               muted
               controls={false}
+              playsInline
             />
           </ScrollParallax>
           <ScrollParallax
@@ -109,6 +111,7 @@ export const StudiosSection = ({
               loop
               muted
               controls={false}
+              playsInline
             />
           </ScrollParallax>
           <ScrollParallax
@@ -122,6 +125,7 @@ export const StudiosSection = ({
               loop
               muted
               controls={false}
+              playsInline
             />
           </ScrollParallax>
           <ScrollParallax
