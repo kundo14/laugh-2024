@@ -42,13 +42,13 @@ export const StudiosSection = ({
           </FadeIn>
           <div className="flex flex-col items-center">
             <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-              <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight max-w-max">
+              <p className="text-center text-white opacity-80 text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight max-w-max">
                 Sparking creativity
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={0.8}>
               <div className="relative max-w-max">
-                <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight font-bold italic">
+                <p className="text-center text-white opacity-80 text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight font-bold italic">
                   Blowing minds.
                 </p>
                 <CustomDraggable>

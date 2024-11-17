@@ -5,6 +5,7 @@ import { WorkPreview } from "@/models";
 import { getWorks } from "@/lib/contentful/api";
 import { StudiosSection } from "@/components/sections/ways-to-connect/studios";
 import { Section360 } from "@/components/sections/ways-to-connect/360";
+import { PassionTeamsSection } from "@/components/sections/ways-to-connect/passion-love";
 
 function WaysToConnect({ works }: { works: WorkPreview[] }) {
   return (
@@ -21,6 +22,7 @@ function WaysToConnect({ works }: { works: WorkPreview[] }) {
       <div className="absolute top-0 left-0 w-full h-full z-0 bg-texture"></div>
       <StudiosSection className="-mt-[136px]" works={works} />
       <Section360 />
+      <PassionTeamsSection />
     </PageLayout>
   );
 }
