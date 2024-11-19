@@ -5,7 +5,7 @@ import { WorkPreview } from "@/models";
 import { getWorks } from "@/lib/contentful/api";
 import { StudiosSection } from "@/components/sections/ways-to-connect/studios";
 import { Section360 } from "@/components/sections/ways-to-connect/360";
-import { PassionTeamsSection } from "@/components/sections/ways-to-connect/passion-love";
+import { PassionTeamsSection } from "@/components/sections/ways-to-connect/passion-teams";
 
 function WaysToConnect({ works }: { works: WorkPreview[] }) {
   return (

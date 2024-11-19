@@ -1,8 +1,11 @@
 import FadeIn from "@/components/common/animations/fade-in";
-import ScrollGrow from "@/components/common/animations/glow-up-image";
 import ScrollParallax from "@/components/common/animations/parallax";
 import { CustomDraggable } from "@/components/common/draggable";
 import { cn } from "@/lib/cn";
+import { NovibetPoster } from "./posters/novibet";
+import { EaFcPoster } from "./posters/eafc";
+import { CopaAmericaPoster } from "./posters/copa-america";
+import { BplayPoster } from "./posters/bplay";
 
 export const PassionTeamsSection = ({ className }: { className?: string }) => {
   return (
@@ -63,66 +66,17 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
           </div>
         </div>
       </div>
-      <div className="relative container min-h-[800px] max-h-[1024px] w-full">
-        <ScrollGrow className="absolute top-20 left-0">
-          <div className="flex flex-col">
-            <video
-              src={`/gifs/passion-love/copa-america.mp4`}
-              className="rounded object-cover w-[280px] sm:w-[320px] md:w-[380px] h-auto"
-              autoPlay
-              loop
-              muted
-              controls={false}
-              playsInline
-            />
-            <p className="text-white uppercase font-archivoBlack text-32 md:text-48">
-              copa américa
-            </p>
-          </div>
-        </ScrollGrow>
-        <ScrollParallax parallaxSpeed={1.2}>
-          <CustomDraggable>
-            <img
-              src="/images/ways-to-connect/passion-love/1.png"
-              alt="drag-me"
-              className="w-[280px] h-auto object-cover mt-8 absolute top-[200px] left-[560px]"
-              draggable={false}
-            />
-          </CustomDraggable>
-        </ScrollParallax>
-        <ScrollParallax parallaxSpeed={0.2}>
-          <CustomDraggable>
-            <img
-              src="/images/ways-to-connect/passion-love/2.png"
-              alt="drag-me"
-              className="w-[200px] md:w-[320px] h-auto object-cover mt-8 absolute top-[480px] left-32"
-              draggable={false}
-            />
-          </CustomDraggable>
-        </ScrollParallax>
-        <ScrollParallax parallaxSpeed={0.8}>
-          <CustomDraggable>
-            <img
-              src="/images/ways-to-connect/passion-love/3.png"
-              alt="drag-me"
-              className="w-[200px] md:w-[420px] h-auto object-cover absolute top-20 right-0"
-              draggable={false}
-            />
-          </CustomDraggable>
-        </ScrollParallax>
-        {/* <ScrollParallax
-          className="absolute top-[280px] left-4"
-          parallaxSpeed={2.8}
-        >
-          <CustomDraggable>
-            <img
-              src="/images/ways-to-connect/studios/1.png"
-              alt="studios 2"
-              draggable={false}
-              className="rounded object-cover lg:w-[180px] xl:w-[240px] h-auto"
-            />
-          </CustomDraggable>
-        </ScrollParallax> */}
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 !pt-12 container lg:min-h-[800px] lg:max-h-[1024px] w-full">
+        <CopaAmericaPoster className="lg:absolute top-20 left-0" />
+
+        {/* EA FC */}
+        <EaFcPoster className="flex flex-col items-end lg:absolute top-24 lg:left-[380px] xl:left-[460px]" />
+
+        {/* NOVIBET */}
+        <NovibetPoster className="lg:absolute top-[480px] left-0" />
+
+        {/* BPLAY */}
+        <BplayPoster className="lg:absolute top-20 right-0" />
       </div>
       <div className="container flex flex-col items-center">
         <div className="flex flex-col items-center gap-8 mt-20 max-w-[1024px]">
