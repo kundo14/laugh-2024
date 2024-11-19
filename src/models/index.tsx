@@ -49,3 +49,10 @@ export type CarouselSlideProps = {
   title: string;
   image: string;
 };
+
+export type Peep = {
+  name: string;
+  role: string;
+  image: string;
+  location: string;
+};

@@ -4,20 +4,16 @@ import { ContactFooterDropdown } from "./contact/contact-footer-dropdow";
 
 const links = [
   {
-    label: "work",
+    label: "projects",
     url: "/work",
   },
   {
-    label: "passion love",
-    url: "/passion-love",
+    label: "ways to connect",
+    url: "/ways-to-connect",
   },
   {
-    label: "360",
-    url: "/360",
-  },
-  {
-    label: "studios",
-    url: "/studios",
+    label: "about us",
+    url: "/about",
   },
 ];
 
