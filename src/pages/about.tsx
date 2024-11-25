@@ -7,9 +7,13 @@ import { OurHausSection } from "@/components/sections/about/our-haus";
 import { getAboutPage } from "@/lib/contentful/api";
 import ScrollParallax from "@/components/common/animations/parallax";
 import ScrollGrow from "@/components/common/animations/glow-up-image";
+import { AboutMap } from "@/components/sections/about/map";
+import { AboutQuote } from "@/components/sections/about/quote";
+import { DamianAlexSection } from "@/components/sections/about/damian-alex";
+import { Players } from "@/components/sections/about/players";
 
 function AboutUsPage({ peeps }: { peeps: Peep[] }) {
-  console.log("peeps", peeps);
+  console.log(peeps);
   return (
     <PageLayout
       headProps={{
@@ -35,30 +39,21 @@ function AboutUsPage({ peeps }: { peeps: Peep[] }) {
           {/* HEADER */}
           <OurStorySection />
         </div>
-        <OurHausSection className="mt-32" />
+        <OurHausSection className="mt-24 sm:mt-28 md:mt-32" />
 
-        {/* MAP */}
-        <div className="container flex flex-col !mt-32">
-          <div className="flex flex-col items-end self-start">
-            <ScrollParallax parallaxSpeed={0.4}>
-              <p className="font-archivoBlack text-white leading-none text-32 sm:text-[56px] md:text-[64px]">
-                Thinking
-              </p>
-            </ScrollParallax>
-            <ScrollParallax parallaxSpeed={0.8}>
-              <p className="text-gold font-masker -mr-8 sm:-mr-12 md:-mr-20 text-42 sm:text-[64px] md:text-[80px] leading-none">
-                global
-              </p>
-            </ScrollParallax>
-          </div>
-          <ScrollGrow>
-            <img
-              src="/images/about/map.png"
-              alt="Map"
-              className="w-full -mt-8 sm:-mt-12 md:-mt-20"
-            />
-          </ScrollGrow>
+        <div className="container flex flex-col items-center">
+          {/* MAP */}
+          <AboutMap className="mt-24 sm:mt-28 md:mt-32" />
+
+          {/* QUOTE */}
+          <AboutQuote className="mt-24 sm:mt-28 md:mt-32" />
+
+          {/* DAMIAN Y ALEX */}
+          <DamianAlexSection className="mt-12 sm:mt-16 md:mt-20" />
         </div>
+
+        {/* PLAYERS */}
+        <Players className="mt-24 sm:mt-28 md:mt-32" peeps={peeps} />
       </div>
     </PageLayout>
   );
@@ -67,7 +62,7 @@ function AboutUsPage({ peeps }: { peeps: Peep[] }) {
 export async function getStaticProps() {
   const peeps = await getAboutPage();
   return {
-    props: { peeps },
+    props: { peeps: peeps.peeps },
   };
 }
 
