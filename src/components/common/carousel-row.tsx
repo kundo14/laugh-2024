@@ -8,7 +8,7 @@ interface CarouselProps {
   options?: EmblaOptionsType;
   speed?: number; // Base speed of the carousel
   direction?: number; // Direction of the scroll: 1 for left, -1 for right
-  size?: "small" | "large";
+  size?: "xs" | "small" | "large";
   className?: string;
 }
 
@@ -54,8 +54,10 @@ const EmblaCarouselAutoScroll: React.FC<CarouselProps> = ({
                 src={src}
                 alt={`Slide ${idx}`}
                 className={cn("object-cover", {
-                  "w-[480px] h-[420px]": size === "large",
-                  "w-[360px] h-[320px]": size === "small",
+                  "w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] md:w-[480px] md:h-[420px]":
+                    size === "large",
+                  "w-[120px] h-[120px] sm:w-[240px] sm:h-[240px] md:w-[360px] md:h-[320px]":
+                    size === "small",
                 })}
               />
             </div>
@@ -65,10 +67,12 @@ const EmblaCarouselAutoScroll: React.FC<CarouselProps> = ({
             <div className="embla__slide" key={`duplicate-${idx}`}>
               <img
                 src={src}
-                alt={`Slide ${idx}`}
+                alt={`Duplicated Slide ${idx}`}
                 className={cn("object-cover", {
-                  "w-[480px] h-[420px]": size === "large",
-                  "w-[360px] h-[320px]": size === "small",
+                  "w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] md:w-[480px] md:h-[420px]":
+                    size === "large",
+                  "w-[120px] h-[120px] sm:w-[240px] sm:h-[240px] md:w-[360px] md:h-[320px]":
+                    size === "small",
                 })}
               />
             </div>

@@ -12,17 +12,9 @@ import ScrollGrow from "@/components/common/animations/glow-up-image";
 import FadeIn from "@/components/common/animations/fade-in";
 import { CustomDraggable } from "@/components/common/draggable";
 import { WorkQuote } from "@/components/sections/work/quote";
+import { shuffleArray } from "@/lib/helpers/shuffle-array";
 
 function Work({ works }: { works: WorkPreview[] }) {
-  function shuffleArray(array: string[]) {
-    const shuffled = array.slice(); // Create a copy to avoid mutating the original array
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  }
-
   const images = React.useMemo(() => {
     const possibleImages = [
       "/images/carousel/1.png",
@@ -142,7 +134,6 @@ function Work({ works }: { works: WorkPreview[] }) {
             size="large"
             direction={-1}
             speed={0.1}
-            className="hidden md:flex"
           />
         </FadeIn>
         <FadeIn>
