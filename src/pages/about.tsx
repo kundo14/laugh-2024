@@ -5,8 +5,6 @@ import { Peep } from "@/models";
 import { OurStorySection } from "@/components/sections/about/our-story";
 import { OurHausSection } from "@/components/sections/about/our-haus";
 import { getAboutPage } from "@/lib/contentful/api";
-import ScrollParallax from "@/components/common/animations/parallax";
-import ScrollGrow from "@/components/common/animations/glow-up-image";
 import { AboutMap } from "@/components/sections/about/map";
 import { AboutQuote } from "@/components/sections/about/quote";
 import { DamianAlexSection } from "@/components/sections/about/damian-alex";

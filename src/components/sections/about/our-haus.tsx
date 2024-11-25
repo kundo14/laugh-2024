@@ -66,10 +66,10 @@ export const OurHausSection = ({ className }: { className?: string }) => {
             <p className="text-16 sm:text-18 font-bold">BUENOS AIRES</p>
           </ScrollParallax>
           <ScrollParallax parallaxSpeed={0.5}>
-            <p className="text-14 opacity-90">O58° 22&apos; 38.03"</p>
+            <p className="text-14 opacity-90">O58° 22&apos; 38.03&quot;</p>
           </ScrollParallax>
           <ScrollParallax parallaxSpeed={0.4}>
-            <p className="text-14 opacity-90">S34° 36&apos; 47.34"</p>
+            <p className="text-14 opacity-90">S34° 36&apos; 47.34&quot;</p>
           </ScrollParallax>
         </div>
       </div>
