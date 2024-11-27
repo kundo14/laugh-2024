@@ -18,7 +18,7 @@ export const getComponent = (component) => {
       return {
         type: "quote",
         quote: component.fields.quote,
-        author: component.fields.author,
+        author: component.fields.author ? component.fields.author : null,
       };
     case "slidingTextComponent":
       return {
@@ -67,7 +67,7 @@ export const getWorkTemplate = async (slug) => {
     heroTitle: page.items[0].fields.heroTitle,
     heroDescription: page.items[0].fields.heroDescription,
     deliverables: page.items[0].fields.deliverables,
-    bottomVideoLink: page.items[0].fields.bottomVideoLink,
+    bottomVideoLink: page.items[0].fields.bottomVideoLink ? page.items[0].fields.bottomVideoLink : null,
     components: page.items[0].fields.customComponents && page.items[0].fields.customComponents.map((component) => getComponent(component)),
   };
 

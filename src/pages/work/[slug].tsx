@@ -1,4 +1,3 @@
-import PageLayout from "@/components/layouts/page";
 import WorkPageLayout from "@/components/layouts/work-page";
 import { WorkHeroData } from "@/components/sections/works/hero-data";
 import { ImageGallery } from "@/components/sections/works/image-gallery";

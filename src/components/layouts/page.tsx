@@ -37,6 +37,8 @@ const PageLayout = ({
   rootClassName,
   withoutBackgroundTexture,
   isPlaying,
+  textWhite,
+  footerWhite,
 }: {
   headProps?: HeadProps;
   children: ReactNode;
@@ -45,6 +47,8 @@ const PageLayout = ({
   rootClassName?: string;
   withoutBackgroundTexture?: boolean;
   isPlaying?: boolean;
+  textWhite?: boolean;
+  footerWhite?: boolean;
 }) => {
   const router = useRouter();
   const { pathname } = router;
@@ -62,7 +66,9 @@ const PageLayout = ({
       <Head headProps={headProps} />
       <SmoothScrolling>
         <div className="h-px" />
-        {!noNavPaths.includes(pathname) && <Nav isPlaying={isPlaying} />}
+        {!noNavPaths.includes(pathname) && (
+          <Nav isPlaying={isPlaying} color={textWhite ? "white" : "black"} />
+        )}
         <motion.main
           className={cn("", className)}
           key={pathname}
@@ -72,7 +78,13 @@ const PageLayout = ({
         >
           {children}
         </motion.main>
-        {!withoutFooter && <Footer className="z-50 relative" />}
+        {!withoutFooter && (
+          <Footer
+            className="z-50 relative"
+            textWhite={footerWhite}
+            color={footerWhite ? "white" : undefined}
+          />
+        )}
         {!withoutBackgroundTexture && (
           <img
             src="/images/textures/paper.jpg"

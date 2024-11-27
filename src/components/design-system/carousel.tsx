@@ -55,7 +55,7 @@ export const EmblaCarouselWorks = ({
             {title}
           </p>
         )}
-        <div className="flex gap-6">
+        <div className="hidden md:flex gap-6">
           <button
             onClick={scrollPrev}
             className={cn(

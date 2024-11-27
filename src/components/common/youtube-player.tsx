@@ -1,10 +1,25 @@
+import { cn } from "@/lib/cn";
 import ReactPlayer from "react-player";
+import { useInView } from "react-intersection-observer";
 
-export const VideoPlayer = ({ video }: { video: string }) => {
+export const VideoPlayer = ({
+  video,
+  className,
+}: {
+  video: string;
+  className?: string;
+}) => {
+  const [ref, inView] = useInView();
   //video path
 
   return (
-    <div className="w-full !max-w-full h-[280px] sm:h-[380px] md:h-[420px] lg:h-[480px] xl:h-[640px]">
+    <div
+      className={cn(
+        "w-full !max-w-full h-[280px] sm:h-[380px] md:h-[420px] lg:h-[480px] xl:h-[640px]",
+        className
+      )}
+      ref={ref}
+    >
       <ReactPlayer
         width={"100%"}
         height={"100%"}
@@ -21,7 +36,7 @@ export const VideoPlayer = ({ video }: { video: string }) => {
         light={false}
         // picture in picture
         pip={true}
-        playing={true}
+        playing={inView}
       />
       <source src={video} type="video/mp4" />
     </div>

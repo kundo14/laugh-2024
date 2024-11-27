@@ -1,66 +1,16 @@
 import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
-import { EmblaCarouselAutoScroll } from "@/components/sections/home/carousel-autoscroll";
 import { cn } from "@/lib/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import FadeIn from "@/components/common/animations/fade-in";
-import { useMedia } from "use-media";
-import { EmblaCarouselMobile } from "@/components/sections/home/mobile-carousel";
-
-const projects = [
-  {
-    title: "Adidas",
-    description: "Adidas Perú",
-    video: "/gifs/adidas.mp4",
-    link: "/work/la-casa-oficial",
-  },
-  {
-    title: "BPLAY",
-    description: "Description 2",
-    video: "/gifs/bplay.mp4",
-    link: "/work/bplay-corazon-argento",
-  },
-  {
-    title: "Corona",
-    description: "Description 3",
-    video: "/gifs/corona.mp4",
-    link: "/work/la-casa-oficial",
-  },
-  {
-    title: "Ea",
-    description: "Description 3",
-    video: "/gifs/ea.mp4",
-    link: "/work/bplay-corazon-argento",
-  },
-  {
-    title: "Netflix",
-    description: "Description 3",
-    video: "/gifs/netflix.mp4",
-    link: "/work/bplay-corazon-argento",
-  },
-  {
-    title: "Puma",
-    description: "Description 3",
-    video: "/gifs/puma.mp4",
-    link: "/work/bplay-corazon-argento",
-  },
-];
+import { VideoPlayer } from "@/components/common/youtube-player";
+import { CustomDraggable } from "@/components/common/draggable";
+import ScrollParallax from "@/components/common/animations/parallax";
+import ScrollGrow from "@/components/common/animations/glow-up-image";
 
 export default function Home() {
-  const [playingProject, setPlayingProject] = React.useState<null | number>(
-    null
-  );
   const ref = React.useRef<HTMLVideoElement>(null);
-
-  const isMobile = useMedia({ maxWidth: "768px" });
-
-  React.useEffect(() => {
-    // play project video in mobile screens by default
-    if (isMobile && playingProject !== null) {
-      ref.current?.play();
-    }
-  }, []);
 
   return (
     <PageLayout
@@ -68,83 +18,102 @@ export default function Home() {
         ...defaultMeta,
         title: "Laugh | share laughs, share sports",
       }}
-      withoutFooter
       withoutBackgroundTexture
-      isPlaying={playingProject !== null}
+      isPlaying={true}
+      textWhite
+      footerWhite
     >
-      <img
-        src="/images/textures/texture.jpg"
-        className="w-full h-[100svh] absolute top-0 left-0 opacity-10"
-      />
+      <div className="absolute top-0 left-0 w-full h-full z-0 bg-texture"></div>
       <AnimatePresence>
-        {playingProject !== null && (
-          <motion.video
+        <motion.div
+          className="w-full h-[100svh] absolute top-0 left-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <video
             autoPlay
             loop
             muted
             playsInline
+            className="w-full h-full object-cover absolute top-0 left-0"
             ref={ref}
-            src={projects[playingProject].video}
-            className="w-full h-[100svh] absolute top-0 left-0 object-cover"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            src={"/gifs/tvs.mp4"}
             controls={false}
+            // we should preload this cover video
+            preload="auto"
           />
-        )}
+          <div className="w-full h-full absolute top-0 left-0 bg-black opacity-70" />
+        </motion.div>
       </AnimatePresence>
 
       {/* so we get the full screen. We dont take into account the nav */}
-      <div className="h-[calc(100svh-182px)] max-h-[calc(100svh-182px)] sm:h-[calc(100vh-170px)] sm:max-h-[calc(100vh-170px)] w-full overflow-hidden flex flex-col relative">
+      <div className="flex flex-col relative">
         <div className="container">
           <div
             className={cn(
-              "flex flex-col gap-6 !max-w-[520px] !text-12 uppercase leading-[1.8] mt-8 sm:mt-32 transition-all duration-300",
-              {
-                "text-white": playingProject !== null,
-              }
+              "flex flex-col items-center font-extralight mx-auto gap-1 leading-[1.8] mt-40 transition-all duration-300 text-white"
             )}
           >
             <FadeIn>
-              <p className="uppercase font-archivoBlack text-24 md:text-48 inline-flex items-center leading-none">
-                We power
-                <span className="font-masker text-yellow text-48 md:text-[72px] ml-6">
-                  PASSION
+              <p className="font-archivo text-center text-24 md:text-32 inline-flex items-center leading-none">
+                We are <b className="ml-2">fans</b>.
+              </p>
+            </FadeIn>
+            <FadeIn>
+              <p className="font-archivo text-center text-24 md:text-32 inline-flex items-center leading-none">
+                We are <b className="ml-2">passion</b>.
+              </p>
+            </FadeIn>
+            <FadeIn>
+              <p className="font-archivo text-center text-24 md:text-32 inline-flex items-center leading-none">
+                We are a
+                <span className="text-yellow italic ml-2">
+                  creative power haus,
                 </span>
               </p>
             </FadeIn>
-            <FadeIn delay={0.1}>
-              <p>
-                Laugh is a space{" "}
-                <b className="italic">where we connect brands and fans.</b>
-                <br />
-                Our passion and dedication to the world of sports define our
-                existence.
-                <br />
-                <b>
-                  We live for the thrill of the game, the roar of the crowd, and
-                  the celebration of sporting achievements.
-                </b>
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <p>
-                Welcome to <b>Laugh,</b>
-                <br />{" "}
-                <b className="italic">
-                  where sports is not just a passion; It&#39;s a way of Life.
-                </b>
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <p className="custom_underline">
-                WE COME TO CREATE, PRODUCE, SPREAD AND <b>LAUGH</b>
+            <FadeIn>
+              <p className="font-playfairDisplay text-center text-24 md:text-32 inline-flex items-center leading-none">
+                Where ideas come to life.
               </p>
             </FadeIn>
           </div>
+          <div className="flex flex-col mx-auto mt-32 items-center">
+            <CustomDraggable>
+              <img
+                src={"/images/scratches/gold-line-arrow.svg"}
+                alt="sticker"
+                className="w-[64px] sm:w-[72px] h-auto"
+                draggable={false}
+              />
+            </CustomDraggable>
+            <ScrollParallax>
+              <p className="text-[56px] sm:text-[80px] md:text-[100px] lg:text-[120px] uppercase font-archivo font-black text-yellow leading-none">
+                our <span className="italic">reel</span>
+              </p>
+            </ScrollParallax>
+            <FadeIn delay={0.3} className="flex w-full xl:w-[1144px] mt-12">
+              <VideoPlayer
+                video="https://www.youtube.com/watch?v=7w4n_gKeFe4"
+                className="rounded overflow-hidden border border-solid border-gray-800"
+              />
+            </FadeIn>
+            <ScrollGrow>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="mt-40"
+                src={"/gifs/home-gif.mp4"}
+                controls={false}
+              />
+            </ScrollGrow>
+          </div>
         </div>
-        <div className="w-full absolute bottom-0 left-0 pb-2 lg:pb-6">
+        {/* <div className="w-full absolute bottom-0 left-0 pb-2 lg:pb-6">
           {!isMobile ? (
             <EmblaCarouselAutoScroll
               slides={projects}
@@ -160,7 +129,7 @@ export default function Home() {
               playingProject={playingProject}
             />
           )}
-        </div>
+        </div> */}
       </div>
     </PageLayout>
   );

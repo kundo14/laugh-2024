@@ -47,14 +47,16 @@ export const Quote = ({
       >
         {quote.quote}
       </p>
-      <p
-        className={cn("font-archivo text-14 uppercase  mt-6 sm:mt-8", {
-          "text-gray-300": textWhite,
-          " text-gray-700": !textWhite,
-        })}
-      >
-        {quote.author}
-      </p>
+      {quote.author && (
+        <p
+          className={cn("font-archivo text-14 uppercase  mt-6 sm:mt-8", {
+            "text-gray-300": textWhite,
+            " text-gray-700": !textWhite,
+          })}
+        >
+          {quote.author}
+        </p>
+      )}
     </div>
   );
 };

@@ -68,9 +68,12 @@ const Counter = ({
           />
         ) : null}
         <p
-          className={clsx("text-16 md:text-20 font-archivoBlack", {
-            "text-yellow": isYellow,
-          })}
+          className={clsx(
+            "text-16 md:text-24 lg:text-32 font-archivoBlack leading-none",
+            {
+              "text-yellow": isYellow,
+            }
+          )}
         >
           {label}
         </p>
@@ -87,21 +90,21 @@ const Counters = ({ className }: { className?: string }) => {
         className
       )}
     >
-      <Counter duration={8} to={100} label=" Sports Legends" onEnd="+100" />
+      <Counter duration={8} to={190} label="Sports Legends" onEnd="+190" />
       <Counter
         duration={10}
         delay={0.2}
-        to={150}
-        label="Partners"
-        onEnd="+150"
+        to={320}
+        label="Influencers"
+        onEnd="+320"
       />
       <Counter
         delay={0.4}
         duration={12}
-        to={300}
+        to={350}
         isYellow
         label="Sports Sites"
-        onEnd="+300"
+        onEnd="+350"
         className="col-span-2 sm:col-span-1"
       />
     </div>

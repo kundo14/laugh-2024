@@ -1,24 +1,19 @@
 import { cn } from "@/lib/cn";
 import Link from "next/link";
-import { ContactDropdown } from "./contact/contact-nav-dropdown";
 import { ContactFooterDropdown } from "./contact/contact-footer-dropdow";
 
 const links = [
   {
-    label: "work",
+    label: "projects",
     url: "/work",
   },
   {
-    label: "passion love",
-    url: "/passion-love",
+    label: "ways to connect",
+    url: "/ways-to-connect",
   },
   {
-    label: "360",
-    url: "/360",
-  },
-  {
-    label: "studios",
-    url: "/studios",
+    label: "about us",
+    url: "/about",
   },
 ];
 
@@ -104,7 +99,7 @@ export const Footer = ({
             "text-red": color === "red",
             "text-yellow": color === "yellow",
             "text-gold": color === "gold",
-            "text-white": textWhite,
+            "text-white": textWhite || color === "white",
             "text-black": !color,
           }
         )}

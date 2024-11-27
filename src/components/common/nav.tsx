@@ -14,20 +14,16 @@ import { BigLogo, Logo } from "./logos/laugh";
 
 export const links = [
   {
-    label: "Work",
+    label: "Projects",
     url: "/work",
   },
   {
-    label: "Passion Love",
-    url: "/passion-love",
+    label: "Ways to connect",
+    url: "/ways-to-connect",
   },
   {
-    label: "360",
-    url: "/360",
-  },
-  {
-    label: "Studios",
-    url: "/studios",
+    label: "About us",
+    url: "/about",
   },
 ];
 
