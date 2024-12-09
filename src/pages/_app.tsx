@@ -3,6 +3,7 @@ import FlareCursor from "@/components/common/cursor";
 import Loader from "@/components/common/loader";
 import "@/styles/globals.css";
 import { AnimatePresence, motion } from "framer-motion";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -31,7 +32,9 @@ export default function App({ Component, pageProps }: AppProps) {
         )}
       </AnimatePresence>
       <FlareCursor />
-      <Component {...pageProps} />
+      <ReactLenis root options={{ lerp: 0.09, duration: 1.5 }}>
+        <Component {...pageProps} />
+      </ReactLenis>
     </>
   );
 }

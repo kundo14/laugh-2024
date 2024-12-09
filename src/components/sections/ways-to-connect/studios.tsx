@@ -16,7 +16,7 @@ export const StudiosSection = ({
     <>
       <div
         className={cn(
-          "flex flex-col items-center justify-center w-full min-h-[800px] h-screen max-h-[1024px] relative z-40",
+          "flex flex-col items-center justify-center w-full min-h-[800px] h-screen max-h-[1024px] relative",
           className
         )}
       >

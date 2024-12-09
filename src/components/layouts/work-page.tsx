@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import Head, { HeadProps } from "../common/head";
 import { Nav } from "../common/nav";
 import { Footer } from "../common/footer";
-import SmoothScrolling from "../common/scroll";
-import FadeIn from "../common/animations/fade-in";
 import ScrollParallax from "../common/animations/parallax";
 
 const noNavPaths = ["/404"];
@@ -62,40 +60,38 @@ const WorkPageLayout = ({
         }
       `}</style>
       <Head headProps={headProps} />
-      <SmoothScrolling>
-        <div className="h-px" />
-        <Nav color={textWhite ? "white" : "black"} />
-        <div
-          className={cn(
-            "flex flex-col items-center justify-center w-full h-screen -mt-[136px] relative"
-          )}
-        >
-          <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0">
-            <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-black opacity-50 z-0 rounded" />
-            <img
-              src={bg}
-              alt={`bg - ${name}`}
-              className="rounded object-cover w-full h-full"
-              loading="lazy"
-            />
-          </div>
-          <ScrollParallax className="z-10" parallaxSpeed={0.8}>
-            <p className="text-white text-24 sm:text-32 uppercase font-archivo text-center px-4 leading-tight">
-              {name}
-            </p>
-          </ScrollParallax>
+      <div className="h-px" />
+      <Nav color={textWhite ? "white" : "black"} />
+      <div
+        className={cn(
+          "flex flex-col items-center justify-center w-full h-screen -mt-[136px] relative"
+        )}
+      >
+        <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0">
+          <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-black opacity-50 z-0 rounded" />
+          <img
+            src={bg}
+            alt={`bg - ${name}`}
+            className="rounded object-cover w-full h-full"
+            loading="lazy"
+          />
         </div>
-        <motion.main
-          className={cn("", className)}
-          key={pathname}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ease: "easeInOut", duration: 0.75 }}
-        >
-          {children}
-        </motion.main>
-        <Footer className="z-50 relative" color="white" textWhite />
-      </SmoothScrolling>
+        <ScrollParallax className="z-10" parallaxSpeed={0.8}>
+          <p className="text-white text-24 sm:text-32 uppercase font-archivo text-center px-4 leading-tight">
+            {name}
+          </p>
+        </ScrollParallax>
+      </div>
+      <motion.main
+        className={cn("", className)}
+        key={pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
+      >
+        {children}
+      </motion.main>
+      <Footer className="z-50 relative" color="white" textWhite />
     </div>
   );
 };

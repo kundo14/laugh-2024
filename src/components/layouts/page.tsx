@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import Head, { HeadProps } from "../common/head";
 import { Nav } from "../common/nav";
 import { Footer } from "../common/footer";
-import SmoothScrolling from "../common/scroll";
 import localFont from "next/font/local";
 
 // Font files can be colocated inside of `pages`
@@ -64,35 +63,33 @@ const PageLayout = ({
         }
       `}</style>
       <Head headProps={headProps} />
-      <SmoothScrolling>
-        <div className="h-px" />
-        {!noNavPaths.includes(pathname) && (
-          <Nav isPlaying={isPlaying} color={textWhite ? "white" : "black"} />
-        )}
-        <motion.main
-          className={cn("", className)}
-          key={pathname}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ease: "easeInOut", duration: 0.75 }}
-        >
-          {children}
-        </motion.main>
-        {!withoutFooter && (
-          <Footer
-            className="z-50 relative"
-            textWhite={footerWhite}
-            color={footerWhite ? "white" : undefined}
-          />
-        )}
-        {!withoutBackgroundTexture && (
-          <img
-            src="/images/textures/paper.jpg"
-            className="w-full h-full absolute top-0 left-0 opacity-20 z-0"
-            alt="texture bg"
-          />
-        )}
-      </SmoothScrolling>
+      <div className="h-px" />
+      {!noNavPaths.includes(pathname) && (
+        <Nav isPlaying={isPlaying} color={textWhite ? "white" : "black"} />
+      )}
+      <motion.main
+        className={cn("", className)}
+        key={pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.75 }}
+      >
+        {children}
+      </motion.main>
+      {!withoutFooter && (
+        <Footer
+          className="z-50 relative"
+          textWhite={footerWhite}
+          color={footerWhite ? "white" : undefined}
+        />
+      )}
+      {!withoutBackgroundTexture && (
+        <img
+          src="/images/textures/paper.jpg"
+          className="w-full h-full absolute top-0 left-0 opacity-20 z-0"
+          alt="texture bg"
+        />
+      )}
     </div>
   );
 };
