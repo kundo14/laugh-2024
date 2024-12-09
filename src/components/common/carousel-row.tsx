@@ -53,7 +53,7 @@ const EmblaCarouselAutoScroll: React.FC<CarouselProps> = ({
               <img
                 src={src}
                 alt={`Slide ${idx}`}
-                className={cn("object-cover", {
+                className={cn("object-cover rounded-md", {
                   "w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] md:w-[480px] md:h-[420px]":
                     size === "large",
                   "w-[120px] h-[120px] sm:w-[240px] sm:h-[240px] md:w-[360px] md:h-[320px]":

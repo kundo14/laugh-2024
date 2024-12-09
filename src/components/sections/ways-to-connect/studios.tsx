@@ -65,9 +65,9 @@ export const StudiosSection = ({
           <ScrollParallax className="z-10" parallaxSpeed={1}>
             <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight mt-24">
               In the exciting world of sports, we&apos;re the innovative
-              thinkers, making campaigns that surprise and impress. <br />
-              With passion driving us, we&apos;re the creators of the most
-              exciting stories.
+              thinkers, making campaigns that surprise and delight. <br />
+              With passion driving us, we&apos;re the creators of truly
+              compelling stories.
             </p>
           </ScrollParallax>
         </div>

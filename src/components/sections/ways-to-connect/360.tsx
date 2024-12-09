@@ -65,8 +65,8 @@ export const Section360 = ({ className }: { className?: string }) => {
           </div>
           <ScrollParallax className="z-10" parallaxSpeed={1}>
             <p className="text-center text-black text-18 sm:text-20 md:text-24 leading-tight mt-24 max-w-[420px]">
-              Our DNA is to create impactful 360 campaigns That reach, connect &
-              interact with all worldwide fans
+              Our DNA is to create impactful 360 campaigns which reach, connect
+              & resonate with fans around the world
             </p>
           </ScrollParallax>
         </div>

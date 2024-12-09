@@ -113,7 +113,7 @@ function Work({ works }: { works: WorkPreview[] }) {
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={0.8}>
               <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight font-extralight mt-2">
-                where sports is not just a passion;
+                where sport is not just a passion;
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={1.2}>
