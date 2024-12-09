@@ -82,8 +82,8 @@ function Work({ works }: { works: WorkPreview[] }) {
           "flex flex-col items-center justify-center w-full h-screen -mt-[136px] relative z-40"
         )}
       >
-        <div className="p-2 absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-2 left-2 w-[calc(100%-16px)] h-[calc(100%-16px)] bg-black opacity-70 z-0 rounded" />
+        <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0">
+          <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-black opacity-70 z-0 rounded" />
           <img
             src={`/images/assets/work-bg.jpg`}
             alt={`bg - work`}
@@ -124,7 +124,7 @@ function Work({ works }: { works: WorkPreview[] }) {
           </div>
         </div>
       </div>
-      <div className="relative z-40 mt-40">
+      <div className="relative z-40 mt-12 sm:mt-24 md:mt-40">
         <FadeIn>
           <CarouselRow images={images.first} />
         </FadeIn>
@@ -140,7 +140,7 @@ function Work({ works }: { works: WorkPreview[] }) {
           <CarouselRow images={images.third} speed={0.5} />
         </FadeIn>
       </div>
-      <div className="container justify-center flex flex-col-reverse sm:flex-row items-center !mt-40 relative z-40 gap-20 sm:gap-12 md:gap-20">
+      <div className="container justify-center flex flex-col-reverse sm:flex-row items-center !mt-24 md:!mt-40 relative z-40 gap-20 sm:gap-12 md:gap-20">
         <ScrollGrow>
           <video
             autoPlay
@@ -174,7 +174,7 @@ function Work({ works }: { works: WorkPreview[] }) {
         </div>
       </div>
       <div className="container z-40 relative">
-        <Clients className="!py-40" />
+        <Clients className="!py-24 sm:!py-40" />
       </div>
 
       <div className="flex flex-col z-40 relative">

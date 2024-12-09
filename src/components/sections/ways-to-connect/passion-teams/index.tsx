@@ -16,8 +16,8 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
           className
         )}
       >
-        <div className="p-2 absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-2 left-2 w-[calc(100%-16px)] h-[calc(100%-16px)] bg-black opacity-70 z-0 rounded" />
+        <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0 mt-2 sm:mt-0">
+          <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-black opacity-70 z-0 rounded" />
           <video
             src={`/gifs/passion-love/cover.mp4`}
             className="rounded object-cover w-full h-full"

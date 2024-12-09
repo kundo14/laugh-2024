@@ -80,7 +80,7 @@ export default function Home() {
               </p>
             </FadeIn>
           </div>
-          <div className="flex flex-col mx-auto mt-56 sm:mt-72 items-center">
+          <div className="flex flex-col mx-auto mt-32 sm:mt-56 md:mt-72 items-center">
             {/* <CustomDraggable>
               <img
                 src={"/images/scratches/gold-line-arrow.svg"}
@@ -94,7 +94,10 @@ export default function Home() {
                 our show<span className="italic">reel</span>
               </p>
             </ScrollParallax>
-            <FadeIn delay={0.3} className="flex w-full xl:w-[1144px] mt-12">
+            <FadeIn
+              delay={0.3}
+              className="flex w-full xl:w-[1144px] mt-6 sm:mt-12"
+            >
               <VideoPlayer
                 video="https://www.youtube.com/watch?v=7w4n_gKeFe4"
                 className="rounded overflow-hidden border border-solid border-gray-800"
@@ -106,7 +109,7 @@ export default function Home() {
                 loop
                 muted
                 playsInline
-                className="mt-40"
+                className="mt-24 sm:mt-32 md:mt-40"
                 src={"/gifs/home-gif.mp4"}
                 controls={false}
               />

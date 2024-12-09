@@ -11,7 +11,6 @@ import { DamianAlexSection } from "@/components/sections/about/damian-alex";
 import { Players } from "@/components/sections/about/players";
 
 function AboutUsPage({ peeps }: { peeps: Peep[] }) {
-  console.log(peeps);
   return (
     <PageLayout
       headProps={{

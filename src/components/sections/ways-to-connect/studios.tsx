@@ -20,8 +20,8 @@ export const StudiosSection = ({
           className
         )}
       >
-        <div className="p-2 absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-2 left-2 w-[calc(100%-16px)] h-[calc(100%-16px)] bg-black opacity-70 z-0 rounded" />
+        <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0">
+          <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-black opacity-70 z-0 rounded" />
           <video
             src={`/gifs/ways-to-connect.mp4`}
             className="rounded object-cover w-full h-full"
@@ -80,8 +80,8 @@ export const StudiosSection = ({
           "flex flex-col items-center w-full min-h-[800px] h-screen max-h-[1024px] relative z-40"
         )}
       >
-        <div className="px-2 absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-0 left-2 w-[calc(100%-16px)] h-[100%] bg-black opacity-70 z-0 rounded" />
+        <div className="sm:px-2 absolute top-0 left-0 w-full h-full z-0">
+          <div className="absolute top-0 left-0 w-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] h-[100%] bg-black opacity-70 z-0 rounded" />
           <img
             src="/images/ways-to-connect/studios/cover.webp"
             alt="studios 2"

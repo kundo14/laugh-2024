@@ -13,8 +13,8 @@ export const Section360 = ({ className }: { className?: string }) => {
           className
         )}
       >
-        <div className="p-2 absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-2 left-2 w-[calc(100%-16px)] h-[calc(100%-16px)] bg-white opacity-50 z-0 rounded" />
+        <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0">
+          <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-white opacity-50 z-0 rounded" />
           <video
             src={`/gifs/360/cover.mp4`}
             className="rounded object-cover w-full h-full"
@@ -75,11 +75,11 @@ export const Section360 = ({ className }: { className?: string }) => {
       {/* 360 SECOND SECTION */}
       <div
         className={cn(
-          "flex flex-col items-center justify-center w-full relative z-40",
+          "flex flex-col items-center justify-center w-full relative z-40 mt-2 sm:mt-0",
           className
         )}
       >
-        <div className="px-2 absolute top-0 left-0 w-full h-full z-0">
+        <div className="sm:px-2 absolute top-0 left-0 w-full h-full z-0">
           <img
             src={`/images/textures/paper.jpg`}
             className="rounded object-cover w-full h-full"
