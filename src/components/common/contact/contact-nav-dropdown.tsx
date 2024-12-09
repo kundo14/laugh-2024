@@ -19,7 +19,14 @@ export const ContactDropdown = ({ size = "sm" }: { size?: "sm" | "lg" }) => {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={10}>
-        <DropdownMenuItem>email</DropdownMenuItem>
+        <DropdownMenuItem
+          onSelect={() => {
+            // target blank
+            router.push("mailto:info@wearelaugh.com");
+          }}
+        >
+          email
+        </DropdownMenuItem>
         <DropdownMenuItem
           onSelect={() => {
             // target blank
@@ -28,7 +35,14 @@ export const ContactDropdown = ({ size = "sm" }: { size?: "sm" | "lg" }) => {
         >
           instagram
         </DropdownMenuItem>
-        <DropdownMenuItem>youtube</DropdownMenuItem>
+        <DropdownMenuItem
+          onSelect={() => {
+            // target blank
+            router.push("https://www.youtube.com/@wearelaugh");
+          }}
+        >
+          youtube
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

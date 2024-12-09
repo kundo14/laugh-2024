@@ -50,7 +50,7 @@ export const Footer = ({
             instagram
           </Link>
           <Link
-            href=""
+            href="https://www.youtube.com/@wearelaugh"
             target="_blank"
             className={cn(
               "uppercase !text-16 sm:!text-18 hover:underline max-w-max",
@@ -62,6 +62,19 @@ export const Footer = ({
           >
             youtube
           </Link>
+          <Link
+            href="https://www.linkedin.com/company/wearelaugh/?viewAsMember=true"
+            target="_blank"
+            className={cn(
+              "uppercase !text-16 sm:!text-18 hover:underline max-w-max",
+              {
+                "text-white": textWhite,
+                "text-black": !textWhite,
+              }
+            )}
+          >
+            linkedin
+          </Link>
         </div>
         <div className="flex justify-between lg:w-full">
           <p
@@ -72,7 +85,7 @@ export const Footer = ({
           >
             ©{new Date().getFullYear()}
           </p>
-          <div className="flex items-end lg:items-center gap-6 group">
+          <div className="flex items-end justify-between w-full sm:w-max sm:justify-end lg:items-center gap-4 sm:gap-6 group">
             {links.map((link, index) => (
               <Link
                 href={link.url}

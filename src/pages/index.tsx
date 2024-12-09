@@ -26,7 +26,7 @@ export default function Home() {
       <div className="absolute top-0 left-0 w-full h-full z-0 bg-texture"></div>
       <AnimatePresence>
         <motion.div
-          className="w-full h-[100svh] absolute top-0 left-0"
+          className="w-full h-[100svh] md:h-[200svh] max-h-[1800px] absolute top-0 left-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -80,18 +80,18 @@ export default function Home() {
               </p>
             </FadeIn>
           </div>
-          <div className="flex flex-col mx-auto mt-32 items-center">
-            <CustomDraggable>
+          <div className="flex flex-col mx-auto mt-56 sm:mt-72 items-center">
+            {/* <CustomDraggable>
               <img
                 src={"/images/scratches/gold-line-arrow.svg"}
                 alt="sticker"
                 className="w-[64px] sm:w-[72px] h-auto"
                 draggable={false}
               />
-            </CustomDraggable>
+            </CustomDraggable> */}
             <ScrollParallax>
-              <p className="text-[56px] sm:text-[80px] md:text-[100px] lg:text-[120px] uppercase font-archivo font-black text-yellow leading-none">
-                our <span className="italic">reel</span>
+              <p className="text-[56px] sm:text-[64px] md:text-[80px] xl:text-[120px] uppercase font-archivo font-black text-yellow leading-none">
+                our show<span className="italic">reel</span>
               </p>
             </ScrollParallax>
             <FadeIn delay={0.3} className="flex w-full xl:w-[1144px] mt-12">

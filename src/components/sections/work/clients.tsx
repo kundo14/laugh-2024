@@ -140,7 +140,7 @@ export const Clients = ({ className }: { className?: string }) => {
                 draggable={false}
               />
             </CustomDraggable>
-            <span className="font-bold">sports greatest fans</span>
+            <span className="font-bold">sport&apos;s greatest fans</span>
           </div>
         </FadeIn>
       </div>
