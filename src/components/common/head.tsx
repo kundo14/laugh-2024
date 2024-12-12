@@ -31,8 +31,8 @@ const Head = ({ headProps = defaultMeta }: { headProps?: HeadProps }) => {
           content={headProps.keywords || defaultMeta.keywords}
         />
         <meta name="author" content={headProps.title} />
-        <link rel="icon" type="image/svg" href="/isologo.svg" />
-        <link rel="icon" type="image/png" href="/isologo.png" />
+        <link rel="icon" type="image/svg" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="description" content={headProps.description} />
         {/* Open Graph */}
         <meta property="og:url" content={headProps.canonical} key="ogurl" />
