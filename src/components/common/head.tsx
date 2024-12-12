@@ -12,7 +12,7 @@ export const defaultMeta: HeadProps = {
   title: "Laugh | share laughs, share sports",
   description: `Connecting fans through amazing stories.`,
   canonical: "https://wearelaugh.com/",
-  ogImage: "https://wearelaugh.com/gray-og.jpg",
+  ogImage: "https://wearelaugh.com/og.png",
   // keywords for a sports marketing agency website.
   keywords:
     "marketing, sports, agency, digital, strategy, social media, branding, sponsorship, sports marketing, sports agency, sports digital, sports strategy, sports social media, sports branding, sports sponsorship, marketing deportivo, agencia deportiva, estrategia digital, redes sociales, patrocinio, marketing deportivo en españa, agencia deportiva en españa, estrategia digital en españa, redes sociales en españa, patrocinio en españa",
