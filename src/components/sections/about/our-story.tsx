@@ -9,20 +9,20 @@ export const OurStorySection = () => {
       <div className="flex flex-col flex-1 gap-12">
         <div className="flex flex-col w-full gap-4">
           <FadeIn>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               “In July 2020, we chose to take a new direction and give life to
               Laugh. At that moment, we realized that “laugh” is not just a
               moment; it&apos;s a way of life.{" "}
             </p>
           </FadeIn>
           <FadeIn>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               The more we laugh, the more we feel, and the more we feel, the
               happier we become.
             </p>
           </FadeIn>
           <FadeIn>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               Our passion for sports goes beyond grand events and packed
               stadiums. It resides in the streets, in the joy of play, in the
               authentic connection with every fan, in the simple moments that
@@ -30,7 +30,7 @@ export const OurStorySection = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               Laugh is a vibrant space, an open book filled with incredible
               stories. It&apos;s a shared journey, a bridge that connects fans
               with experiences that touch the heart.
@@ -39,50 +39,50 @@ export const OurStorySection = () => {
         </div>
         <div className="flex flex-col w-full">
           <FadeIn>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               We are fans.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               We are passion.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               We are a creative powerhouse,
             </p>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               where ideas come to life.
             </p>
           </FadeIn>
           <FadeIn delay={0.5}>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               We believe, we connect, we have fun.
             </p>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               We are Laugh.
             </p>
           </FadeIn>
           <FadeIn delay={0.7}>
-            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+            <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay">
               And that means a lot...
             </p>
           </FadeIn>
         </div>
         <FadeIn>
-          <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed italic">
+          <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay italic">
             The passion and love we pour into every project define our very
             existence. Thanks to all who were, are, and will be part of this
             beautiful and exciting roller coaster.”
           </p>
         </FadeIn>
         <FadeIn>
-          <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed">
+          <p className="text-16 lg:text-18 xl:text-20 text-white leading-relaxed font-playfairDisplay italic">
             Nacho Bernardo and Juli Carneiro.
           </p>
         </FadeIn>
@@ -94,7 +94,7 @@ export const OurStorySection = () => {
             <img
               src="/images/about/juli-nacho-2.jpg"
               alt="Our Story"
-              className="rounded -rotate-3 md:w-[320px] lg:w-[400px] xl:w-[420px] h-auto object-cover max-h-[420px]"
+              className="rounded -rotate-3 md:w-[280px] lg:w-[360px] h-auto object-cover max-h-[420px]"
             />
           </FadeIn>
 
@@ -118,7 +118,7 @@ export const OurStorySection = () => {
             <img
               src="/images/about/juli-nacho-1.jpg"
               alt="Our Story 2"
-              className="rounded rotate-2 w-[280px] h-auto object-cover max-h-[320px]"
+              className="rounded rotate-2 w-[220px] h-auto object-cover max-h-[320px]"
             />
           </ScrollGrow>
 

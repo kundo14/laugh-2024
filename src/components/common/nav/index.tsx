@@ -22,6 +22,10 @@ export const links = [
     label: "About us",
     url: "/about",
   },
+  {
+    label: "Contact",
+    url: "/contact",
+  },
 ];
 
 export const Nav = ({
@@ -103,7 +107,6 @@ export const Nav = ({
                 {link.label}
               </Link>
             ))}
-            <ContactDropdown />
           </div>
           <div className="flex sm:hidden text-current">
             <button

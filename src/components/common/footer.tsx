@@ -101,7 +101,21 @@ export const Footer = ({
                 {link.label}
               </Link>
             ))}
-            <ContactFooterDropdown color={color} textWhite={textWhite} />
+            <Link
+              href={"/contact"}
+              className={cn(
+                "text-12 sm:text-14 uppercase group-hover:opacity-50 hover:!opacity-100 transition-all duration-150",
+                {
+                  scratch: color === "yellow" || color === "white" || !color,
+                  scratch_red: color === "red",
+                  scratch_gold: color === "gold",
+                  "!text-white": textWhite,
+                  "!text-black": !textWhite,
+                }
+              )}
+            >
+              contact
+            </Link>
           </div>
         </div>
       </div>

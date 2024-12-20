@@ -9,6 +9,7 @@ import { AboutMap } from "@/components/sections/about/map";
 import { AboutQuote } from "@/components/sections/about/quote";
 import { DamianAlexSection } from "@/components/sections/about/damian-alex";
 import { Players } from "@/components/sections/about/players";
+import { ThisIsUsSection } from "@/components/sections/about/this-is-us";
 
 function AboutUsPage({ peeps }: { peeps: Peep[] }) {
   return (
@@ -39,14 +40,17 @@ function AboutUsPage({ peeps }: { peeps: Peep[] }) {
         <OurHausSection className="mt-24 sm:mt-28 md:mt-32" />
 
         <div className="container flex flex-col items-center">
-          {/* MAP */}
-          <AboutMap className="mt-24 sm:mt-28 md:mt-32" />
-
           {/* QUOTE */}
           <AboutQuote className="mt-24 sm:mt-28 md:mt-32" />
 
           {/* DAMIAN Y ALEX */}
-          <DamianAlexSection className="mt-12 sm:mt-16 md:mt-20" />
+          <DamianAlexSection className="mt-20 sm:mt-24 md:mt-28" />
+
+          {/* MAP */}
+          <AboutMap className="mt-24 sm:mt-20 md:mt-32" />
+
+          {/* THIS IS US */}
+          <ThisIsUsSection className="mt-24 sm:mt-28 md:mt-32" />
         </div>
 
         {/* PLAYERS */}
