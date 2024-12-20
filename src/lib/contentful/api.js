@@ -160,3 +160,26 @@ export const getAboutPage = async () => {
 
   return cleanAbout;
 }
+
+export const getProjectsPage = async () => {
+  const page = await client.getEntries({
+    content_type: "projectsPage",
+    include: 5,
+  });
+
+  const cleanWorks = page.items[0].fields.projects.map((item) => ({
+    name: item.fields.name,
+    slug: item.fields.slug,
+    imagePreview: item.fields.imagePreview.fields ? `https:${item.fields.imagePreview.fields.file.url}` : null,
+    tags: item.fields.tags,
+    date: {
+      start: item.fields.startYear,
+      end: item.fields.endYear,
+    },
+    featured: item.fields.featured,
+  }))
+
+  return cleanWorks;
+}
+
+

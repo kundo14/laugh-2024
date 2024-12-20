@@ -8,6 +8,8 @@ import { VideoPlayer } from "@/components/common/youtube-player";
 import { CustomDraggable } from "@/components/common/draggable";
 import ScrollParallax from "@/components/common/animations/parallax";
 import ScrollGrow from "@/components/common/animations/glow-up-image";
+import { WorkQuote } from "@/components/sections/work/quote";
+import Link from "next/link";
 
 export default function Home() {
   const ref = React.useRef<HTMLVideoElement>(null);
@@ -116,6 +118,14 @@ export default function Home() {
             </ScrollGrow>
           </div>
         </div>
+        <WorkQuote className="mt-32" />
+        <Link
+          href="/contact"
+          aria-label="contact us"
+          className="max-w-max mx-auto text-gold border border-gold text-20 sm:text-24 px-6 pt-2 pb-3 mt-12 md:mt-20 rounded-md font-playfairDisplay transition-all duration-300 hover:bg-gold hover:text-black"
+        >
+          Get in touch
+        </Link>
         {/* <div className="w-full absolute bottom-0 left-0 pb-2 lg:pb-6">
           {!isMobile ? (
             <EmblaCarouselAutoScroll

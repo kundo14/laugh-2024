@@ -63,7 +63,7 @@ export const StudiosSection = ({
             </ScrollParallax>
           </div>
           <ScrollParallax className="z-10" parallaxSpeed={1}>
-            <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight mt-24">
+            <p className="text-center text-white text-18 sm:text-20 leading-tight font-playfairDisplay font-extralight mt-24">
               In the exciting world of sports, we&apos;re the innovative
               thinkers, making campaigns that surprise and delight. <br />
               With passion driving us, we&apos;re the creators of truly
@@ -81,7 +81,7 @@ export const StudiosSection = ({
         )}
       >
         <div className="sm:px-2 absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-0 left-0 w-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] h-[100%] bg-black opacity-70 z-0 rounded" />
+          <div className="absolute top-0 left-0 w-full sm:top-0 sm:left-2 sm:w-[calc(100%-16px)] h-[100%] bg-black opacity-70 z-0 rounded" />
           <img
             src="/images/ways-to-connect/studios/cover.webp"
             alt="studios 2"
@@ -194,7 +194,7 @@ export const StudiosSection = ({
         <FadeIn className="!py-16 z-40 relative overflow-x-hidden mt-12">
           <ScrollableWorks works={works} title="Works" textWhite />
         </FadeIn>
-        <div className="flex flex-col items-center mx-auto mt-8 sm:mt-2">
+        {/* <div className="flex flex-col items-center mx-auto mt-8 sm:mt-2">
           <ScrollParallax className="z-10" parallaxSpeed={0.7}>
             <p className="text-gold font-masker text-32 md:text-[56px] lg:text-[64px] leading-none z-10">
               we come to
@@ -210,7 +210,7 @@ export const StudiosSection = ({
               spread and laugh
             </p>
           </ScrollParallax>
-        </div>
+        </div> */}
       </div>
     </>
   );

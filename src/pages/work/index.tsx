@@ -4,14 +4,13 @@ import { defaultMeta } from "@/components/common/head";
 import { Clients } from "@/components/sections/work/clients";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
-import { getWorks } from "@/lib/contentful/api";
+import { getProjectsPage, getWorks } from "@/lib/contentful/api";
 import { cn } from "@/lib/cn";
 import ScrollParallax from "@/components/common/animations/parallax";
 import CarouselRow from "@/components/common/carousel-row";
 import ScrollGrow from "@/components/common/animations/glow-up-image";
 import FadeIn from "@/components/common/animations/fade-in";
 import { CustomDraggable } from "@/components/common/draggable";
-import { WorkQuote } from "@/components/sections/work/quote";
 import { shuffleArray } from "@/lib/helpers/shuffle-array";
 
 function Work({ works }: { works: WorkPreview[] }) {
@@ -67,7 +66,6 @@ function Work({ works }: { works: WorkPreview[] }) {
       third,
     };
   }, []);
-
   return (
     <PageLayout
       headProps={{
@@ -93,31 +91,31 @@ function Work({ works }: { works: WorkPreview[] }) {
         </div>
         <div className="mx-auto px-4 max-w-[1024px] flex flex-col gap-8 mt-32 sm:mt-20 lg:mt-28 xl:mt-32">
           <ScrollParallax className="z-10" parallaxSpeed={0.8}>
-            <p className="text-center text-white text-18 sm:text-20 md:text-24 lg:text-[28px] leading-tight font-extralight">
+            <p className="text-center text-white text-16 sm:text-18 lg:text-20 leading-tight font-extralight">
               Laugh is a space where <b>we connect brands and fans.</b> <br />{" "}
               Our passion and dedication to the world of sports define our
               existence.
             </p>
           </ScrollParallax>
           <ScrollParallax className="z-10" parallaxSpeed={1}>
-            <p className="text-center text-white text-18 sm:text-20 md:text-24 lg:text-[28px] leading-tight italic font-extralight">
+            <p className="text-center text-white text-16 sm:text-18 lg:text-20 leading-tight italic font-extralight">
               We live for the thrill of the game, the roar of the crowd,
               <br /> and the celebration of sporting achievements.
             </p>
           </ScrollParallax>
           <div className="flex flex-col items-center">
             <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-              <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight font-playfairDisplay custom_underline max-w-max">
+              <p className="text-center text-white text-24 sm:text-[28px] md:text-32 leading-tight font-playfairDisplay custom_underline max-w-max">
                 Welcome to Laugh,
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={0.8}>
-              <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight font-extralight mt-2">
+              <p className="text-center text-white text-24 sm:text-[28px] md:text-32 leading-tight font-extralight mt-2">
                 where sport is not just a passion;
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={1.2}>
-              <p className="text-center text-yellow font-archivo italic font-black text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight">
+              <p className="text-center text-yellow font-archivo italic font-black text-24 sm:text-[28px] md:text-32 leading-tight">
                 IT&apos;S A WAY OF LIFE.
               </p>
             </ScrollParallax>
@@ -149,7 +147,8 @@ function Work({ works }: { works: WorkPreview[] }) {
             playsInline
             className="w-[420px] h-auto"
             src={"/gifs/let-it-happen.mp4"}
-            controls={false}
+            controls
+            // controls={false}
           />
         </ScrollGrow>
         <div className="flex flex-col">
@@ -184,20 +183,15 @@ function Work({ works }: { works: WorkPreview[] }) {
           </p>
         </div>
         <div id="studios" className="!py-16 -mt-12 overflow-x-hidden">
-          <ScrollableWorks
-            works={works.filter((w) => w.tags.includes("studios"))}
-            title=" "
-          />
+          <ScrollableWorks works={works} title=" " />
         </div>
       </div>
-
-      <WorkQuote className="mt-32" />
     </PageLayout>
   );
 }
 
 export async function getStaticProps() {
-  const works = await getWorks();
+  const works = await getProjectsPage();
   return {
     props: { works },
   };

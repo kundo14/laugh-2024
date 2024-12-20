@@ -28,7 +28,7 @@ export const WorkQuote = ({ className }: { className?: string }) => {
       <FadeIn>
         <p
           className={cn(
-            "font-archivo text-20 md:text-24 lg:text-32 xl:text-42 leading-normal max-w-max xl:max-w-[920px] italic font-extralight"
+            "font-archivo !text-20 md:!text-24 lg:!text-32 xl:!text-42 leading-normal max-w-max xl:max-w-[920px] italic font-extralight text-white"
           )}
         >
           No one understands <b>sports</b> like the{" "}

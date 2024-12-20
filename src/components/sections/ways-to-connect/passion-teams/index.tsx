@@ -53,14 +53,10 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
           </div>
           <div className="flex flex-col items-center mt-20">
             <ScrollParallax className="z-10" parallaxSpeed={1}>
-              <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight">
-                We create exclusive passion teams for each partner,
-              </p>
-            </ScrollParallax>
-            <ScrollParallax className="z-10" parallaxSpeed={1}>
-              <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight mt-0">
-                offering various services to enhance their interaction with
-                fans.
+              <p className="text-center text-white text-18 sm:text-20 font-playfairDisplay leading-tight font-extralight max-w-[820px]">
+                We create 100% dedicated teams who seamlessly integrate with
+                your brand to understand who you are and what you need like a
+                partner, not a supplier.
               </p>
             </ScrollParallax>
           </div>
@@ -80,15 +76,6 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
       </div>
       <div className="container flex flex-col items-center">
         <div className="flex flex-col items-center gap-8 mt-20 max-w-[1024px]">
-          <FadeIn>
-            <ScrollParallax className="z-10" parallaxSpeed={0.5}>
-              <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight">
-                We create 100% dedicated teams who seamlessly integrate with
-                your brand to understand who you are and what you need like a
-                partner, not a supplier.
-              </p>
-            </ScrollParallax>
-          </FadeIn>
           <FadeIn>
             <ScrollParallax className="z-10" parallaxSpeed={0.4}>
               <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight mt-0">

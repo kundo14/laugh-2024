@@ -65,7 +65,7 @@ export const Nav = ({
     <>
       <header
         style={{
-          zIndex: 1000,
+          zIndex: 998,
         }}
         className={cn("container sm:!mt-4 md:!mt-10 !py-6", className, {
           contrast: hasScrolled || isPlaying,
