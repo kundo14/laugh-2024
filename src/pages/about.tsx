@@ -10,6 +10,7 @@ import { AboutQuote } from "@/components/sections/about/quote";
 import { DamianAlexSection } from "@/components/sections/about/damian-alex";
 import { Players } from "@/components/sections/about/players";
 import { ThisIsUsSection } from "@/components/sections/about/this-is-us";
+import { ActingLocalSection } from "@/components/sections/about/acting-local";
 
 function AboutUsPage({ peeps }: { peeps: Peep[] }) {
   return (
@@ -48,6 +49,9 @@ function AboutUsPage({ peeps }: { peeps: Peep[] }) {
 
           {/* MAP */}
           <AboutMap className="mt-24 sm:mt-20 md:mt-32" />
+
+          {/* ACTING LOCAL */}
+          <ActingLocalSection className="mt-24 sm:mt-28 md:mt-32" />
 
           {/* THIS IS US */}
           <ThisIsUsSection className="mt-24 sm:mt-28 md:mt-32" />
