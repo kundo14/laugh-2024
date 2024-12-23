@@ -61,7 +61,7 @@ export const OurHausSection = ({ className }: { className?: string }) => {
             </p>
           </FadeIn>
         </div>
-        <div className="absolute right-0 top-[70%] flex flex-col items-end text-white">
+        <div className="absolute right-4 lg:right-0 top-[70%] flex flex-col items-end text-white">
           <ScrollParallax>
             <p className="text-16 sm:text-18 font-bold">BUENOS AIRES</p>
           </ScrollParallax>

@@ -35,7 +35,7 @@ export const NovibetPoster = ({ className }: { className?: string }) => {
 
         <CustomDraggable>
           <img
-            src="/images/ways-to-connect/passion-love/2.png"
+            src="/images/ways-to-connect/passion-love/2.jpg"
             alt="drag-me"
             className="w-[200px] md:w-[280px] h-auto object-cover"
             draggable={false}

@@ -19,7 +19,7 @@ export const BplayPoster = ({ className }: { className?: string }) => {
         </CustomDraggable>
         <CustomDraggable>
           <img
-            src="/images/ways-to-connect/passion-love/3.png"
+            src="/images/ways-to-connect/passion-love/3.jpg"
             alt="drag-me"
             className="w-[200px] md:w-[280px] lg:w-[380px] xl:w-[420px] h-auto object-cover"
             draggable={false}

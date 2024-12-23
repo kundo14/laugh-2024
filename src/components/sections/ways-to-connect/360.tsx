@@ -174,7 +174,7 @@ export const Section360 = ({ className }: { className?: string }) => {
               />
             </ScrollParallax>
           </div>
-          <div className="flex flex-col items-center gap-2 mt-20">
+          <div className="flex flex-col items-center gap-2 mt-12 sm:mt-20">
             <FadeIn>
               <p className="text-black text-24 sm:text-32 md:text-42 lg:text-48 leading-none">
                 Content is <span className="font-playfairDisplay">king</span>

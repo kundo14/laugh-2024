@@ -21,7 +21,7 @@ export const EaFcPoster = ({ className }: { className?: string }) => {
       <ScrollParallax parallaxSpeed={-0.4}>
         <CustomDraggable>
           <img
-            src="/images/ways-to-connect/passion-love/1.png"
+            src="/images/ways-to-connect/passion-love/1.jpg"
             alt="drag-me"
             className="w-[220px] xl:w-[280px] h-auto object-cover"
             draggable={false}
