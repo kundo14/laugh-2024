@@ -15,7 +15,7 @@ export const SwitchComponents = ({
     case "quote":
       return (
         <FadeIn>
-          <div className="container !my-40 flex items-center justify-center">
+          <div className="container !mb-16 !mt-24 sm:!my-40 flex items-center justify-center">
             <QuoteComponent
               textWhite
               quote={{
