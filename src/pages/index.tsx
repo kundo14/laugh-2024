@@ -101,7 +101,7 @@ export default function Home() {
               className="flex w-full xl:w-[1144px] mt-6 sm:mt-12"
             >
               <VideoPlayer
-                video="https://www.youtube.com/watch?v=7w4n_gKeFe4"
+                video="https://youtu.be/lgi3nZ0fhmI?si=urZQ1ePsJq8X8vEm"
                 className="rounded overflow-hidden border border-solid border-gray-800"
               />
             </FadeIn>
