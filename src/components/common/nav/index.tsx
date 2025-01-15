@@ -11,7 +11,7 @@ import { MobileMenu } from "./mobile";
 
 export const links = [
   {
-    label: "Projects",
+    label: "Our work",
     url: "/work",
   },
   {

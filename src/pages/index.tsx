@@ -5,7 +5,6 @@ import { cn } from "@/lib/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import FadeIn from "@/components/common/animations/fade-in";
 import { VideoPlayer } from "@/components/common/youtube-player";
-import { CustomDraggable } from "@/components/common/draggable";
 import ScrollParallax from "@/components/common/animations/parallax";
 import ScrollGrow from "@/components/common/animations/glow-up-image";
 import { WorkQuote } from "@/components/sections/work/quote";
@@ -18,7 +17,7 @@ export default function Home() {
     <PageLayout
       headProps={{
         ...defaultMeta,
-        title: "Laugh | share laughs, share sports",
+        title: "Laugh | We power passion",
       }}
       withoutBackgroundTexture
       isPlaying={true}
@@ -70,7 +69,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn>
               <p className="font-archivo text-center text-24 md:text-32 inline-flex items-center leading-none">
-                We are a
+                We are a{" "}
                 <span className="text-yellow italic ml-2">
                   creative power haus,
                 </span>

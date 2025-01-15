@@ -31,10 +31,10 @@ export const WorkQuote = ({ className }: { className?: string }) => {
             "font-archivo !text-20 md:!text-24 lg:!text-32 xl:!text-42 leading-normal max-w-max xl:max-w-[920px] italic font-extralight text-white"
           )}
         >
-          No one understands <b>sports</b> like the{" "}
+          No one understands <b>sport</b> like{" "}
           <b>
             fans,
-            <br /> and as true fanatics,
+            <br /> and as true fanatics
           </b>
           <br /> we&apos;re ready to bring that <b>energy</b> to your brand.
         </p>

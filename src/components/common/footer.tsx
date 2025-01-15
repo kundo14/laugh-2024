@@ -1,10 +1,9 @@
 import { cn } from "@/lib/cn";
 import Link from "next/link";
-import { ContactFooterDropdown } from "./contact/contact-footer-dropdow";
 
 const links = [
   {
-    label: "projects",
+    label: "Our work",
     url: "/work",
   },
   {

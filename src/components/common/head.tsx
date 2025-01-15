@@ -9,7 +9,7 @@ export type HeadProps = {
 };
 
 export const defaultMeta: HeadProps = {
-  title: "Laugh | share laughs, share sports",
+  title: "Laugh | We power passion",
   description: `Connecting fans through amazing stories.`,
   canonical: "https://wearelaugh.com/",
   ogImage: "https://wearelaugh.com/og.png",
