@@ -9,6 +9,8 @@ import Marquee from "react-fast-marquee";
 import { CarouselSlideProps } from "@/models";
 import ScrollParallax from "@/components/common/animations/parallax";
 
+// boca, caliente, club america, EA FC, jugabet, mercado pago, michelob ultra, randstad
+
 const clients: CarouselSlideProps[] = [
   {
     title: "first",
@@ -94,6 +96,38 @@ const clients: CarouselSlideProps[] = [
     title: "twenty-first",
     image: "/images/clients/clientes-21.svg",
   },
+  {
+    title: "boca",
+    image: "/images/clients/clientes-boca.svg",
+  },
+  {
+    title: "caliente",
+    image: "/images/clients/clientes-caliente.svg",
+  },
+  {
+    title: "club-america",
+    image: "/images/clients/clientes-club-america.svg",
+  },
+  {
+    title: "EA-FC",
+    image: "/images/clients/clientes-EA-FC.svg",
+  },
+  {
+    title: "jugabet",
+    image: "/images/clients/clientes-jugabet.svg",
+  },
+  {
+    title: "mp",
+    image: "/images/clients/clientes-mp.svg",
+  },
+  {
+    title: "michelob",
+    image: "/images/clients/clientes-michelob.svg",
+  },
+  {
+    title: "randstad",
+    image: "/images/clients/randstad.svg",
+  },
 ];
 
 export const Clients = ({ className }: { className?: string }) => {
@@ -156,9 +190,9 @@ export const Clients = ({ className }: { className?: string }) => {
           ))}
         </Marquee>
       ) : (
-        <div className="grid grid-cols-7 gap-x-12 lg:gap-x-16 xl:gap-x-20 gap-y-6 mt-12 items-center">
+        <div className="flex flex-wrap gap-x-12 lg:gap-x-16 gap-y-6 mt-12 items-center justify-center">
           {clients.map((client, i) => (
-            <FadeIn key={i} delay={i * 0.05}>
+            <FadeIn key={i} delay={i * 0.05} className="w-[8%]">
               <ScrollParallax parallaxSpeed={i * 0.05}>
                 <img
                   key={client.image}
