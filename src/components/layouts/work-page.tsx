@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Archivo, Archivo_Black, Playfair_Display } from "next/font/google";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
@@ -43,7 +44,9 @@ const WorkPageLayout = ({
   name: ReactNode;
 }) => {
   const router = useRouter();
-  const { pathname } = router;
+  const { pathname, asPath } = router;
+
+  const isVideo = React.useMemo(() => bg.includes("mp4"), [bg, asPath]);
 
   return (
     <div
@@ -69,12 +72,24 @@ const WorkPageLayout = ({
       >
         <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0">
           <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-black opacity-50 z-0 rounded" />
-          <img
-            src={bg}
-            alt={`bg - ${name}`}
-            className="rounded object-cover w-full h-full"
-            loading="lazy"
-          />
+          {!isVideo ? (
+            <img
+              src={bg}
+              alt={`bg - ${name}`}
+              className="rounded object-cover w-full h-full"
+              loading="lazy"
+            />
+          ) : (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="rounded object-cover w-full h-full"
+            >
+              <source src={bg} type="video/mp4" />
+            </video>
+          )}
         </div>
         <ScrollParallax className="z-10" parallaxSpeed={0.8}>
           <p className="text-white text-24 sm:text-32 uppercase font-archivo text-center px-4 leading-tight">

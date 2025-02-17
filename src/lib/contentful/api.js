@@ -179,7 +179,17 @@ export const getProjectsPage = async () => {
     featured: item.fields.featured,
   }))
 
-  return cleanWorks;
+  const cleanClients = page.items[0].fields.clients.map((client) => {
+    return {
+      name: client.fields.clientName,
+      logo: `https:${client.fields.logo.fields.file.url}`,
+    };
+  });
+
+  return {
+    works: cleanWorks,
+    clients: cleanClients,
+  };
 }
 
 

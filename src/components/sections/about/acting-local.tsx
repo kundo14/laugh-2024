@@ -10,11 +10,11 @@ export const ActingLocalSection = ({ className }: { className?: string }) => {
         className
       )}
     >
-      <FadeIn delay={0.5}>
+      <FadeIn delay={0.5} className="hidden sm:flex">
         <img
           src="/images/about/acting-local/3.jpg"
           alt="Acting Local"
-          className="hidden sm:flex w-full min-h-full object-cover rounded"
+          className="w-full min-h-full object-cover rounded"
         />
       </FadeIn>
 
@@ -34,11 +34,11 @@ export const ActingLocalSection = ({ className }: { className?: string }) => {
           />
         </FadeIn>
       </div>
-      <FadeIn delay={0.15}>
+      <FadeIn delay={0.15} className="hidden md:flex">
         <img
           src="/images/about/acting-local/4.jpg"
           alt="Acting Local"
-          className="hidden md:flex w-full h-full object-cover rounded"
+          className="w-full h-full object-cover rounded"
         />
       </FadeIn>
       <div className="w-full flex flex-col gap-8">

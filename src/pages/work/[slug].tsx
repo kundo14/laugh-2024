@@ -1,3 +1,4 @@
+import * as React from "react";
 import WorkPageLayout from "@/components/layouts/work-page";
 import { WorkHeroData } from "@/components/sections/works/hero-data";
 import { ImageGallery } from "@/components/sections/works/image-gallery";
@@ -7,8 +8,18 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { SwitchComponents } from "../../components/sections/works/switch-components";
 import FadeIn from "@/components/common/animations/fade-in";
 import { VideoPlayer } from "@/components/common/youtube-player";
+import { useRouter } from "next/router";
 
 const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
+  const router = useRouter();
+  const { asPath } = router;
+
+  // Scroll to top on route change
+  React.useEffect(() => {
+    console.log("r-c");
+    window.scrollTo(0, 0);
+  }, [asPath]);
+
   return (
     <WorkPageLayout
       headProps={{

@@ -56,3 +56,8 @@ export type Peep = {
   image: string;
   location: string;
 };
+
+export type Client = {
+  name: string;
+  logo: string;
+};

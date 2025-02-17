@@ -8,6 +8,11 @@ import { Section360 } from "@/components/sections/ways-to-connect/360";
 import { PassionTeamsSection } from "@/components/sections/ways-to-connect/passion-teams";
 
 function WaysToConnect({ works }: { works: WorkPreview[] }) {
+  // Scroll to top on route change
+  React.useEffect(() => {
+    console.log("r-c");
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <PageLayout
       headProps={{

@@ -2,9 +2,9 @@ import * as React from "react";
 import PageLayout from "@/components/layouts/page";
 import { defaultMeta } from "@/components/common/head";
 import { Clients } from "@/components/sections/work/clients";
-import { WorkPreview } from "@/models";
+import { Client, WorkPreview } from "@/models";
 import { ScrollableWorks } from "@/components/sections/work/scrollable-works";
-import { getProjectsPage, getWorks } from "@/lib/contentful/api";
+import { getProjectsPage } from "@/lib/contentful/api";
 import { cn } from "@/lib/cn";
 import ScrollParallax from "@/components/common/animations/parallax";
 import CarouselRow from "@/components/common/carousel-row";
@@ -13,7 +13,7 @@ import FadeIn from "@/components/common/animations/fade-in";
 import { CustomDraggable } from "@/components/common/draggable";
 import { shuffleArray } from "@/lib/helpers/shuffle-array";
 
-function Work({ works }: { works: WorkPreview[] }) {
+function Work({ works, clients }: { works: WorkPreview[]; clients: Client[] }) {
   const images = React.useMemo(() => {
     const possibleImages = [
       "/images/carousel/1.png",
@@ -173,7 +173,7 @@ function Work({ works }: { works: WorkPreview[] }) {
         </div>
       </div>
       <div className="container z-40 relative">
-        <Clients className="!py-24 sm:!py-40" />
+        <Clients className="!py-24 sm:!py-40" clients={clients} />
       </div>
 
       <div className="flex flex-col z-40 relative">
@@ -191,9 +191,9 @@ function Work({ works }: { works: WorkPreview[] }) {
 }
 
 export async function getStaticProps() {
-  const works = await getProjectsPage();
+  const { works, clients } = await getProjectsPage();
   return {
-    props: { works },
+    props: { works, clients },
   };
 }
 

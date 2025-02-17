@@ -13,6 +13,11 @@ import { ThisIsUsSection } from "@/components/sections/about/this-is-us";
 import { ActingLocalSection } from "@/components/sections/about/acting-local";
 
 function AboutUsPage({ peeps }: { peeps: Peep[] }) {
+  // Scroll to top on route change
+  React.useEffect(() => {
+    console.log("r-c");
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <PageLayout
       headProps={{

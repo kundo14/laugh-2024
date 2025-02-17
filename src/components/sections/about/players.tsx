@@ -26,7 +26,7 @@ export const Players = ({
               <img
                 src={peep.image}
                 alt={`${peep.name} img`}
-                className="w-full rounded-3xl max-w-[170px] sm:max-w-[220px] border border-gray-800"
+                className="w-full rounded-3xl max-w-[150px] sm:max-w-[220px] border border-gray-800"
               />
             </div>
           </FadeIn>
