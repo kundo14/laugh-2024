@@ -44,6 +44,7 @@ const Counter = ({
               "text-48 md:text-[80px] font-archivoBlack leading-none",
               {
                 "text-yellow": isYellow,
+                "text-white": !isYellow,
               }
             )}
           >
@@ -63,6 +64,7 @@ const Counter = ({
               "text-48 md:text-[80px] font-archivoBlack leading-none",
               {
                 "text-yellow": isYellow,
+                "text-white": !isYellow,
               }
             )}
           />
@@ -72,6 +74,7 @@ const Counter = ({
             "text-16 md:text-24 lg:text-32 font-archivoBlack leading-none",
             {
               "text-yellow": isYellow,
+              "text-white": !isYellow,
             }
           )}
         >

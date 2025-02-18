@@ -14,7 +14,7 @@ export const Section360 = ({ className }: { className?: string }) => {
         )}
       >
         <div className="sm:p-2 absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-white opacity-50 z-0 rounded" />
+          <div className="absolute top-0 left-0 w-full h-full sm:top-2 sm:left-2 sm:w-[calc(100%-16px)] sm:h-[calc(100%-16px)] bg-black opacity-70 z-0 rounded" />
           <video
             src={`/gifs/360/cover.mp4`}
             className="rounded object-cover w-full h-full"
@@ -35,20 +35,20 @@ export const Section360 = ({ className }: { className?: string }) => {
           </FadeIn>
           <div className="flex flex-col items-center">
             <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-              <p className="text-center text-black text-24 sm:text-[28px] md:text-32 lg:text-42 leading-none max-w-max">
+              <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-none max-w-max">
                 Where incredible
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-              <p className="text-center text-black text-24 sm:text-[28px] md:text-32 lg:text-42 leading-none max-w-max">
+              <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-none max-w-max">
                 stories meet
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={0.8}>
               <div className="relative max-w-max">
-                <p className="text-center text-black text-24 sm:text-[28px] md:text-32 lg:text-42 leading-none font-black">
+                <p className="text-center text-white text-24 sm:text-[28px] md:text-32 lg:text-42 leading-none font-black">
                   their perfect{" "}
-                  <span className="font-masker text-yellow text-[28px] md:text-42 lg:text-48">
+                  <span className="font-masker text-yellow text-[28px] md:text-42 lg:text-48 ml-2">
                     fans
                   </span>
                 </p>
@@ -64,7 +64,7 @@ export const Section360 = ({ className }: { className?: string }) => {
             </ScrollParallax>
           </div>
           <ScrollParallax className="z-10" parallaxSpeed={1}>
-            <p className="text-center text-black text-18 sm:text-20 font-playfairDisplay leading-tight mt-24 max-w-[420px]">
+            <p className="text-center text-white text-18 sm:text-20 font-playfairDisplay leading-tight mt-24 max-w-[420px]">
               Our DNA is to create impactful 360 campaigns which reach, connect
               & resonate with fans around the world
             </p>
@@ -79,13 +79,13 @@ export const Section360 = ({ className }: { className?: string }) => {
           className
         )}
       >
-        <div className="sm:px-2 absolute top-0 left-0 w-full h-full z-0">
+        {/* <div className="sm:px-2 absolute top-0 left-0 w-full h-full z-0">
           <img
             src={`/images/textures/paper.jpg`}
             className="rounded object-cover w-full h-full"
             alt="white paper"
           />
-        </div>
+        </div> */}
         <div className="container !py-20 flex flex-col items-center z-50 relative">
           <ScrollParallax className="z-10" parallaxSpeed={0.2}>
             <p className="text-yellow text-center uppercase text-24 md:text-32 lg:text-42 xl:text-48 leading-none font-black">
@@ -93,7 +93,7 @@ export const Section360 = ({ className }: { className?: string }) => {
             </p>
           </ScrollParallax>
           <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-            <p className="text-black font-masker text-42 sm:text-[56px] md:text-[64px] xl:text-[72px] leading-none">
+            <p className="text-white font-masker text-42 sm:text-[56px] md:text-[64px] xl:text-[72px] leading-none">
               network
             </p>
           </ScrollParallax>
@@ -176,12 +176,12 @@ export const Section360 = ({ className }: { className?: string }) => {
           </div>
           <div className="flex flex-col items-center gap-2 mt-12 sm:mt-20">
             <FadeIn>
-              <p className="text-black text-24 sm:text-32 md:text-42 lg:text-48 leading-none">
+              <p className="text-white text-24 sm:text-32 md:text-42 lg:text-48 leading-none">
                 Content is <span className="font-playfairDisplay">king</span>
               </p>
             </FadeIn>
             <ScrollParallax className="z-10" parallaxSpeed={0.2}>
-              <p className="text-black font-bold italic text-24 sm:text-32 md:text-42 lg:text-48 leading-none">
+              <p className="text-white font-bold italic text-24 sm:text-32 md:text-42 lg:text-48 leading-none">
                 Distribution is
                 <span className="ml-4 scratch">queen.</span>
               </p>
