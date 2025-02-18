@@ -4,6 +4,11 @@ export type Quote = {
   author?: string | null;
 };
 
+export type GalleryRow = {
+  assets: string[];
+  caption?: string | null;
+};
+
 export type TextSlider = {
   type: "text-slider";
   text: string;
@@ -19,7 +24,16 @@ export type ImageTextGalleryProps = {
   images: ImageTextProps[];
 };
 
-export type CustomComponent = Quote | TextSlider | ImageTextGalleryProps;
+export type ImageGalleryProps = {
+  type: "gallery";
+  rows: GalleryRow[];
+};
+
+export type CustomComponent =
+  | Quote
+  | TextSlider
+  | ImageTextGalleryProps
+  | ImageGalleryProps;
 
 export type WorkTemplateProps = {
   name: string;

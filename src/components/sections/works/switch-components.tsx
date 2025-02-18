@@ -3,6 +3,7 @@ import { Quote as QuoteComponent } from "@/components/common/dynamic-sections/qu
 import { TextMarquee } from "@/components/common/text-marquee";
 import { CustomComponent } from "@/models";
 import { ImageTextGallery } from "./image-text-gallery";
+import { Gallery } from "../work/gallery";
 
 export const SwitchComponents = ({
   component,
@@ -11,7 +12,7 @@ export const SwitchComponents = ({
 }) => {
   if (!component || !component.type) return null;
 
-  // TO DO: add video and image gallery components
+  // TO DO: add video component
 
   switch (component.type) {
     case "quote":
@@ -33,5 +34,7 @@ export const SwitchComponents = ({
       return <TextMarquee text={component.text} color="white" />;
     case "image-text-gallery":
       return <ImageTextGallery component={component} />;
+    case "gallery":
+      return <Gallery gallery={component.rows} />;
   }
 };

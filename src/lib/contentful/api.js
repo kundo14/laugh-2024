@@ -38,10 +38,10 @@ export const getComponent = (component) => {
     case "galleryComponent":
       return {
         type: "gallery",
-        images: component.fields.rows.map((row) => {
+        rows: component.fields.rows.map((row) => {
           return {
-            assets: row.fields.assets.map((column) => `https:${column.fields.image.fields.file.url}`),
-            caption: row.fields.caption,
+            assets: row.fields.assets.map((column) => `https:${column.fields.file.url}`),
+            caption: row.fields.caption ? row.fields.caption : null,
           }
         }),
       }
