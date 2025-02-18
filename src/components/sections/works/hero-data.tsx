@@ -103,16 +103,18 @@ export const WorkHeroData = ({
             {renderBody(work.heroTitle)}
           </div>
         </FadeIn>
-        <FadeIn delay={0.3}>
-          <div
-            className={cn("text-16 leading-[1.8]", {
-              "text-gray-400": textWhite,
-              "text-gray-800": !textWhite,
-            })}
-          >
-            {renderBody(work.heroDescription)}
-          </div>
-        </FadeIn>
+        {work.heroDescription && (
+          <FadeIn delay={0.3}>
+            <div
+              className={cn("text-16 leading-[1.8]", {
+                "text-gray-400": textWhite,
+                "text-gray-800": !textWhite,
+              })}
+            >
+              {renderBody(work.heroDescription)}
+            </div>
+          </FadeIn>
+        )}
       </div>
       <CustomDraggable>
         <img

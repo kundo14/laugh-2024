@@ -12,7 +12,11 @@ import Link from "next/link";
 
 export default function Home() {
   const ref = React.useRef<HTMLVideoElement>(null);
-
+  // Scroll to top on route change
+  React.useEffect(() => {
+    console.log("r-c");
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <PageLayout
       headProps={{

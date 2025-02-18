@@ -66,6 +66,12 @@ function Work({ works, clients }: { works: WorkPreview[]; clients: Client[] }) {
       third,
     };
   }, []);
+
+  // Scroll to top on route change
+  React.useEffect(() => {
+    console.log("r-c");
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <PageLayout
       headProps={{
@@ -173,7 +179,10 @@ function Work({ works, clients }: { works: WorkPreview[]; clients: Client[] }) {
         </div>
       </div>
       <div className="container z-40 relative">
-        <Clients className="!py-24 sm:!py-40" clients={clients} />
+        <Clients
+          className="!pt-24 sm:!pt-40 !pb-16 sm:!pb-24"
+          clients={clients}
+        />
       </div>
 
       <div className="flex flex-col z-40 relative">

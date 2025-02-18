@@ -11,6 +11,8 @@ export const SwitchComponents = ({
 }) => {
   if (!component || !component.type) return null;
 
+  // TO DO: add video and image gallery components
+
   switch (component.type) {
     case "quote":
       return (

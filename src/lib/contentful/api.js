@@ -35,6 +35,20 @@ export const getComponent = (component) => {
           };
         }),
       };
+    case "galleryComponent":
+      return {
+        type: "gallery",
+        images: component.fields.rows.map((row) => {
+          return {
+            assets: row.fields.assets.map((column) => `https:${column.fields.image.fields.file.url}`),
+            caption: row.fields.caption,
+          }
+        }),
+      }
+      case "videoComponent":
+        return {
+          video: `https:${component.fields.video.fields.file.url}`,
+        }
       default:
         return null;
     }
@@ -53,19 +67,19 @@ export const getWorkTemplate = async (slug) => {
     heroVideo: `https:${page.items[0].fields.heroVideo.fields.file.url}`,
     imagePreview: `https:${page.items[0].fields.imagePreview.fields.file.url}`,
     tags: page.items[0].fields.tags,
-    imageGallery: page.items[0].fields.imageGallery.map((image) => {
+    imageGallery: page.items[0].fields.imageGallery ? page.items[0].fields.imageGallery.map((image) => {
       return {
         url: `https:${image.fields.file.url}`,
         description: image.fields.description,
       };
-    }),
+    }) : null,
     date: {
       start: page.items[0].fields.startYear,
       end: page.items[0].fields.endYear,
     },
     featured: page.items[0].fields.featured,
     heroTitle: page.items[0].fields.heroTitle,
-    heroDescription: page.items[0].fields.heroDescription,
+    heroDescription: page.items[0].fields.heroDescription ? page.items[0].fields.heroDescription : null,
     deliverables: page.items[0].fields.deliverables,
     bottomVideoLink: page.items[0].fields.bottomVideoLink ? page.items[0].fields.bottomVideoLink : null,
     components: page.items[0].fields.customComponents && page.items[0].fields.customComponents.map((component) => getComponent(component)),
@@ -123,6 +137,7 @@ export const getWorks = async () => {
       end: item.fields.endYear,
     },
     featured: item.fields.featured,
+    heroVideo: item.fields.heroVideo ? `https:${item.fields.heroVideo.fields.file.url}` : null,
   }))
 
   return cleanWorks;
@@ -177,6 +192,7 @@ export const getProjectsPage = async () => {
       end: item.fields.endYear,
     },
     featured: item.fields.featured,
+    heroVideo: item.fields.heroVideo ? `https:${item.fields.heroVideo.fields.file.url}` : null,
   }))
 
   const cleanClients = page.items[0].fields.clients.map((client) => {

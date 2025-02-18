@@ -36,9 +36,10 @@ const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
         <WorkHeroData work={data} className="!mb-8 sm:!mb-16" textWhite />
         <ImageGallery images={data.imageGallery} />
       </div>{" "}
-      {data.components.map((component, index) => (
-        <SwitchComponents key={index} component={component} />
-      ))}
+      {data.components &&
+        data.components.map((component, index) => (
+          <SwitchComponents key={index} component={component} />
+        ))}
       <div className="container relative z-40 !mt-40">
         {data.bottomVideoLink && (
           <FadeIn delay={0.3} className="flex">

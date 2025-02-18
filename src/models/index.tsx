@@ -33,16 +33,16 @@ export type WorkTemplateProps = {
   imageGallery: { url: string; description: string }[];
   heroVideo: string;
   heroTitle: any;
-  heroDescription: any;
+  heroDescription?: any;
   featured: boolean;
   deliverables: string[];
-  components: CustomComponent[];
+  components?: CustomComponent[];
   bottomVideoLink?: string | null;
 };
 
 export type WorkPreview = Pick<
   WorkTemplateProps,
-  "name" | "slug" | "imagePreview" | "tags" | "date" | "featured"
+  "name" | "slug" | "imagePreview" | "tags" | "date" | "featured" | "heroVideo"
 >;
 
 export type CarouselSlideProps = {
