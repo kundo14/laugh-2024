@@ -44,8 +44,8 @@ export const EmblaCarouselWorks = ({
 
   return (
     <div className="flex flex-col container">
-      <div className="flex items-center w-full justify-between">
-        {title && (
+      {title && (
+        <div className="flex items-center w-full justify-between">
           <p
             className={cn("uppercase text-14 sm:text-16", {
               "text-white": textWhite,
@@ -54,19 +54,19 @@ export const EmblaCarouselWorks = ({
           >
             {title}
           </p>
-        )}
-        <Link
-          href={"/work/all"}
-          className={cn(
-            "text-14 sm:text-16 uppercase hover:!opacity-60 transition-all duration-150 !text-white cursor-pointer relative min-w-max",
-            {}
-          )}
-        >
-          See All
-          {/* underline */}
-          <div className="absolute bottom-0 left-0 w-full h-px mt-2 bg-white" />
-        </Link>
-      </div>
+          <Link
+            href={"/work/all"}
+            className={cn(
+              "text-14 sm:text-16 uppercase hover:!opacity-60 transition-all duration-150 !text-white cursor-pointer relative min-w-max",
+              {}
+            )}
+          >
+            See All
+            {/* underline */}
+            <div className="absolute bottom-0 left-0 w-full h-px mt-2 bg-white" />
+          </Link>
+        </div>
+      )}
       <div className="overflow-x-visible !mt-8">
         <div className="embla">
           <div className="embla__viewport" ref={emblaRef}>
