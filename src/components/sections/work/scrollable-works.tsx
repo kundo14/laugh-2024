@@ -9,7 +9,7 @@ export const ScrollableWorks = ({
   textWhite,
 }: {
   works: WorkPreviewProps[];
-  title: string;
+  title?: string;
   className?: string;
   textWhite?: boolean;
 }) => {

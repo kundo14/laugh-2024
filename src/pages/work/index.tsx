@@ -205,7 +205,7 @@ function Work({ works, clients }: { works: WorkPreview[]; clients: Client[] }) {
         </div>
 
         <div id="studios" className="!py-16 overflow-x-hidden -mt-12">
-          <ScrollableWorks works={works} title=" " />
+          <ScrollableWorks works={works} />
         </div>
       </div>
     </PageLayout>
