@@ -33,7 +33,7 @@ function WaysToConnect({ works }: { works: WorkPreview[] }) {
 }
 
 export async function getStaticProps() {
-  const works = await getWorks();
+  const works = await getWorks(20);
   return {
     props: { works },
   };

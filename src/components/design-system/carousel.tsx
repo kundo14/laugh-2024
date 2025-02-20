@@ -4,8 +4,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { WorkPreview as WorkPreviewProps } from "@/models";
 import { WorkPreview } from "@/components/common/work-preview";
 import { cn } from "@/lib/cn";
-import { AnimatePresence, motion } from "framer-motion";
 import pickRandomColor from "@/lib/helpers/pick-random-color";
+import Link from "next/link";
 
 export const EmblaCarouselWorks = ({
   slides,
@@ -47,7 +47,7 @@ export const EmblaCarouselWorks = ({
       <div className="flex items-center w-full justify-between">
         {title && (
           <p
-            className={cn("uppercase text-16", {
+            className={cn("uppercase text-14 sm:text-16", {
               "text-white": textWhite,
               "text-black": !textWhite,
             })}
@@ -55,7 +55,45 @@ export const EmblaCarouselWorks = ({
             {title}
           </p>
         )}
-        <div className="hidden md:flex gap-6">
+        <Link
+          href={"/work/all"}
+          className={cn(
+            "text-14 sm:text-16 uppercase hover:!opacity-60 transition-all duration-150 !text-white cursor-pointer relative min-w-max",
+            {}
+          )}
+        >
+          See All
+          {/* underline */}
+          <div className="absolute bottom-0 left-0 w-full h-px mt-2 bg-white" />
+        </Link>
+      </div>
+      <div className="overflow-x-visible !mt-8">
+        <div className="embla">
+          <div className="embla__viewport" ref={emblaRef}>
+            <div className="embla__container flex gap-4">
+              {slides.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="embla__slide !max-w-[340px] sm:!max-w-[420px]"
+                >
+                  <WorkPreview
+                    size="small"
+                    variant={textWhite ? "dark" : "light"}
+                    work={item}
+                    className=""
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+{
+  /* <div className="hidden md:flex gap-6">
           <button
             onClick={scrollPrev}
             className={cn(
@@ -108,29 +146,5 @@ export const EmblaCarouselWorks = ({
               )}
             </AnimatePresence>
           </button>
-        </div>
-      </div>
-      <div className="overflow-x-visible mt-8">
-        <div className="embla">
-          <div className="embla__viewport" ref={emblaRef}>
-            <div className="embla__container flex gap-4">
-              {slides.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="embla__slide !max-w-[340px] sm:!max-w-[420px]"
-                >
-                  <WorkPreview
-                    size="small"
-                    variant={textWhite ? "dark" : "light"}
-                    work={item}
-                    className=""
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+        </div> */
+}

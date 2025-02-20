@@ -121,10 +121,11 @@ export const getWorksByTag = async (tag) => {
   }
 };
 
-export const getWorks = async () => {
+export const getWorks = async (limit) => {
   const page = await client.getEntries({
     content_type: "workTemplate",
     include: 5,
+    limit: limit ? limit : 200,
   });
 
   const cleanWorks = page.items.map((item) => ({
@@ -148,6 +149,7 @@ export const getWorks = async () => {
 export const getWorksRoutes = async () => {
   const page = await client.getEntries({
     content_type: "workTemplate",
+    limit: 500,
   });
 
   // we get the possible slugs for the getStaticPaths

@@ -8,11 +8,13 @@ export const WorkPreview = ({
   work,
   variant = "light",
   className,
+  smallTitle,
 }: {
   size: "small" | "large";
   work: WorkPreviewProps;
   variant: "light" | "dark";
   className?: string;
+  smallTitle?: boolean;
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [videoLoaded, setVideoLoaded] = React.useState(false);
@@ -91,8 +93,8 @@ export const WorkPreview = ({
         className={cn("font-semibold uppercase leading-tight", {
           "!text-white": variant === "dark",
           "!text-black": variant === "light",
-          "text-24 lg:text-32": size === "large",
-          "text-20 sm:text-24": size === "small",
+          "text-24 lg:text-32": size === "large" && !smallTitle,
+          "text-20 sm:text-24": size === "small" || smallTitle,
         })}
       >
         {work.name}
@@ -101,7 +103,7 @@ export const WorkPreview = ({
         className={cn(
           "flex gap-y-1 gap-x-2 items-center flex-wrap pr-8 flex-1",
           {
-            "lg:mt-1": size === "large",
+            "lg:mt-1": size === "large" && !smallTitle,
           }
         )}
       >

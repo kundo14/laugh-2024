@@ -12,6 +12,7 @@ import ScrollGrow from "@/components/common/animations/glow-up-image";
 import FadeIn from "@/components/common/animations/fade-in";
 import { CustomDraggable } from "@/components/common/draggable";
 import { shuffleArray } from "@/lib/helpers/shuffle-array";
+import Link from "next/link";
 
 function Work({ works, clients }: { works: WorkPreview[]; clients: Client[] }) {
   const images = React.useMemo(() => {
@@ -185,13 +186,25 @@ function Work({ works, clients }: { works: WorkPreview[]; clients: Client[] }) {
         />
       </div>
 
-      <div className="flex flex-col z-40 relative">
-        <div className="container !-mb-4 md:!-mb-12">
+      <div className="flex flex-col z-40 relative lg:-mt-12">
+        <div className="container flex justify-between items-end gap-4">
           <p className="text-48 sm:text-[64px] md:text-[80px] font-playfairDisplay leading-none">
             our <span className="font-masker text-yellow">projects</span>
           </p>
+          <Link
+            href={"/work/all"}
+            className={cn(
+              "text-14 sm:text-16 uppercase hover:!opacity-60 transition-all duration-150 !text-black cursor-pointer relative min-w-max",
+              {}
+            )}
+          >
+            See All
+            {/* underline */}
+            <div className="absolute bottom-0 left-0 w-full h-px mt-2 bg-black" />
+          </Link>
         </div>
-        <div id="studios" className="!py-16 -mt-12 overflow-x-hidden">
+
+        <div id="studios" className="!py-16 overflow-x-hidden -mt-12">
           <ScrollableWorks works={works} title=" " />
         </div>
       </div>
