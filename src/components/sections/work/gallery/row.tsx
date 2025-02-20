@@ -14,14 +14,29 @@ export const Row = ({ row }: { row: GalleryRow }) => {
           "grid-cols-2 sm:grid-cols-4": cols === 4,
         })}
       >
-        {row.assets.map((image, idx) => (
-          <ScrollGrow key={idx} className="w-full">
-            <img
-              src={image}
-              className="object-cover w-full rounded border border-gray-800"
-            />
-          </ScrollGrow>
-        ))}
+        {row.assets.map((asset, idx) => {
+          const isVideo = asset.includes(".mp4");
+          return (
+            <ScrollGrow key={idx} className="w-full">
+              {isVideo ? (
+                <video
+                  src={asset}
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                  preload="auto"
+                  className="object-cover w-full rounded border border-gray-800 h-full"
+                />
+              ) : (
+                <img
+                  src={asset}
+                  className="object-cover w-full rounded border border-gray-800 h-full"
+                />
+              )}
+            </ScrollGrow>
+          );
+        })}
       </div>
       {row.caption && (
         <p className="my-4 text-16 text-right max-w-[1024px] ml-auto text-gray-400">
