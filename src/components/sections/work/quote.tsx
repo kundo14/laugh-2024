@@ -14,21 +14,21 @@ export const WorkQuote = ({ className }: { className?: string }) => {
       <ScrollParallax className="absolute bottom-[90%] left-0 sm:left-[unset] sm:bottom-[unset] sm:right-[95%]">
         <QuoteIcon
           className={cn(
-            "w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-32 lg:h-32 xl:w-44 xl:h-44 text-yellow transform rotate-180"
+            "w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-32 lg:h-32 text-gold transform rotate-180"
           )}
         />
       </ScrollParallax>
       <ScrollParallax className="absolute bottom-[90%] right-0 sm:right-[unset]  sm:bottom-[unset] sm:left-[95%]">
         <QuoteIcon
           className={cn(
-            "w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-32 lg:h-32 xl:w-44 xl:h-44 text-yellow"
+            "w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-32 lg:h-32 text-gold"
           )}
         />
       </ScrollParallax>
       <FadeIn>
         <p
           className={cn(
-            "font-archivo !text-20 md:!text-24 lg:!text-32 xl:!text-42 leading-normal max-w-max xl:max-w-[920px] italic font-extralight text-white"
+            "font-playfairDisplay !text-20 md:!text-24 lg:!text-32 leading-normal max-w-max xl:max-w-[920px] italic font-extralight text-white"
           )}
         >
           No one understands <b>sport</b> like{" "}
