@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ReactLenis root options={{ lerp: 0.09, duration: 1.5 }}>
         <Component {...pageProps} />
       </ReactLenis>
-      {/* <GoogleAnalytics gaId="G-RCQW1RSLBM" /> */}
+      <GoogleAnalytics gaId="G-KQD9X0N9WL" />
     </>
   );
 }
