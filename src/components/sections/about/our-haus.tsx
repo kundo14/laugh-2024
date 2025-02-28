@@ -4,6 +4,7 @@ import ScrollParallax from "@/components/common/animations/parallax";
 import CarouselRow from "@/components/common/carousel-row";
 import { cn } from "@/lib/cn";
 import { shuffleArray } from "@/lib/helpers/shuffle-array";
+import { CarouselDragImages } from "@/components/common/carousel-drag";
 
 export const OurHausSection = ({ className }: { className?: string }) => {
   const images = React.useMemo(() => {
@@ -73,21 +74,10 @@ export const OurHausSection = ({ className }: { className?: string }) => {
           </ScrollParallax>
         </div>
       </div>
-      <div className="relative z-40 mt-12">
-        <FadeIn>
-          <CarouselRow images={images.first} />
-        </FadeIn>
-        <FadeIn>
-          <CarouselRow
-            images={images.second}
-            size="large"
-            direction={-1}
-            speed={0.1}
-          />
-        </FadeIn>
-        <FadeIn>
-          <CarouselRow images={images.third} speed={0.5} />
-        </FadeIn>
+      <div className="relative z-40 mt-12 flex flex-col  gap-2 sm:gap-4">
+        <CarouselDragImages images={images.first} size="small" />
+        <CarouselDragImages images={images.second} size="large" />
+        <CarouselDragImages images={images.third} size="small" />
       </div>
     </div>
   );
