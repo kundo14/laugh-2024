@@ -5,12 +5,39 @@ import { getWorks } from "@/lib/contentful/api";
 import { WorkPreview as WorkPreviewProps } from "@/models";
 import { WorkPreview } from "@/components/common/work-preview";
 
-function Work({ works }: { works: WorkPreviewProps[] }) {
-  // Scroll to top on route change
+const WORKS_PER_PAGE = 12;
+
+function Work({ initialWorks }: { initialWorks: WorkPreviewProps[] }) {
+  const [works, setWorks] = React.useState<WorkPreviewProps[]>(initialWorks);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [offset, setOffset] = React.useState(WORKS_PER_PAGE);
+  const loaderRef = React.useRef(null);
+
+  // Load more works when reaching the bottom
   React.useEffect(() => {
-    console.log("r-c");
-    window.scrollTo(0, 0);
-  }, []);
+    const observer = new IntersectionObserver(
+      async ([entry]) => {
+        if (entry.isIntersecting && !isLoading) {
+          setIsLoading(true);
+          const newWorks = await getWorks(WORKS_PER_PAGE, offset);
+
+          setWorks((prev) => [...prev, ...(newWorks as WorkPreviewProps[])]);
+          setOffset((prevOffset) => prevOffset + WORKS_PER_PAGE);
+          setIsLoading(false);
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+
+    return () => {
+      if (loaderRef.current) observer.unobserve(loaderRef.current);
+    };
+  }, [offset, isLoading]);
+
   return (
     <PageLayout
       headProps={{
@@ -38,15 +65,21 @@ function Work({ works }: { works: WorkPreviewProps[] }) {
             />
           ))}
         </div>
+        <div
+          ref={loaderRef}
+          className="h-10 w-full flex justify-center items-center"
+        >
+          {isLoading && <p>Loading more works...</p>}
+        </div>
       </div>
     </PageLayout>
   );
 }
 
 export async function getStaticProps() {
-  const works = await getWorks();
+  const initialWorks = await getWorks(WORKS_PER_PAGE, 0);
   return {
-    props: { works },
+    props: { initialWorks },
   };
 }
 

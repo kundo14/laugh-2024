@@ -48,7 +48,7 @@ export const WorkPreview = ({
         className={cn("border rounded relative", {
           "border-gray-700": variant === "dark",
           "border-gray-300": variant === "light",
-          "min-w-[320px] w-full md:w-[420px] h-[180px] sm:h-[220px]":
+          "min-w-[320px] w-full md:w-[420px] h-[180px] sm:h-[220px] min-h-[180px] sm:min-h-[220px]":
             size === "small",
           "w-full h-auto": size === "large",
         })}
