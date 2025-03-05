@@ -11,19 +11,28 @@ function Work({ initialWorks }: { initialWorks: WorkPreviewProps[] }) {
   const [works, setWorks] = React.useState<WorkPreviewProps[]>(initialWorks);
   const [isLoading, setIsLoading] = React.useState(false);
   const [offset, setOffset] = React.useState(WORKS_PER_PAGE);
+  const [hasMore, setHasMore] = React.useState(true); // Track if there's more data to fetch
+
   const loaderRef = React.useRef(null);
 
   // Load more works when reaching the bottom
   React.useEffect(() => {
+    if (!hasMore) return; // Stop if no more works
+
     const observer = new IntersectionObserver(
       async ([entry]) => {
         if (entry.isIntersecting && !isLoading) {
           setIsLoading(true);
           const newWorks = await getWorks(WORKS_PER_PAGE, offset);
 
-          setWorks((prev) => [...prev, ...(newWorks as WorkPreviewProps[])]);
-          setOffset((prevOffset) => prevOffset + WORKS_PER_PAGE);
-          setIsLoading(false);
+          if (newWorks.length === 0 || !newWorks) {
+            setHasMore(false); // No more works to fetch
+            setIsLoading(false);
+          } else {
+            setWorks((prev) => [...prev, ...(newWorks as WorkPreviewProps[])]);
+            setOffset((prevOffset) => prevOffset + WORKS_PER_PAGE);
+            setIsLoading(false);
+          }
         }
       },
       { rootMargin: "100px" }
