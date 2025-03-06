@@ -95,21 +95,21 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
         </div>
 
         {/* RETRO STICKERS */}
-        <div className="flex justify-center lg:justify-between items-end max-w-full flex-wrap w-full flex-1 xl:max-w-[1200px] gap-4 sm:gap-6 lg:gap-12 xl:gap-20">
+        <div className="flex justify-center lg:justify-between items-end flex-wrap w-full flex-1 max-w-max gap-4 sm:gap-6 lg:gap-16 xl:gap-32">
           <FadeIn>
             <CustomDraggable>
               <div className="flex flex-col items-center">
                 <img
                   src="/images/stickers/joystick.png"
                   alt="retro-sticker-1"
-                  className="w-[120px] md:w-[140px] lg:w-[200px] h-auto"
+                  className="w-[80px] md:w-[100px] lg:w-[120px] h-auto"
                   draggable={false}
                 />
-                <div className="flex flex-col items-center -mt-4">
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-archivoBlack">
+                <div className="flex flex-col items-center -mt-2">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-archivoBlack">
                     building
                   </p>
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-masker">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-masker">
                     communities
                   </p>
                 </div>
@@ -122,14 +122,14 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
                 <img
                   src="/images/stickers/tv.png"
                   alt="retro-sticker-1"
-                  className="w-[120px] md:w-[140px] lg:w-[200px] h-auto"
+                  className="w-[80px] md:w-[100px] lg:w-[120px] h-auto"
                   draggable={false}
                 />
-                <div className="flex flex-col items-center -mt-2">
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-archivoBlack">
+                <div className="flex flex-col items-center">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-archivoBlack">
                     CREATIVE &{" "}
                   </p>
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-masker">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-masker">
                     STRATEGY
                   </p>
                 </div>
@@ -142,14 +142,14 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
                 <img
                   src="/images/stickers/libertadores.png"
                   alt="retro-sticker-1"
-                  className="w-[120px] md:w-[140px] lg:w-[200px] h-auto"
+                  className="w-[80px] md:w-[100px] lg:w-[120px] h-auto"
                   draggable={false}
                 />
                 <div className="flex flex-col items-center mt-3">
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-archivoBlack">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-archivoBlack">
                     SPORTS{" "}
                   </p>
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-masker">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-masker">
                     MANAGEMENT
                   </p>
                 </div>

@@ -3,13 +3,18 @@ import { cn } from "@/lib/cn";
 
 export const ThisIsUsSection = ({ className }: { className?: string }) => {
   return (
-    <div className={cn("flex flex-col items-center max-w-[1024px]", className)}>
+    <div
+      className={cn(
+        "flex flex-col items-center max-w-[1024px] w-full",
+        className
+      )}
+    >
       <ScrollParallax parallaxSpeed={-0.4}>
         <h1
-          style={{ fontSize: "clamp(1rem, 11.8vw, 170px)" }}
-          className="text-yellow font-archivoBlack uppercase text-center sm:-mb-20 z-10"
+          style={{ fontSize: "clamp(1rem, 18vw, 160px)" }}
+          className="text-white font-playfairDisplay uppercase text-center sm:-mb-20 z-10"
         >
-          this&nbsp;is&nbsp;us
+          this&nbsp;is&nbsp;<i className="font-playfairDisplay">us</i>
         </h1>
       </ScrollParallax>
       <img

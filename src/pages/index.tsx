@@ -62,17 +62,17 @@ export default function Home() {
             )}
           >
             <FadeIn>
-              <p className="font-archivo text-center text-28 inline-flex items-center leading-none">
+              <p className="font-archivo text-center text-18 sm:text-20 md:text-24 inline-flex items-center leading-none">
                 We are <b className="ml-2">fans</b>.
               </p>
             </FadeIn>
             <FadeIn>
-              <p className="font-archivo text-center text-28 inline-flex items-center leading-none">
+              <p className="font-archivo text-center text-18 sm:text-20 md:text-24 inline-flex items-center leading-none">
                 We are <b className="ml-2">passion</b>.
               </p>
             </FadeIn>
             <FadeIn>
-              <p className="font-archivo text-center text-28 inline-flex items-center leading-none">
+              <p className="font-archivo text-center text-18 sm:text-20 md:text-24 inline-flex items-center leading-none">
                 We are a{" "}
                 <span className="text-gold italic ml-2">
                   creative power haus,
@@ -80,7 +80,7 @@ export default function Home() {
               </p>
             </FadeIn>
             <FadeIn>
-              <p className="font-playfairDisplay text-center text-28 inline-flex items-center leading-none">
+              <p className="font-playfairDisplay text-center text-18 sm:text-20 md:text-24 inline-flex items-center leading-none">
                 Where ideas come to life.
               </p>
             </FadeIn>
@@ -95,7 +95,7 @@ export default function Home() {
               />
             </CustomDraggable> */}
             <ScrollParallax>
-              <p className="text-[56px] sm:text-[64px] md:text-[80px] xl:text-[120px] uppercase font-archivo font-black text-gold leading-none">
+              <p className="text-[40px] sm:text-48 md:text-[80px] xl:text-[120px] uppercase font-archivo font-black text-gold leading-none">
                 our show<span className="italic">reel</span>
               </p>
             </ScrollParallax>
@@ -114,7 +114,7 @@ export default function Home() {
                 loop
                 muted
                 playsInline
-                className="mt-24 sm:mt-32 md:mt-40"
+                className="mt-24 sm:mt-32 md:mt-40 w-full max-w-[640px]"
                 src={"/gifs/home-gif.mp4"}
                 controls={false}
               />
@@ -130,10 +130,11 @@ export default function Home() {
           >
             All our work
           </Link>
+          <div className="h-[32px] w-px bg-gold" />
           <Link
             href="/contact"
             aria-label="contact us"
-            className="max-w-max text-gold border border-gold text-18 sm:text-20 px-6 pt-2 pb-3 rounded-md font-playfairDisplay transition-all duration-300 hover:bg-gold hover:text-black"
+            className="max-w-max text-gold text-18 sm:text-20 px-6 font-playfairDisplay transition-all duration-300 hover:text-white"
           >
             Get in touch
           </Link>
