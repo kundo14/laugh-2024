@@ -98,31 +98,31 @@ function Work({ works, clients }: { works: WorkPreview[]; clients: Client[] }) {
         </div>
         <div className="mx-auto px-4 max-w-[1024px] flex flex-col gap-8 mt-32 sm:mt-20 lg:mt-28 xl:mt-32">
           <ScrollParallax className="z-10" parallaxSpeed={0.8}>
-            <p className="text-center text-white text-16 sm:text-18 leading-tight font-extralight">
+            <p className="text-center text-white text-14 sm:text-16 leading-tight font-extralight">
               Laugh is a space where <b>we connect brands and fans.</b> <br />{" "}
               Our passion and dedication to the world of sports define our
               existence.
             </p>
           </ScrollParallax>
           <ScrollParallax className="z-10" parallaxSpeed={1}>
-            <p className="text-center text-white text-16 sm:text-18 leading-tight italic font-extralight">
+            <p className="text-center text-white text-14 sm:text-16 leading-tight italic font-extralight">
               We live for the thrill of the game, the roar of the crowd,
               <br /> and the celebration of sporting achievements.
             </p>
           </ScrollParallax>
           <div className="flex flex-col items-center gap-1">
             <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-              <p className="text-center text-white text-24 sm:text-[28px] leading-tight font-playfairDisplay custom_underline max-w-max">
+              <p className="text-center text-white text-20 sm:text-24 leading-tight font-playfairDisplay custom_underline max-w-max">
                 Welcome to Laugh,
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={0.8}>
-              <p className="text-center text-white text-24 sm:text-[28px] leading-tight font-extralight mt-2">
+              <p className="text-center text-white text-20 sm:text-24 leading-tight font-extralight mt-2">
                 where sport is not just a passion;
               </p>
             </ScrollParallax>
             <ScrollParallax className="z-10" parallaxSpeed={1.2}>
-              <p className="text-center text-yellow font-archivo italic font-black text-24 sm:text-[28px] leading-tight">
+              <p className="text-center text-yellow font-archivo italic font-black text-20 sm:text-24 leading-tight">
                 IT&apos;S A WAY OF LIFE.
               </p>
             </ScrollParallax>
