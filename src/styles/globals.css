@@ -177,7 +177,7 @@ b {
 .bg-texture {
   background-image: url('/images/textures/black-bg.jpg');
   background-repeat: repeat-y !important; 
-  background-size: auto; 
+  background-size: 100%; 
   background-position: center top; 
 }
 

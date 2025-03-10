@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import type { AppProps } from "next/app";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = React.useState(true);
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ReactLenis root options={{ lerp: 0.09, duration: 1.5 }}>
         <Component {...pageProps} />
       </ReactLenis>
+      <GoogleAnalytics gaId="G-KQD9X0N9WL" />
     </>
   );
 }

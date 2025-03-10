@@ -13,10 +13,10 @@ import Link from "next/link";
 export default function Home() {
   const ref = React.useRef<HTMLVideoElement>(null);
   // Scroll to top on route change
-  React.useEffect(() => {
-    console.log("r-c");
-    window.scrollTo(0, 0);
-  }, []);
+  // React.useEffect(() => {
+  //   console.log("r-c");
+  //   window.scrollTo(0, 0);
+  // }, []);
   return (
     <PageLayout
       headProps={{
@@ -62,25 +62,25 @@ export default function Home() {
             )}
           >
             <FadeIn>
-              <p className="font-archivo text-center text-24 md:text-32 inline-flex items-center leading-none">
+              <p className="font-archivo text-center text-18 md:text-20 inline-flex items-center leading-none">
                 We are <b className="ml-2">fans</b>.
               </p>
             </FadeIn>
             <FadeIn>
-              <p className="font-archivo text-center text-24 md:text-32 inline-flex items-center leading-none">
+              <p className="font-archivo text-center text-18 md:text-20 inline-flex items-center leading-none">
                 We are <b className="ml-2">passion</b>.
               </p>
             </FadeIn>
             <FadeIn>
-              <p className="font-archivo text-center text-24 md:text-32 inline-flex items-center leading-none">
+              <p className="font-archivo text-center text-18 md:text-20 inline-flex items-center leading-none">
                 We are a{" "}
-                <span className="text-yellow italic ml-2">
+                <span className="text-gold italic ml-2">
                   creative power haus,
                 </span>
               </p>
             </FadeIn>
             <FadeIn>
-              <p className="font-playfairDisplay text-center text-24 md:text-32 inline-flex items-center leading-none">
+              <p className="font-playfairDisplay text-center text-18 md:text-20 inline-flex items-center leading-none">
                 Where ideas come to life.
               </p>
             </FadeIn>
@@ -95,7 +95,7 @@ export default function Home() {
               />
             </CustomDraggable> */}
             <ScrollParallax>
-              <p className="text-[56px] sm:text-[64px] md:text-[80px] xl:text-[120px] uppercase font-archivo font-black text-yellow leading-none">
+              <p className="text-[40px] sm:text-48 md:text-[80px] xl:text-[120px] uppercase font-archivo font-black text-gold leading-none">
                 our show<span className="italic">reel</span>
               </p>
             </ScrollParallax>
@@ -114,7 +114,7 @@ export default function Home() {
                 loop
                 muted
                 playsInline
-                className="mt-24 sm:mt-32 md:mt-40"
+                className="mt-24 sm:mt-32 md:mt-40 w-full max-w-[420px]"
                 src={"/gifs/home-gif.mp4"}
                 controls={false}
               />
@@ -122,13 +122,23 @@ export default function Home() {
           </div>
         </div>
         <WorkQuote className="mt-32" />
-        <Link
-          href="/contact"
-          aria-label="contact us"
-          className="max-w-max mx-auto text-gold border border-gold text-20 sm:text-24 px-6 pt-2 pb-3 mt-12 md:mt-20 rounded-md font-playfairDisplay transition-all duration-300 hover:bg-gold hover:text-black"
-        >
-          Get in touch
-        </Link>
+        <div className="flex items-center gap-4 mt-12 md:mt-20 mx-auto">
+          <Link
+            href="/work/all"
+            aria-label="contact us"
+            className="max-w-max text-gold text-18 sm:text-20 px-6 font-playfairDisplay transition-all duration-300 hover:text-white"
+          >
+            All our work
+          </Link>
+          <div className="h-[32px] w-px bg-gold" />
+          <Link
+            href="/contact"
+            aria-label="contact us"
+            className="max-w-max text-gold text-18 sm:text-20 px-6 font-playfairDisplay transition-all duration-300 hover:text-white"
+          >
+            Get in touch
+          </Link>
+        </div>
         {/* <div className="w-full absolute bottom-0 left-0 pb-2 lg:pb-6">
           {!isMobile ? (
             <EmblaCarouselAutoScroll

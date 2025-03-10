@@ -63,7 +63,7 @@ export const StudiosSection = ({
             </ScrollParallax>
           </div>
           <ScrollParallax className="z-10" parallaxSpeed={1}>
-            <p className="text-center text-white text-18 sm:text-20 leading-tight font-playfairDisplay font-extralight mt-24">
+            <p className="text-center text-white text-16 sm:text-18 leading-tight font-playfairDisplay font-extralight mt-24">
               In the exciting world of sport, we&apos;re the innovative
               thinkers, making campaigns that surprise and delight. <br />
               With passion driving us, we&apos;re the creators of truly
@@ -190,11 +190,11 @@ export const StudiosSection = ({
       </div>
 
       {/* WORKS */}
-      <div className="flex flex-col">
-        <FadeIn className="!py-16 z-40 relative overflow-x-hidden mt-12">
+      {/* <div className="flex flex-col"> */}
+      {/* <FadeIn className="!py-16 z-40 relative overflow-x-hidden mt-12">
           <ScrollableWorks works={works} title="Works" textWhite />
-        </FadeIn>
-        {/* <div className="flex flex-col items-center mx-auto mt-8 sm:mt-2">
+        </FadeIn> */}
+      {/* <div className="flex flex-col items-center mx-auto mt-8 sm:mt-2">
           <ScrollParallax className="z-10" parallaxSpeed={0.7}>
             <p className="text-gold font-masker text-32 md:text-[56px] lg:text-[64px] leading-none z-10">
               we come to
@@ -211,7 +211,7 @@ export const StudiosSection = ({
             </p>
           </ScrollParallax>
         </div> */}
-      </div>
+      {/* </div> */}
     </>
   );
 };

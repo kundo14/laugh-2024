@@ -121,28 +121,34 @@ export const getWorksByTag = async (tag) => {
   }
 };
 
-export const getWorks = async (limit) => {
+export const getWorks = async (limit = 12, offset = 0) => {
   const page = await client.getEntries({
     content_type: "workTemplate",
     include: 5,
-    limit: limit ? limit : 200,
+    limit,
+    skip: offset, // Pagination
   });
 
   const cleanWorks = page.items.map((item) => ({
     name: item.fields.name,
     slug: item.fields.slug,
-    imagePreview: item.fields.imagePreview.fields ? `https:${item.fields.imagePreview.fields.file.url}` : null,
+    imagePreview: item.fields.imagePreview?.fields?.file.url
+      ? `https:${item.fields.imagePreview.fields.file.url}`
+      : null,
     tags: item.fields.tags,
     date: {
       start: item.fields.startYear,
       end: item.fields.endYear,
     },
     featured: item.fields.featured,
-    heroVideo: item.fields.heroVideo ? `https:${item.fields.heroVideo.fields.file.url}` : null,
-  }))
+    heroVideo: item.fields.heroVideo?.fields?.file.url
+      ? `https:${item.fields.heroVideo.fields.file.url}`
+      : null,
+  }));
 
   return cleanWorks;
 };
+
 
 
 

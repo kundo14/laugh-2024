@@ -38,7 +38,7 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
           </FadeIn>
           <div className="flex flex-col items-center mt-12">
             <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-              <p className="text-center font-medium text-white opacity-80 text-24 sm:text-[28px] md:text-32 lg:text-42 leading-tight max-w-max">
+              <p className="text-center font-playfairDisplay font-medium text-white opacity-80 text-24 sm:text-[28px] md:text-32 leading-tight max-w-max">
                 We build <i>engaged</i> communities
               </p>
             </ScrollParallax>
@@ -78,7 +78,7 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
         <div className="flex flex-col items-center gap-8 mt-20 max-w-[1024px]">
           <FadeIn>
             <ScrollParallax className="z-10" parallaxSpeed={0.4}>
-              <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight mt-0">
+              <p className="text-center text-white text-16 sm:text-18 md:text-24 leading-tight font-extralight mt-0">
                 Our vision is one where client and agency lines are blurred in
                 the mutual goal of success.
               </p>
@@ -86,7 +86,7 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
           </FadeIn>
           <FadeIn>
             <ScrollParallax className="z-10" parallaxSpeed={0.6}>
-              <p className="text-center text-white text-18 sm:text-20 md:text-24 leading-tight font-extralight mt-0">
+              <p className="text-center text-white text-16 sm:text-18 md:text-24 leading-tight font-extralight mt-0">
                 As with everything we do, our philosophy is rooted in passion:
                 to cooperate, to excel, to succeed.
               </p>
@@ -95,21 +95,21 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
         </div>
 
         {/* RETRO STICKERS */}
-        <div className="flex justify-center lg:justify-between items-end max-w-full flex-wrap w-full flex-1 xl:max-w-[1200px] gap-4 sm:gap-6 lg:gap-12 xl:gap-20">
+        <div className="flex justify-center lg:justify-between items-end flex-wrap w-full flex-1 max-w-max gap-4 sm:gap-6 lg:gap-16 xl:gap-32">
           <FadeIn>
             <CustomDraggable>
               <div className="flex flex-col items-center">
                 <img
                   src="/images/stickers/joystick.png"
                   alt="retro-sticker-1"
-                  className="w-[120px] md:w-[140px] lg:w-[200px] h-auto"
+                  className="w-[80px] md:w-[100px] lg:w-[120px] h-auto"
                   draggable={false}
                 />
-                <div className="flex flex-col items-center -mt-4">
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-archivoBlack">
+                <div className="flex flex-col items-center -mt-2">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-archivoBlack">
                     building
                   </p>
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-masker">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-masker">
                     communities
                   </p>
                 </div>
@@ -122,14 +122,14 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
                 <img
                   src="/images/stickers/tv.png"
                   alt="retro-sticker-1"
-                  className="w-[120px] md:w-[140px] lg:w-[200px] h-auto"
+                  className="w-[80px] md:w-[100px] lg:w-[120px] h-auto"
                   draggable={false}
                 />
-                <div className="flex flex-col items-center -mt-2">
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-archivoBlack">
+                <div className="flex flex-col items-center">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-archivoBlack">
                     CREATIVE &{" "}
                   </p>
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-masker">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-masker">
                     STRATEGY
                   </p>
                 </div>
@@ -142,14 +142,14 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
                 <img
                   src="/images/stickers/libertadores.png"
                   alt="retro-sticker-1"
-                  className="w-[120px] md:w-[140px] lg:w-[200px] h-auto"
+                  className="w-[80px] md:w-[100px] lg:w-[120px] h-auto"
                   draggable={false}
                 />
                 <div className="flex flex-col items-center mt-3">
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-archivoBlack">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-archivoBlack">
                     SPORTS{" "}
                   </p>
-                  <p className="text-white text-24 sm:text-32 md:text-42 uppercase leading-none font-masker">
+                  <p className="text-white text-18 sm:text-24 md:text-28 uppercase leading-[1.15] font-masker">
                     MANAGEMENT
                   </p>
                 </div>
@@ -159,14 +159,14 @@ export const PassionTeamsSection = ({ className }: { className?: string }) => {
         </div>
 
         <div className="flex flex-col container relative z-50 !mt-20">
-          <p className="text-red font-masker text-48 md:text-[64px] lg:text-[80px] xl:text-[90px] leading-[0.9]">
+          <ScrollParallax className="text-red font-playfairDisplay text-48 md:text-[64px] leading-[0.9]">
             Fueling a fan revolution
-          </p>
-          <div className="flex flex-wrap justify-end sm:items-start ml-auto mt-2">
-            <p className="text-white font-archivoBlack uppercase leading-none text-32 md:text-48 lg:text-[64px] xl:text-[72px]">
+          </ScrollParallax>
+          <div className="flex flex-wrap justify-end sm:items-start ml-auto -mt-2">
+            <p className="text-white font-archivoBlack uppercase leading-none text-32 md:text-48 lg:text-[64px]">
               Cultivating
             </p>
-            <div className="relative text-white font-archivoBlack uppercase leading-none ml-6 text-32 md:text-48 lg:text-[64px] xl:text-[72px]">
+            <div className="relative text-white font-archivoBlack uppercase leading-none ml-6 text-32 md:text-48 lg:text-[64px]">
               Fandoms.
               <CustomDraggable>
                 <img
