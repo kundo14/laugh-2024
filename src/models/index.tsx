@@ -44,7 +44,7 @@ export type WorkTemplateProps = {
     start: number;
     end: number;
   };
-  imageGallery: { url: string; description: string }[];
+  imageGallery?: { url: string; description: string }[] | null;
   heroVideo: string;
   heroTitle: any;
   heroDescription?: any;
