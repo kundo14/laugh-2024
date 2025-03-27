@@ -34,7 +34,9 @@ const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
     >
       <div className="container relative z-40 !mt-16">
         <WorkHeroData work={data} className="!mb-8 sm:!mb-16" textWhite />
-        <ImageGallery images={data.imageGallery} />
+        {data.imageGallery && data.imageGallery.length && (
+          <ImageGallery images={data.imageGallery} />
+        )}
       </div>{" "}
       {data.components &&
         data.components.map((component, index) => (

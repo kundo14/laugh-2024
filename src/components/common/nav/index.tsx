@@ -2,7 +2,6 @@ import * as React from "react";
 import { cn } from "@/lib/cn";
 import Link from "next/link";
 import { useLenis } from "@studio-freight/react-lenis";
-import { ContactDropdown } from "../contact/contact-nav-dropdown";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
 import { BigLogo, Logo } from "../logos/laugh";
@@ -97,7 +96,7 @@ export const Nav = ({
               <Logo className="text-current" />
             )}
           </Link>
-          <div className="hidden sm:flex flex-col absolute top-0 right-0 sm:relative sm:flex-row items-end sm:items-center gap-2 sm:gap-6 group">
+          <div className="hidden sm:flex top-0 right-0 sm:relative sm:items-center gap-2 sm:gap-6 group">
             {links.map((link) => (
               <Link
                 key={link.url}
@@ -108,7 +107,7 @@ export const Nav = ({
               </Link>
             ))}
           </div>
-          <div className="flex sm:hidden text-current">
+          <div className="flex sm:!hidden text-current">
             <button
               name="open menu"
               onClick={() => {
