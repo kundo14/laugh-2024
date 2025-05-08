@@ -89,6 +89,7 @@ export async function getStaticProps() {
   const initialWorks = await getWorks(WORKS_PER_PAGE, 0);
   return {
     props: { initialWorks },
+    revalidate: 60, // Revalidate every 60 seconds
   };
 }
 
