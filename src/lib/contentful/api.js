@@ -82,7 +82,7 @@ export const getWorkTemplate = async (slug) => {
     heroDescription: page.items[0].fields.heroDescription ? page.items[0].fields.heroDescription : null,
     deliverables: page.items[0].fields.deliverables,
     bottomVideoLink: page.items[0].fields.bottomVideoLink ? page.items[0].fields.bottomVideoLink : null,
-    bottomVideoLink2: page.items[0].fields.bottomVideoLink2 ? page.items[0].fields.bottomVideoLink2 : null,
+    youTubeVideos: page.items[0].fields.youTubeVideos ? page.items[0].fields.youTubeVideos : null,
     components: page.items[0].fields.customComponents && page.items[0].fields.customComponents.map((component) => getComponent(component)),
   };
 
