@@ -52,7 +52,7 @@ export type WorkTemplateProps = {
   deliverables: string[];
   components?: CustomComponent[];
   bottomVideoLink?: string | null;
-  bottomVideoLink2?: string | null;
+  youTubeVideos?: string[] | null;
 };
 
 export type WorkPreview = Pick<

@@ -53,16 +53,25 @@ const WorkTemplate = ({ data }: { data: WorkTemplateProps }) => {
                 "text-slider"),
         })}
       >
-        {data.bottomVideoLink && (
+        {/* OLD */}
+        {data.bottomVideoLink && !data.youTubeVideos && (
           <FadeIn delay={0.3} className="flex">
             <VideoPlayer video={data.bottomVideoLink} />
           </FadeIn>
         )}
-        {data.bottomVideoLink2 && (
-          <FadeIn delay={0.3} className="flex mt-12 md:mt-20">
-            <VideoPlayer video={data.bottomVideoLink2} />
-          </FadeIn>
-        )}
+
+        {/* NEW */}
+        {data.youTubeVideos &&
+          data.youTubeVideos.length > 0 &&
+          data.youTubeVideos.map((video, index) => (
+            <FadeIn
+              key={index}
+              delay={0.3}
+              className="flex mb-8 md:mb-12 lg:mb-16"
+            >
+              <VideoPlayer video={video} />
+            </FadeIn>
+          ))}
       </div>
     </WorkPageLayout>
   );
