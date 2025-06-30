@@ -61,7 +61,7 @@ export const Clients = ({
           ))}
         </Marquee>
       ) : (
-        <div className="flex flex-wrap mt-12 gap-x-4 items-center justify-center">
+        <div className="flex flex-wrap mt-12 gap-x-2 items-center justify-center">
           {clients.map((client, i) => (
             <FadeIn key={i} delay={i * 0.01} className="">
               <ScrollParallax parallaxSpeed={i * 0.05}>
