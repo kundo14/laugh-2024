@@ -62,7 +62,7 @@ export const FifaWC2026HeroV2 = ({ className }: { className?: string }) => {
           </FloatingElement>
           <FloatingElement
             depth={1}
-            className="top-[16%] sm:top-[20%] lg:top-[40%] right-[20%] sm::right-[5%]"
+            className="top-[16%] sm:top-[20%] lg:top-[40%] right-[20%] sm:right-[5%]"
           >
             <motion.img
               initial={{ opacity: 0 }}
@@ -83,7 +83,7 @@ export const FifaWC2026HeroV2 = ({ className }: { className?: string }) => {
           </FloatingElement>
           <FloatingElement
             depth={1}
-            className="bottom-[15%] right-[2%] sm:right-[8%] lg:right-[30%]"
+            className="bottom-[8%] right-[2%] sm:right-[8%] lg:right-[15%]"
           >
             <motion.img
               initial={{ opacity: 0 }}
