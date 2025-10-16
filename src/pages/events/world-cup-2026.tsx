@@ -24,7 +24,7 @@ function WorldCup2026() {
       <div className="absolute top-0 left-0 w-full h-full z-0 bg-texture"></div>
       <FifaWC2026Hero className="-mt-[136px]" />
       <div className="flex relative">
-        <Statement className="!pt-24 sm:!pt-32" />
+        <Statement className="!pt-24 sm:!pt-32" withStickers />
       </div>
     </PageLayout>
   );

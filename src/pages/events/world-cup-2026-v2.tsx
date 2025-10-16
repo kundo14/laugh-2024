@@ -20,7 +20,11 @@ function WorldCup2026V2() {
       withoutBackgroundTexture
     >
       <FifaWC2026HeroV2 className="-mt-[136px]" />
-      <Statement textColor="black" className="!pt-8 sm:!pt-32" />
+      <Statement
+        textColor="black"
+        className="!pt-8 sm:!pt-32"
+        withStickers={false}
+      />
     </PageLayout>
   );
 }

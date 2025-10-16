@@ -32,12 +32,12 @@ export const FifaWC2026HeroV2 = ({ className }: { className?: string }) => {
         <Floating sensitivity={-1} className="overflow-hidden">
           <FloatingElement
             depth={0.5}
-            className="top-[18%] left-[2%] sm:left-[11%]"
+            className="top-[20%] left-[2%] sm:left-[11%]"
           >
             <motion.img
               initial={{ opacity: 0 }}
               src={exampleImages[0].url}
-              className="w-24 sm:w-32 h-auto object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
+              className="w-20 sm:w-32 h-auto object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
             />
           </FloatingElement>
           <FloatingElement
@@ -62,12 +62,12 @@ export const FifaWC2026HeroV2 = ({ className }: { className?: string }) => {
           </FloatingElement>
           <FloatingElement
             depth={1}
-            className="top-[16%] sm:top-[20%] lg:top-[40%] right-[5%]"
+            className="top-[16%] sm:top-[20%] lg:top-[40%] right-[20%] sm::right-[5%]"
           >
             <motion.img
               initial={{ opacity: 0 }}
               src={exampleImages[3].url}
-              className="w-28 sm:w-40 h-auto object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
+              className="w-24 sm:w-40 h-auto object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
             />
           </FloatingElement>
 
@@ -83,7 +83,7 @@ export const FifaWC2026HeroV2 = ({ className }: { className?: string }) => {
           </FloatingElement>
           <FloatingElement
             depth={1}
-            className="bottom-[15%] right-[8%] lg:right-[30%]"
+            className="bottom-[15%] right-[2%] sm:right-[8%] lg:right-[30%]"
           >
             <motion.img
               initial={{ opacity: 0 }}
