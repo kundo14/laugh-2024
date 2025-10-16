@@ -1,21 +1,54 @@
 import FadeIn from "@/components/common/animations/fade-in";
 import { Button } from "@/components/design-system/button";
+import { cn } from "@/lib/cn";
+import { Cross1Icon } from "@radix-ui/react-icons";
 import { useRouter } from "next/router";
 
-export const StatementText = () => {
+export const StatementText = ({
+  textColor = "white",
+}: {
+  textColor?: "black" | "white";
+}) => {
   const router = useRouter();
   return (
     <div className="container z-10 relative">
-      <div className="flex flex-col text-gray-200 text-[15px] sm:text-16 max-w-[768px] mx-auto pt-20 sm:pt-32 pb-12 space-y-4 leading-relaxed">
+      <div
+        className={cn(
+          "flex flex-col text-[15px] sm:text-16 max-w-[768px] mx-auto space-y-4 leading-relaxed",
+          {
+            "text-gray-200": textColor === "white",
+            "text-gray-900": textColor === "black",
+          }
+        )}
+      >
         <FadeIn>
           <p>
-            The <span className="!text-yellow">FIFA World Cup 2026</span> is
-            only <span className="!text-yellow">9 months away</span>, and with{" "}
-            <span className="!text-yellow">70M+ Hispanic soccer fans</span>{" "}
+            The{" "}
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              FIFA World Cup 2026
+            </span>{" "}
+            is only{" "}
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              9 months away
+            </span>
+            , and with{" "}
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              70M+ Hispanic soccer fans
+            </span>{" "}
             expected to watch in the US, it is an{" "}
-            <span className="!text-yellow">$80 billion opportunity</span> to
-            authentically reach the US Hispanic audience around a core passion
-            point in 2026.
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              $80 billion opportunity
+            </span>{" "}
+            to authentically reach the US Hispanic audience around a core
+            passion point in 2026.
           </p>
         </FadeIn>
         <FadeIn>
@@ -28,14 +61,22 @@ export const StatementText = () => {
           <p>
             Most agencies understand marketing OR Hispanic audiences OR
             fútbol/soccer. But we&apos;re the{" "}
-            <span className="!text-yellow">only content studio</span> that
-            combines Hispanic sports expertise with US market strategy - we
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              only content studio
+            </span>{" "}
+            that combines Hispanic sports expertise with US market strategy - we
             understand the culture, the sport, AND the business.
           </p>{" "}
         </FadeIn>{" "}
         <FadeIn>
           <p>
-            <span className="!text-yellow">Book a FREE strategy session</span>{" "}
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              Book a FREE strategy session
+            </span>{" "}
             and get a board-ready presentation within 7 days showing exactly how
             to capture this opportunity for your company.
           </p>{" "}
@@ -46,33 +87,86 @@ export const StatementText = () => {
             assessment with sports marketing experts:
           </p>
         </FadeIn>
-        <ul className="list-disc list-inside space-y-2 mb-4">
+        <div className="flex flex-col gap-2">
           <FadeIn>
-            <li>Market opportunity size and audience data.</li>
+            <div className="flex items-start gap-2">
+              <Cross1Icon
+                className={cn("w-[14px] h-[14px] mt-[5px]", {
+                  "text-red": textColor === "black",
+                  "text-yellow": textColor === "white",
+                })}
+              />
+              <p>Market opportunity size and audience data.</p>
+            </div>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <li>
-              FIFA World Cup data & why it&apos;s important for Hispanic
-              audiences.
-            </li>
+            {" "}
+            <div className="flex items-start gap-2">
+              <Cross1Icon
+                className={cn("w-[14px] h-[14px] mt-[5px]", {
+                  "text-red": textColor === "black",
+                  "text-yellow": textColor === "white",
+                })}
+              />
+              <p>
+                FIFA World Cup data & why it&apos;s important for Hispanic
+                audiences.
+              </p>
+            </div>
           </FadeIn>{" "}
           <FadeIn delay={0.2}>
-            <li>Hispanic audience data specific to your industry/vertical.</li>{" "}
+            <div className="flex items-start gap-2">
+              <Cross1Icon
+                className={cn("w-[14px] h-[14px] mt-[5px]", {
+                  "text-red": textColor === "black",
+                  "text-yellow": textColor === "white",
+                })}
+              />
+              <p>Hispanic audience data specific to your industry/vertical.</p>{" "}
+            </div>
           </FadeIn>{" "}
           <FadeIn delay={0.3}>
-            <li>Tailored insight to meet your business objectives.</li>{" "}
+            <div className="flex items-start gap-2">
+              <Cross1Icon
+                className={cn("w-[14px] h-[14px] mt-[5px]", {
+                  "text-red": textColor === "black",
+                  "text-yellow": textColor === "white",
+                })}
+              />
+              <p>Tailored insight to meet your business objectives.</p>{" "}
+            </div>
           </FadeIn>{" "}
           <FadeIn delay={0.4}>
-            <li>
-              <span className="!text-yellow">
-                Custom board-ready presentation delivered within 7 days.
-              </span>
-            </li>
+            <div className="flex items-start gap-2">
+              <Cross1Icon
+                className={cn("w-[14px] h-[14px] mt-[5px]", {
+                  "text-red": textColor === "black",
+                  "text-yellow": textColor === "white",
+                })}
+              />
+              <p>
+                <span
+                  className={
+                    textColor === "white" ? "!text-yellow" : "!text-red"
+                  }
+                >
+                  Custom board-ready presentation delivered within 7 days.
+                </span>
+              </p>
+            </div>
           </FadeIn>{" "}
           <FadeIn delay={0.5}>
-            <li>Clear next steps for implementation.</li>
+            <div className="flex items-center gap-2">
+              <Cross1Icon
+                className={cn("w-[14px] h-[14px]", {
+                  "text-red": textColor === "black",
+                  "text-yellow": textColor === "white",
+                })}
+              />
+              <p>Clear next steps for implementation.</p>
+            </div>
           </FadeIn>
-        </ul>
+        </div>
         <FadeIn>
           <p>
             No obligation, just expert guidance to help you capture this
@@ -85,9 +179,13 @@ export const StatementText = () => {
         <FadeIn>
           <p>
             If the above resonates, why not{" "}
-            <span className="!text-yellow">book a FREE consultation</span> here
-            and we can discuss how your brand can achieve the same outcomes as
-            our other clients.
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              book a FREE consultation
+            </span>{" "}
+            here and we can discuss how your brand can achieve the same outcomes
+            as our other clients.
           </p>
         </FadeIn>
         <div className="">
@@ -97,7 +195,14 @@ export const StatementText = () => {
               router.push("/contact");
             }}
             aria-label="book a free"
-            className="w-full sm:w-max px-4 py-2 text-[15px] sm:text-16 border rounded-sm border-yellow text-yellow bg-transparent font-medium hover:transform hover:scale-105 transition-all duration-200 mt-8"
+            className={cn(
+              "w-full sm:w-max px-4 py-2 text-[15px] sm:text-16 border rounded-sm bg-transparent font-medium hover:transform hover:scale-105 transition-all duration-200 mt-8",
+              {
+                "border-yellow text-yellow": textColor === "white",
+                "border-red text-red hover:bg-red hover:text-white":
+                  textColor === "black",
+              }
+            )}
           >
             Book a free consultation
           </button>

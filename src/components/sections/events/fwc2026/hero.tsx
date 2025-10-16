@@ -4,7 +4,11 @@ import { cn } from "@/lib/cn";
 import { SpinningText } from "@/components/design-system/spinning-text";
 import React from "react";
 
-export function HomeHeroSpinningText() {
+export function HomeHeroSpinningText({
+  textColor = "white",
+}: {
+  textColor?: "black" | "white";
+}) {
   return (
     <SpinningText
       radius={6}
@@ -37,7 +41,10 @@ export function HomeHeroSpinningText() {
           },
         },
       }}
-      className="!text-yellow text-12"
+      className={cn("text-[12px] sm:text-14", {
+        "text-black": textColor === "black",
+        "text-yellow": textColor === "white",
+      })}
     >
       {`scroll down • scroll down • scroll down • `}
     </SpinningText>
