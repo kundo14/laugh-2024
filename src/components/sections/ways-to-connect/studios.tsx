@@ -5,13 +5,7 @@ import { cn } from "@/lib/cn";
 import { WorkPreview } from "@/models";
 import { ScrollableWorks } from "../work/scrollable-works";
 
-export const StudiosSection = ({
-  className,
-  works,
-}: {
-  className?: string;
-  works: WorkPreview[];
-}) => {
+export const StudiosSection = ({ className }: { className?: string }) => {
   return (
     <>
       <div

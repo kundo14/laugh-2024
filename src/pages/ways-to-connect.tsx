@@ -7,7 +7,7 @@ import { StudiosSection } from "@/components/sections/ways-to-connect/studios";
 import { Section360 } from "@/components/sections/ways-to-connect/360";
 import { PassionTeamsSection } from "@/components/sections/ways-to-connect/passion-teams";
 
-function WaysToConnect({ works }: { works: WorkPreview[] }) {
+function WaysToConnect() {
   // Scroll to top on route change
   React.useEffect(() => {
     console.log("r-c");
@@ -25,18 +25,11 @@ function WaysToConnect({ works }: { works: WorkPreview[] }) {
       footerWhite
     >
       <div className="absolute top-0 left-0 w-full h-full z-0 bg-texture"></div>
-      <StudiosSection className="-mt-[136px]" works={works} />
+      <StudiosSection className="-mt-[136px]" />
       <Section360 />
       <PassionTeamsSection />
     </PageLayout>
   );
-}
-
-export async function getStaticProps() {
-  const works = await getWorks(20);
-  return {
-    props: { works },
-  };
 }
 
 export default WaysToConnect;

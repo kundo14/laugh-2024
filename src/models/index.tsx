@@ -41,8 +41,8 @@ export type WorkTemplateProps = {
   imagePreview: string;
   tags: string[];
   date: {
-    start: number;
-    end: number;
+    start: number | null;
+    end: number | null;
   };
   imageGallery?: { url: string; description: string }[] | null;
   heroVideo: string;

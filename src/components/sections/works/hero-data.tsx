@@ -3,7 +3,6 @@ import { CustomDraggable } from "@/components/common/draggable";
 import { cn } from "@/lib/cn";
 import { WorkTemplateProps } from "@/models";
 import { renderBody } from "@/lib/contentful/renderer";
-import ScrollParallax from "@/components/common/animations/parallax";
 import FadeIn from "@/components/common/animations/fade-in";
 import { useRouter } from "next/router";
 
@@ -69,7 +68,7 @@ export const WorkHeroData = ({
         <div className="flex flex-col border-t border-gray-500 pt-4">
           <p className="uppercase text-12 text-gray-500 mb-3">year</p>
           <p className="uppercase text-12 text-gray-500">
-            {work.date.start} - {work.date.end || "Present"}
+            {work.date.start} - {work.date.end ? work.date.end : "present"}
           </p>
         </div>
         <div className="flex flex-col border-t border-gray-500 pt-4 sm:mt-12">

@@ -74,8 +74,8 @@ export const getWorkTemplate = async (slug) => {
       };
     }) : null,
     date: {
-      start: page.items[0].fields.startYear,
-      end: page.items[0].fields.endYear,
+      start: page.items[0].fields.startYear ? page.items[0].fields.startYear : null,
+      end: page.items[0].fields.endYear ? page.items[0].fields.endYear : null,
     },
     featured: page.items[0].fields.featured,
     heroTitle: page.items[0].fields.heroTitle,
@@ -138,8 +138,8 @@ export const getWorks = async (limit = 12, offset = 0) => {
       : null,
     tags: item.fields.tags,
     date: {
-      start: item.fields.startYear,
-      end: item.fields.endYear,
+      start: item.fields.startYear ? item.fields.startYear : null,
+      end: item.fields.endYear ? item.fields.endYear : null,
     },
     featured: item.fields.featured,
     heroVideo: item.fields.heroVideo?.fields?.file.url
