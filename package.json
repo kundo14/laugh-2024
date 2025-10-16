@@ -23,6 +23,7 @@
     "embla-carousel-autoplay": "^8.1.6",
     "embla-carousel-react": "^8.1.6",
     "framer-motion": "^11.3.12",
+    "motion": "^12.23.24",
     "next": "14.2.4",
     "react": "^18",
     "react-animated-cursor": "^2.11.2",
