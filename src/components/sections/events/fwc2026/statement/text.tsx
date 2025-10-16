@@ -188,7 +188,7 @@ export const StatementText = ({
             as our other clients.
           </p>
         </FadeIn>
-        <div className="">
+        <FadeIn className="">
           <button
             name="book"
             onClick={() => {
@@ -206,7 +206,7 @@ export const StatementText = ({
           >
             Book a free consultation
           </button>
-        </div>
+        </FadeIn>
       </div>
     </div>
   );
