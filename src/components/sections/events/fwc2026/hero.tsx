@@ -3,6 +3,7 @@ import { cn } from "@/lib/cn";
 
 import { SpinningText } from "@/components/design-system/spinning-text";
 import React from "react";
+import { Cross1Icon } from "@radix-ui/react-icons";
 
 export function HomeHeroSpinningText({
   textColor = "white",

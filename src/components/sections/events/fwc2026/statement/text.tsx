@@ -2,6 +2,7 @@ import FadeIn from "@/components/common/animations/fade-in";
 import { Button } from "@/components/design-system/button";
 import { cn } from "@/lib/cn";
 import { Cross1Icon } from "@radix-ui/react-icons";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const StatementText = ({
@@ -179,33 +180,35 @@ export const StatementText = ({
         <FadeIn>
           <p>
             If the above resonates, why not{" "}
-            <span
+            <Link
+              href={"https://meetings-eu1.hubspot.com/dsmyth"}
+              target="_blank"
+              aria-label="book a free consultation"
               className={textColor === "white" ? "!text-yellow" : "!text-red"}
             >
               book a FREE consultation
-            </span>{" "}
+            </Link>{" "}
             here and we can discuss how your brand can achieve the same outcomes
             as our other clients.
           </p>
         </FadeIn>
-        <FadeIn className="">
-          <button
-            name="book"
-            onClick={() => {
-              router.push("/contact");
-            }}
+        <FadeIn className="!mt-8">
+          <Link
+            href="https://meetings-eu1.hubspot.com/dsmyth"
+            target="_blank"
             aria-label="book a free"
             className={cn(
-              "w-full sm:w-max px-4 py-2 text-[15px] sm:text-16 border rounded-sm bg-transparent font-medium hover:transform hover:scale-105 transition-all duration-200 mt-8",
+              "w-full sm:w-max px-4 py-2 text-[15px] sm:text-16 border rounded-sm bg-transparent font-medium transition-all duration-200",
               {
-                "border-yellow text-yellow": textColor === "white",
+                "border-yellow text-yellow hover:text-black hover:bg-yellow":
+                  textColor === "white",
                 "border-red text-red hover:bg-red hover:text-white":
                   textColor === "black",
               }
             )}
           >
             Book a free consultation
-          </button>
+          </Link>
         </FadeIn>
       </div>
     </div>
