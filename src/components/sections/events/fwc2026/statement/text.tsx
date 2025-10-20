@@ -1,5 +1,4 @@
 import FadeIn from "@/components/common/animations/fade-in";
-import { Button } from "@/components/design-system/button";
 import { cn } from "@/lib/cn";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
@@ -24,32 +23,49 @@ export const StatementText = ({
       >
         <FadeIn>
           <p>
-            The{" "}
+            Does your brand want to connect authentically with{" "}
             <span
               className={textColor === "white" ? "!text-yellow" : "!text-red"}
             >
-              FIFA World Cup 2026
-            </span>{" "}
-            is only{" "}
-            <span
-              className={textColor === "white" ? "!text-yellow" : "!text-red"}
-            >
-              9 months away
+              Hispanic audiences
             </span>
-            , and with{" "}
+            ?
+          </p>
+        </FadeIn>
+        <FadeIn>
+          <p>
+            As one of the fastest growing demographics in the US and with a
+            spending power of{" "}
             <span
               className={textColor === "white" ? "!text-yellow" : "!text-red"}
             >
-              70M+ Hispanic soccer fans
-            </span>{" "}
-            expected to watch in the US, it is an{" "}
+              $4.1 trillion
+            </span>
+            , they are an audience you can’t afford to miss.
+          </p>
+        </FadeIn>
+        <FadeIn>
+          <p>
+            With authentic connections coming courtesy of cultural passion
+            points, the upcoming{" "}
             <span
               className={textColor === "white" ? "!text-yellow" : "!text-red"}
             >
-              $80 billion opportunity
+              FIFA World Cup
             </span>{" "}
-            to authentically reach the US Hispanic audience around a core
-            passion point in 2026.
+            - FIFA analysis shows as an{" "}
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              $80billion opportunity*
+            </span>{" "}
+            for US companies - offers a platform to tap into{" "}
+            <span
+              className={textColor === "white" ? "!text-yellow" : "!text-red"}
+            >
+              27m+ Hispanic soccer fans
+            </span>{" "}
+            expected to watch in the US alone.
           </p>
         </FadeIn>
         <FadeIn>
@@ -57,7 +73,7 @@ export const StatementText = ({
             If that is something you&apos;re looking for, then don&apos;t miss
             out!
           </p>
-        </FadeIn>{" "}
+        </FadeIn>
         <FadeIn>
           <p>
             Most agencies understand marketing OR Hispanic audiences OR
@@ -69,8 +85,8 @@ export const StatementText = ({
             </span>{" "}
             that combines Hispanic sports expertise with US market strategy - we
             understand the culture, the sport, AND the business.
-          </p>{" "}
-        </FadeIn>{" "}
+          </p>
+        </FadeIn>
         <FadeIn>
           <p>
             <span
@@ -80,12 +96,12 @@ export const StatementText = ({
             </span>{" "}
             and get a board-ready presentation within 7 days showing exactly how
             to capture this opportunity for your company.
-          </p>{" "}
-        </FadeIn>{" "}
+          </p>
+        </FadeIn>
         <FadeIn>
           <p>
             What you&apos;ll receive from a 30-minute World Cup opportunity
-            assessment with sports marketing experts:
+            assessment with us:
           </p>
         </FadeIn>
         <div className="flex flex-col gap-2">
@@ -101,7 +117,6 @@ export const StatementText = ({
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
-            {" "}
             <div className="flex items-start gap-2">
               <Cross1Icon
                 className={cn("w-[14px] h-[14px] mt-[5px]", {
@@ -114,7 +129,7 @@ export const StatementText = ({
                 audiences.
               </p>
             </div>
-          </FadeIn>{" "}
+          </FadeIn>
           <FadeIn delay={0.2}>
             <div className="flex items-start gap-2">
               <Cross1Icon
@@ -123,9 +138,9 @@ export const StatementText = ({
                   "text-yellow": textColor === "white",
                 })}
               />
-              <p>Hispanic audience data specific to your industry/vertical.</p>{" "}
+              <p>Hispanic audience data specific to your industry/vertical.</p>
             </div>
-          </FadeIn>{" "}
+          </FadeIn>
           <FadeIn delay={0.3}>
             <div className="flex items-start gap-2">
               <Cross1Icon
@@ -134,32 +149,13 @@ export const StatementText = ({
                   "text-yellow": textColor === "white",
                 })}
               />
-              <p>Tailored insight to meet your business objectives.</p>{" "}
+              <p>Tailored insight to meet your business objectives.</p>
             </div>
-          </FadeIn>{" "}
+          </FadeIn>
           <FadeIn delay={0.4}>
             <div className="flex items-start gap-2">
               <Cross1Icon
                 className={cn("w-[14px] h-[14px] mt-[5px]", {
-                  "text-red": textColor === "black",
-                  "text-yellow": textColor === "white",
-                })}
-              />
-              <p>
-                <span
-                  className={
-                    textColor === "white" ? "!text-yellow" : "!text-red"
-                  }
-                >
-                  Custom board-ready presentation delivered within 7 days.
-                </span>
-              </p>
-            </div>
-          </FadeIn>{" "}
-          <FadeIn delay={0.5}>
-            <div className="flex items-center gap-2">
-              <Cross1Icon
-                className={cn("w-[14px] h-[14px]", {
                   "text-red": textColor === "black",
                   "text-yellow": textColor === "white",
                 })}
@@ -170,8 +166,8 @@ export const StatementText = ({
         </div>
         <FadeIn>
           <p>
-            No obligation, just expert guidance to help you capture this
-            opportunity.
+            No obligation, just expert guidance to help you capture & take
+            advantage of this huge opportunity in 2026.
           </p>
         </FadeIn>
         <FadeIn>
@@ -181,7 +177,7 @@ export const StatementText = ({
           <p>
             If the above resonates, why not{" "}
             <Link
-              href={"https://meetings-eu1.hubspot.com/dsmyth"}
+              href="https://meetings-eu1.hubspot.com/dsmyth"
               target="_blank"
               aria-label="book a free consultation"
               className={textColor === "white" ? "!text-yellow" : "!text-red"}
@@ -196,7 +192,7 @@ export const StatementText = ({
           <Link
             href="https://meetings-eu1.hubspot.com/dsmyth"
             target="_blank"
-            aria-label="book a free"
+            aria-label="book a free consultation"
             className={cn(
               "w-full sm:w-max px-4 py-2 text-[15px] sm:text-16 border rounded-sm bg-transparent font-medium transition-all duration-200",
               {
